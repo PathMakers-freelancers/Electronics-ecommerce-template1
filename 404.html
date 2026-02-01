@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Lost in the Circuit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['Syne', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global-reveal.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+    class="bg-slate-900 text-white min-h-screen flex flex-col items-center justify-center p-4 overflow-hidden relative">
+
+    <!-- Flash Preloader REMOVED -->
+
+    <!-- Navbar -->
+    <nav
+        class="nav-glow fixed z-50 top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full backdrop-blur-2xl shadow-lg shadow-indigo-500/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <i data-lucide="zap" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i>
+                <span class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">ElectraHub</span>
+            </a>
+            <div class="hidden lg:flex items-center gap-8 font-medium text-slate-700 dark:text-slate-200">
+                <div class="relative">
+                    <button id="nav-home-btn" data-target="nav-home-menu"
+                        class="nav-dropdown-trigger flex items-center gap-1 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                        Home <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                    </button>
+                    <div id="nav-home-menu"
+                        class="nav-dropdown-menu absolute top-full start-0 mt-2 w-48 bg-white dark:bg-slate-900 shadow-xl rounded-xl p-2 hidden border border-indigo-50 dark:border-slate-800">
+                        <a href="index.html"
+                            class="block px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">Home 1</a>
+                        <a href="index2.html"
+                            class="block px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">Home 2</a>
+                    </div>
+                </div>
+                <a href="about.html"
+                    class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+                <a href="services.html"
+                    class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Services</a>
+                <a href="contact.html"
+                    class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
+                <div class="relative">
+                    <button id="nav-dashboards-btn" data-target="nav-dashboards-menu"
+                        class="nav-dropdown-trigger flex items-center gap-1 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                        Dashboards <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                    </button>
+                    <div id="nav-dashboards-menu"
+                        class="nav-dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-900 shadow-xl rounded-xl p-2 hidden border border-indigo-50 dark:border-slate-800">
+                        <a href="user_dashboard.html"
+                            class="block px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">User Panel</a>
+                        <a href="admin_dashboard.html"
+                            class="block px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">Admin Panel</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <!-- Buttons with Explicit Text Colors for Visibility -->
+                <button id="rtl-toggle"
+                    class="text-slate-700 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"><i
+                        data-lucide="globe" class="w-5 h-5"></i></button>
+                <button id="theme-toggle"
+                    class="text-slate-700 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"><i
+                        data-lucide="moon" class="w-5 h-5 hidden dark:block"></i><i data-lucide="sun"
+                        class="w-5 h-5 block dark:hidden"></i></button>
+                <a href="login.html"
+                    class="px-6 py-2.5 rounded-full bg-indigo-600 text-white font-bold transition-all shadow-[0_0_10px_rgba(99,102,241,0.3)] hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] hidden sm:block">Log
+                    In</a>
+                <a href="signup.html"
+                    class="px-6 py-2.5 border border-indigo-500/50 font-bold text-slate-700 dark:text-white rounded-full hover:shadow-lg hover:scale-105 transition-all text-sm hidden sm:block">GET
+                    STARTED</a>
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 dark:text-white"><i data-lucide="menu"
+                        class="w-6 h-6"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-overlay"></div>
+    <div id="mobile-menu" class="mobile-menu-drawer shadow-2xl p-6">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-black dark:text-white">ElectraHub</span>
+            <button id="mobile-menu-close-btn" class="p-2 text-slate-700 hover:text-rose-500"><i data-lucide="x"
+                    class="w-6 h-6"></i></button>
+        </div>
+        <div class="space-y-4">
+            <!-- Home Dropdown -->
+            <div class="relative group">
+                <button onclick="document.getElementById('mobile-home-menu').classList.toggle('hidden')"
+                    class="w-full flex justify-between items-center p-3 rounded-lg bg-slate-50 dark:bg-slate-900 font-bold text-slate-700 dark:text-white">
+                    Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div id="mobile-home-menu" class="hidden pl-4 mt-2 space-y-2">
+                    <a href="index.html" class="block p-2 text-slate-600 dark:text-slate-300">Home 1</a>
+                    <a href="index2.html" class="block p-2 text-slate-600 dark:text-slate-300">Home 2</a>
+                </div>
+            </div>
+
+            <a href="about.html"
+                class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200">About</a>
+            <a href="services.html"
+                class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200">Services</a>
+            <a href="contact.html"
+                class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200">Contact</a>
+
+            <!-- Dashboards Dropdown -->
+            <div class="relative group">
+                <button onclick="document.getElementById('mobile-dash-menu').classList.toggle('hidden')"
+                    class="w-full flex justify-between items-center p-3 rounded-lg bg-slate-50 dark:bg-slate-900 font-bold text-slate-700 dark:text-white">
+                    Dashboards <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div id="mobile-dash-menu" class="hidden pl-4 mt-2 space-y-2">
+                    <a href="user_dashboard.html" class="block p-2 text-slate-600 dark:text-slate-300">User Panel</a>
+                    <a href="admin_dashboard.html" class="block p-2 text-slate-600 dark:text-slate-300">Admin Panel</a>
+                </div>
+            </div>
+
+            <div class="pt-4 space-y-3">
+                <a href="login.html"
+                    class="block w-full text-center py-3 rounded-xl border border-indigo-200 dark:border-slate-700 font-bold text-indigo-600 dark:text-indigo-400">Log
+                    In</a>
+                <a href="signup.html"
+                    class="block w-full text-center py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/30">Get
+                    STARTED</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Grid -->
+    <div class="absolute inset-0 opacity-10"
+        style="background-image: linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+
+    <div class="relative z-10 text-center max-w-2xl mx-auto">
+        <!-- Glitch Effect Text -->
+        <h1
+            class="text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-rose-500 mb-4 animate-pulse">
+            404</h1>
+
+        <h2 class="text-4xl font-bold mb-8 glow-neon-blue">System Failure</h2>
+        <p class="text-slate-400 text-xl mb-12">
+            The page you are looking for has been disconnected from the mainframe. It might have been moved, deleted, or
+            eaten by a cyber-glitch.
+        </p>
+
+        <!-- Animated Elements -->
+        <div class="flex justify-center gap-8 mb-12">
+            <div
+                class="w-20 h-20 bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700 animate-float-3d text-rose-500">
+                <i data-lucide="alert-triangle" class="w-10 h-10"></i>
+            </div>
+            <div class="w-20 h-20 bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700 animate-float-3d text-indigo-500"
+                style="animation-delay: 1s;">
+                <i data-lucide="wifi-off" class="w-10 h-10"></i>
+            </div>
+        </div>
+
+        <a href="index.html"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-indigo-600 hover:bg-indigo-700 rounded-full font-bold text-lg shadow-lg shadow-indigo-600/30 transition-all hover:scale-105 active:scale-95">
+            <i data-lucide="home" class="w-5 h-5"></i> Return to Base
+        </a>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="absolute top-20 left-20 w-4 h-4 bg-purple-500 rounded-full blur-sm animate-float-3d"></div>
+    <div class="absolute bottom-20 right-20 w-6 h-6 bg-indigo-500 rounded-full blur-sm animate-float-3d"
+        style="animation-delay: 2s;"></div>
+
+    <script src="main.js"></script>
+    <script src="global-reveal.js"></script>
+    <script>
+        // Preloader & Page Transition
+        const preloader = document.getElementById('flash-preloader');
+
+        window.addEventListener('load', () => {
+            if (preloader) {
+                setTimeout(() => {
+                    preloader.classList.add('opacity-0');
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }, 300);
+            }
+        });
+
+        // Handle Internal Navigation
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && this.target !== '_blank') {
+                    e.preventDefault();
+                    if (preloader) {
+                        preloader.style.display = 'flex';
+                        void preloader.offsetWidth;
+                        preloader.classList.remove('opacity-0');
+                    }
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 400);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+/* Ensuring no gray text globally - extracted from services.html */
+.text-slate-400,
+.text-slate-500,
+.text-gray-500,
+.text-gray-600,
+.text-slate-700 {
+    color: #0369A1 !important;
+    /* Force Deep Sky Blue in light mode */
+}
+
+.dark .text-slate-700,
+.dark .text-slate-800,
+.dark .text-slate-900,
+.dark .text-gray-700,
+.dark .text-gray-800,
+.dark .text-gray-900,
+.dark .text-black {
+    color: #7DD3FC !important;
+    /* Force Light Sky Blue in dark mode */
+}
+
+/* Navbar Toggle Buttons Visibility */
+#rtl-toggle,
+#theme-toggle {
+    color: #334155;
+    /* Slate 700 */
+}
+
+.dark #rtl-toggle,
+.dark #theme-toggle {
+    color: #FFFFFF;
+}
+
+/* Active Nav Underline */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #4f46e5;
+    /* Indigo-600 */
+    transition: width 0.3s ease;
+}
+
+.dark .nav-link::after {
+    background-color: #818cf8;
+    /* Indigo-400 */
+}
+
+.nav-link.active-nav-link::after {
+    width: 100%;
+}
+
+/* Navbar Glow Effect */
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.nav-glow {
+    position: fixed;
+    border: 2px solid transparent;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)) padding-box,
+        conic-gradient(from var(--gradient-angle), transparent 20%, #6366f1 40%, #ec4899 60%, transparent 80%) border-box;
+    animation: spin-border 4s linear infinite;
+    background-clip: padding-box, border-box;
+}
+
+.dark .nav-glow {
+    background:
+        linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)) padding-box,
+        conic-gradient(from var(--gradient-angle), transparent 20%, #6366f1 40%, #0ea5e9 60%, transparent 80%) border-box;
+}
+
+@keyframes spin-border {
+    to {
+        --gradient-angle: 360deg;
+    }
+}
+
+/* Mobile Menu Overlay - Overrides or supplements style.css if needed */
+.mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 190;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.mobile-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    z-index: 65 !important;
+}
+
+/* Mobile Menu Drawer - basic structure (styling handled by Tailwind classes in HTML mostly) */
+.mobile-menu-drawer {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 20rem;
+    max-width: 80%;
+    background-color: white;
+    z-index: 70 !important;
+    transition: transform 0.3s ease-in-out;
+    left: 0;
+    right: auto;
+    transform: translateX(-100%);
+}
+
+.mobile-menu-drawer.open {
+    transform: translateX(0);
+}
+
+.dark .mobile-menu-drawer {
+    background-color: #020617;
+}
+
+/* RTL Support for Mobile Menu */
+[dir="rtl"] .mobile-menu-drawer {
+    left: auto;
+    right: 0;
+    transform: translateX(100%);
+}
+
+[dir="rtl"] .mobile-menu-drawer.open {
+    transform: translateX(0) !important;
+}
+
+/* Navbar Pills & Soft Shapes */
+.nav-glow {
+    border-radius: 9999px !important;
+    /* Force pill shape */
+}
+
+/* Dropdown Animations */
+.nav-dropdown-menu {
+    border-radius: 1.5rem !important;
+    /* Soft rounded corners */
+    transform-origin: top;
+    transition: all 0.2s ease-out;
+    opacity: 0;
+    transform: scale(0.95) translateY(-10px);
+    display: block !important;
+    /* Override hidden to manage visibility via opacity/pointer-events */
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.nav-dropdown-menu.active {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Arrow Rotation */
+.nav-dropdown-trigger i {
+    transition: transform 0.3s ease;
+}
+
+.nav-dropdown-trigger[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+/* Custom Button Styles (if needed beyond Tailwind) */
+.btn-pill {
+    border-radius: 9999px;
+}
+
+/* Flash Preloader */
+#flash-preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease;
+}
+
+.dark #flash-preloader {
+    background-color: #020617;
+}
+
+#flash-preloader.opacity-0 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Dropdown Text Visibility */
+.nav-dropdown-menu a {
+    color: #0F172A;
+    /* Slate 900 - Dark text for light background */
+    transition: all 0.2s ease;
+}
+
+.dark .nav-dropdown-menu a {
+    color: #FFFFFF;
+    /* White text for dark background */
+}
+
+.nav-dropdown-menu a:hover {
+    background-color: #F8FAFC;
+    /* Slate 50 */
+    color: #4F46E5;
+    /* Indigo 600 */
+    padding-left: 1.25rem;
+    /* Slight shift right on hover */
+}
+
+.dark .nav-dropdown-menu a:hover {
+    background-color: #1E293B;
+    /* Slate 800 */
+    color: #818CF8;
+    /* Indigo 400 */
+}

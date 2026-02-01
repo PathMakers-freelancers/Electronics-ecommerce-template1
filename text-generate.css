@@ -1,0 +1,20 @@
+/* Text Generate Effect CSS */
+.text-generate-word {
+    display: inline-block;
+    /* allows transform/opacity */
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.5s ease-out, filter 0.5s ease-out;
+    margin-right: 0.25em;
+    /* Space between words */
+}
+
+.text-generate-word.active {
+    opacity: 1;
+    filter: blur(0px);
+}
+
+.text-generate-container {
+    font-weight: bold;
+    line-height: 1.5;
+}

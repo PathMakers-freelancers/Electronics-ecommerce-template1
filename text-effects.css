@@ -1,0 +1,164 @@
+/* Custom Text Effects - Updated Selection */
+
+/* Common Utilities */
+.text-effect-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+/* =========================================
+   HOME 1: FOREST EFFECT (Stroke to Fill)
+   Target Class: .effect-stroke-fill
+   ========================================= */
+.effect-stroke-fill {
+    color: transparent;
+    -webkit-text-stroke: 2px #fff;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+}
+
+.dark .effect-stroke-fill {
+    -webkit-text-stroke: 2px #fff;
+}
+
+html:not(.dark) .effect-stroke-fill {
+    -webkit-text-stroke: 2px #0F172A;
+}
+
+.effect-stroke-fill:hover {
+    transform: scale(1.1);
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: 2px transparent;
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+html:not(.dark) .effect-stroke-fill:hover {
+    color: #0F172A;
+    -webkit-text-fill-color: #0F172A;
+}
+
+
+/* =========================================
+   CONTACT: SHIFT EFFECT (Formerly Simple Canyon)
+   Target Class: .effect-shift
+   ========================================= */
+.effect-shift {
+    display: inline-block;
+    transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    z-index: 10;
+}
+
+.effect-shift:hover {
+    transform: translateY(-15px) scale(1.05);
+    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   HOME 2: REAL CANYON EFFECT (Grid Triggers)
+   Target Class: .effect-canyon-complex
+   ========================================= */
+.effect-canyon-complex {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.canyon-char-wrapper {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    /* Two distinct rows for hover detection */
+    height: 1.5em;
+    /* Height to cover the character */
+    width: 0.8em;
+    /* Approximate width per char */
+    cursor: pointer;
+}
+
+.canyon-trigger {
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+}
+
+.canyon-char {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centered by default */
+    transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    z-index: 0;
+    pointer-events: none;
+    line-height: 1;
+}
+
+/* Top half hover */
+.canyon-char-wrapper .canyon-trigger:nth-child(1):hover~.canyon-char {
+    margin-top: -10px;
+}
+
+/* Bottom half hover */
+.canyon-char-wrapper .canyon-trigger:nth-child(2):hover~.canyon-char {
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   SERVICES & CONTACT: GLACIER EFFECT (Expansion)
+   Target Class: .effect-glacier
+   ========================================= */
+.effect-glacier {
+    display: inline-block;
+    transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.effect-glacier:hover {
+    letter-spacing: 15px;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .effect-glacier:hover {
+        letter-spacing: 5px;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes jump-out {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+/* Glow Effects */
+.text-glow {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(34, 211, 238, 0.4);
+}
+
+.btn-glow {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.5);
+    transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.8);
+    transform: scale(1.05);
+}

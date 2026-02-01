@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Console | PrimeVolt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['Syne', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                        outfit: ['Outfit', 'sans-serif'],
+                        anime: ['Orbitron', 'sans-serif'],
+                        comic: ['Bangers', 'cursive'],
+                        sub: ['Rajdhani', 'sans-serif'],
+                    },
+                    colors: {
+                        light: {
+                            bg: '#FFFFFF',
+                            surface: '#F0F9FF',
+                            text: {
+                                primary: '#020617',
+                                secondary: '#0369A1',
+                                accent: '#0EA5E9'
+                            },
+                        },
+                        dark: {
+                            bg: '#020617',
+                            surface: '#0F172A',
+                            text: {
+                                primary: '#FFFFFF',
+                                secondary: '#7DD3FC',
+                                accent: '#38BDF8'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="anime-fonts.css">
+    <link rel="stylesheet" href="navbar.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="global-reveal.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style type="text/tailwindcss">
+        /* Strict No-Gray Policy */
+        .text-slate-400,
+        .text-slate-500,
+        .text-gray-500,
+        .text-gray-600,
+        .text-slate-700 {
+            color: #0369A1 !important;
+        }
+
+        .dark .text-slate-400,
+        .dark .text-slate-500,
+        .dark .text-gray-500,
+        .dark .text-gray-600,
+        .dark .text-slate-700 {
+            color: #7DD3FC !important;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary transition-colors duration-300 font-sans">
+
+    <!-- Flash Preloader REMOVED -->
+
+    <!-- Navbar -->
+    <nav
+        class="nav-glow fixed z-[60] top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80 lg:left-[calc(18rem+24px)] lg:right-6 lg:w-auto lg:translate-x-0 lg:max-w-none">
+        <div class="px-6 h-16 flex justify-between items-center">
+            <!-- Left: Logo & Brand -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div
+                    class="p-2 bg-indigo-600 rounded-full text-white shadow-lg group-hover:scale-110 transition-transform">
+                    <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
+                </div>
+                <span
+                    class="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">ElectraHub</span>
+            </a>
+
+            <!-- Center: Primary Menu -->
+            <div
+                class="hidden lg:flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/50 p-1 rounded-full border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm">
+                <!-- Home Dropdown -->
+                <div class="relative">
+                    <button data-target="nav-home-menu" aria-expanded="false"
+                        class="nav-dropdown-trigger px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all flex items-center gap-1.5 active:scale-95">
+                        Home <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div id="nav-home-menu"
+                        class="nav-dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-slate-900 shadow-custom-xl rounded-3xl p-2 border border-slate-100 dark:border-slate-800 ring-1 ring-black/5">
+                        <a href="index.html"
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <i data-lucide="home"
+                                class="w-4 h-4 text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Home 1</span>
+                        </a>
+                        <a href="index2.html"
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <i data-lucide="layout-grid"
+                                class="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Home 2</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Regular Links -->
+                <a href="about.html"
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    About
+                </a>
+                <a href="services.html"
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    Our Services
+                </a>
+                <a href="contact.html"
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    Contact
+                </a>
+
+                <!-- Dashboard Dropdown -->
+                <div class="relative">
+                    <button data-target="nav-dashboards-menu" aria-expanded="false"
+                        class="nav-dropdown-trigger px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all flex items-center gap-1.5 active:scale-95">
+                        Dashboard <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
+                    </button>
+                    <div id="nav-dashboards-menu"
+                        class="nav-dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 bg-white dark:bg-slate-900 shadow-custom-xl rounded-3xl p-2 border border-slate-100 dark:border-slate-800 ring-1 ring-black/5">
+                        <div class="px-4 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Access Panels
+                        </div>
+                        <a href="user_dashboard.html"
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                <i data-lucide="user" class="w-4 h-4"></i>
+                            </div>
+                            <span>User Panel</span>
+                        </a>
+                        <a href="admin_dashboard.html"
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <div
+                                class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            </div>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Actions -->
+            <div class="flex items-center gap-3">
+                <!-- Toggles -->
+                <div
+                    class="flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/20 p-1 rounded-full border border-slate-200/50 dark:border-slate-700/50">
+                    <button id="rtl-toggle"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        title="Toggle Direction">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                    </button>
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        title="Toggle Theme">
+                        <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+                        <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+                    </button>
+                </div>
+
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+
+                <!-- Auth Buttons -->
+                <a href="login.html"
+                    class="hidden sm:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
+                    Log In
+                </a>
+                <a href="signup.html"
+                    class="hidden sm:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
+                    Get Started
+                </a>
+
+                <!-- Mobile Sidebar Toggle -->
+                <button id="mobile-sidebar-toggle"
+                    class="lg:hidden p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors mr-1">
+                    <i data-lucide="layout-dashboard" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Mobile Menu Details -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-overlay backdrop-blur-sm bg-black/40"></div>
+    <div id="mobile-menu"
+        class="mobile-menu-drawer shadow-2xl p-6 rounded-r-3xl border-r border-white/20 dark:border-slate-800">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-black dark:text-white flex items-center gap-2">
+                <i data-lucide="zap" class="w-6 h-6 text-indigo-500"></i> ElectraHub
+            </span>
+            <button id="mobile-menu-close-btn"
+                class="p-2 rounded-full hover:bg-rose-100 text-slate-700 hover:text-rose-500 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div class="space-y-4">
+            <!-- Home Dropdown -->
+            <div class="relative group">
+                <button onclick="document.getElementById('mobile-home-menu').classList.toggle('hidden')"
+                    class="w-full flex justify-between items-center p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 font-bold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div id="mobile-home-menu" class="hidden pl-2 mt-2 space-y-1">
+                    <a href="index.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Home
+                        1</a>
+                    <a href="index2.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Home
+                        2</a>
+                </div>
+            </div>
+
+            <a href="about.html"
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">About</a>
+            <a href="services.html"
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Our
+                Services</a>
+            <a href="contact.html"
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Contact</a>
+
+            <!-- Dashboards Dropdown -->
+            <div class="relative group">
+                <button onclick="document.getElementById('mobile-dash-menu').classList.toggle('hidden')"
+                    class="w-full flex justify-between items-center p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 font-bold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    Dashboards <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div id="mobile-dash-menu" class="hidden pl-2 mt-2 space-y-1">
+                    <a href="user_dashboard.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">User
+                        Panel</a>
+                    <a href="admin_dashboard.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Admin
+                        Panel</a>
+                </div>
+            </div>
+
+            <div class="pt-6 space-y-3">
+                <a href="login.html"
+                    class="block w-full text-center py-3.5 rounded-full border-2 border-indigo-100 dark:border-slate-700 font-bold text-indigo-600 dark:text-indigo-400 hover:border-indigo-200 transition-colors">
+                    Log In
+                </a>
+                <a href="signup.html"
+                    class="block w-full text-center py-3.5 rounded-full bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex min-h-screen pt-20">
+        <!-- Sticky Sidebar -->
+        <aside
+            class="fixed inset-y-0 start-0 w-72 bg-slate-900 border-e border-slate-800 z-50 transition-transform lg:translate-x-0 -translate-x-full shadow-2xl flex flex-col"
+            id="sidebar">
+            <div class="h-20 flex items-center px-8 border-b border-slate-800 shrink-0 bg-slate-900 z-10">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-slate-900">
+                        <i data-lucide="zap" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-xl font-black text-white">ElectraHub Admin</span>
+                </a>
+            </div>
+
+            <nav class="flex-1 p-4 space-y-1 overflow-y-auto no-scrollbar" id="nav-menu">
+                <a href="#overview"
+                    class="nav-item active flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="layout-grid" class="w-5 h-5 group-hover:text-white transition-colors"></i> Overview
+                </a>
+                <a href="#orders"
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="shopping-bag" class="w-5 h-5 group-hover:text-white transition-colors"></i> Order
+                    Management
+                </a>
+                <a href="#products"
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="package" class="w-5 h-5 group-hover:text-white transition-colors"></i> Product &
+                    Inventory
+                </a>
+                <a href="#users"
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="users" class="w-5 h-5 group-hover:text-white transition-colors"></i> Users & Roles
+                </a>
+                <a href="#reports"
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="bar-chart-2" class="w-5 h-5 group-hover:text-white transition-colors"></i> Payments
+                    & Reports
+                </a>
+                <a href="#support"
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="life-buoy" class="w-5 h-5 group-hover:text-white transition-colors"></i> Support &
+                    Ops
+                </a>
+                <a href="#settings"
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="settings" class="w-5 h-5 group-hover:text-white transition-colors"></i> System
+                    Settings
+                </a>
+            </nav>
+
+            <div class="p-4 border-t border-slate-800 bg-slate-900 shrink-0">
+                <button
+                    class="w-full flex items-center justify-center gap-2 py-2 bg-rose-600 hover:bg-rose-700 text-white rounded-lg font-bold transition-colors">
+                    <i data-lucide="log-out" class="w-4 h-4"></i> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 lg:ml-72 p-6 lg:px-16 lg:pb-12 lg:pt-8 space-y-12 relative overflow-x-hidden">
+
+            <!-- Mobile Toggle -->
+            <button id="sidebar-toggle"
+                class="lg:hidden fixed top-4 right-4 z-[100] p-3 bg-indigo-600 text-white rounded-full shadow-lg">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+
+            <!-- 1️⃣ DASHBOARD OVERVIEW -->
+            <section id="overview" class="scroll-mt-24">
+                <div
+                    class="inline-block bg-indigo-600 text-white text-base font-black px-3 py-1 rounded-lg mb-2 shadow-lg tracking-widest">
+                    ADMIN CONSOLE
+                </div>
+                <h1 class="text-4xl font-black text-slate-900 dark:text-white mb-6">Dashboard Overview</h1>
+
+                <!-- KPI Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm font-bold uppercase text-indigo-600 dark:text-indigo-400 mb-2">Total Revenue
+                        </div>
+                        <div class="text-3xl font-black text-slate-900 dark:text-white">$84,295.00</div>
+                        <div class="text-xs font-bold text-emerald-500 mt-1">↑ 12% vs last month</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm font-bold uppercase text-indigo-600 dark:text-indigo-400 mb-2">Active Orders
+                        </div>
+                        <div class="text-3xl font-black text-slate-900 dark:text-white">142</div>
+                        <div class="text-xs font-bold text-emerald-500 mt-1">↑ 5% vs last week</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm font-bold uppercase text-indigo-600 dark:text-indigo-400 mb-2">Low Stock
+                            Items</div>
+                        <div class="text-3xl font-black text-slate-900 dark:text-white">8</div>
+                        <div class="text-xs font-bold text-rose-500 mt-1">Needs Attention</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm font-bold uppercase text-indigo-600 dark:text-indigo-400 mb-2">Active Users
+                        </div>
+                        <div class="text-3xl font-black text-slate-900 dark:text-white">1,204</div>
+                        <div class="text-xs font-bold text-emerald-500 mt-1">↑ 24 new today</div>
+                    </div>
+                </div>
+
+                <!-- 21 Charts Grid (7 Rows x 3 Cols) -->
+                <!-- 21 Charts Grid (7 Rows x 3 Cols) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Row 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">1. Total Revenue</h3>
+                        <div id="chart-revenue-line" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">2. Orders Volume</h3>
+                        <div id="chart-orders-area" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">3. Profit Trends</h3>
+                        <div id="chart-profit-trends" class="flex-1 w-full min-h-0"></div>
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">4. Revenue by Category</h3>
+                        <div id="chart-revenue-category" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">5. Avg Order Value</h3>
+                        <div id="chart-avg-order-value" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">6. Top Products</h3>
+                        <div id="chart-top-products" class="flex-1 w-full min-h-0"></div>
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">7. Stock Levels</h3>
+                        <div id="chart-stock-levels" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">8. Low Stock Alerts</h3>
+                        <div id="chart-low-stock" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">9. Product Lifecycle</h3>
+                        <div id="chart-product-lifecycle" class="flex-1 w-full min-h-0"></div>
+                    </div>
+
+                    <!-- Row 4 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">10. Inventory Turnover</h3>
+                        <div id="chart-inventory-turnover" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">11. New User Growth</h3>
+                        <div id="chart-user-growth" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">12. User Roles</h3>
+                        <div id="chart-user-roles" class="flex-1 w-full min-h-0"></div>
+                    </div>
+
+                    <!-- Row 5 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">13. User Retention</h3>
+                        <div id="chart-user-retention" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">14. Activity Heatmap</h3>
+                        <div id="chart-user-heatmap" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">15. Order Status</h3>
+                        <div id="chart-order-status" class="flex-1 w-full min-h-0"></div>
+                    </div>
+
+                    <!-- Row 6 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">16. Delivery Times</h3>
+                        <div id="chart-delivery-time" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">17. Return Rate</h3>
+                        <div id="chart-return-rate" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">18. Payment Methods</h3>
+                        <div id="chart-payment-methods" class="flex-1 w-full min-h-0"></div>
+                    </div>
+
+                    <!-- Row 7 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">19. Payment Types</h3>
+                        <div id="chart-emi-full" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">20. Refund Trends</h3>
+                        <div id="chart-refund-trends" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow aspect-square flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">21. Support Tickets</h3>
+                        <div id="chart-support-status" class="flex-1 w-full min-h-0"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2️⃣ ORDER MANAGEMENT -->
+            <section id="orders" class="scroll-mt-24">
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8">Order Management</h2>
+
+                <!-- Quick Stats -->
+                <div class="grid lg:grid-cols-5 gap-6 mb-8">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm text-slate-500 font-bold">Total Orders</div>
+                        <div class="text-3xl font-black">10,293</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm text-slate-500 font-bold">Pending Dispatch</div>
+                        <div class="text-3xl font-black text-indigo-600">45</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm text-slate-500 font-bold">Returns Processed</div>
+                        <div class="text-3xl font-black text-rose-500">12</div>
+                    </div>
+                    <!-- NEW POINT 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm text-slate-500 font-bold">On Hold</div>
+                        <div class="text-3xl font-black text-amber-500">8</div>
+                    </div>
+                    <!-- NEW POINT 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm text-slate-500 font-bold">Cancelled</div>
+                        <div class="text-3xl font-black text-slate-400">23</div>
+                    </div>
+                </div>
+
+                <!-- NEW ROW: Order Stats Data -->
+                <div class="grid lg:grid-cols-3 gap-6 mb-8">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm text-slate-500 font-bold">Avg Processing Time</div>
+                        <div class="text-3xl font-black text-slate-900 dark:text-white">4.2h</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm text-slate-500 font-bold">Cart Abandonment</div>
+                        <div class="text-3xl font-black text-rose-500">24%</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                        <div class="text-sm text-slate-500 font-bold">Repeat Cust. Rate</div>
+                        <div class="text-3xl font-black text-emerald-500">45%</div>
+                    </div>
+                </div>
+
+                <!-- Orders Table -->
+                <div
+                    class="bg-white dark:bg-slate-800 rounded-3xl border border-indigo-50 dark:border-slate-700 overflow-hidden">
+                    <table class="w-full text-left">
+                        <thead class="bg-indigo-50 dark:bg-slate-900">
+                            <tr>
+                                <th class="p-4 font-bold text-sm">Order ID</th>
+                                <th class="p-4 font-bold text-sm">Customer</th>
+                                <th class="p-4 font-bold text-sm">Amount</th>
+                                <th class="p-4 font-bold text-sm">Status</th>
+                                <th class="p-4 font-bold text-sm">Date</th>
+                                <th class="p-4 font-bold text-sm">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-indigo-50 dark:divide-slate-700">
+                            <tr>
+                                <td class="p-4 font-mono text-sm">#PV-9921</td>
+                                <td class="p-4 font-bold">Alex Morgan</td>
+                                <td class="p-4">$349.00</td>
+                                <td class="p-4"><span
+                                        class="px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 text-xs font-bold rounded">Completed</span>
+                                </td>
+                                <td class="p-4 text-sm">Jan 26</td>
+                                <td class="p-4"><button class="text-indigo-600 font-bold text-sm">View</button></td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-mono text-sm">#PV-9922</td>
+                                <td class="p-4 font-bold">Sarah Chen</td>
+                                <td class="p-4">$1,299.00</td>
+                                <td class="p-4"><span
+                                        class="px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 text-xs font-bold rounded">Shipped</span>
+                                </td>
+                                <td class="p-4 text-sm">Jan 25</td>
+                                <td class="p-4"><button class="text-indigo-600 font-bold text-sm">View</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 3️⃣ PRODUCT & INVENTORY -->
+            <section id="products" class="scroll-mt-24">
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8">Product & Inventory</h2>
+
+                <div class="grid lg:grid-cols-4 gap-6 mb-8">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                        <i data-lucide="package-search" class="w-12 h-12 text-indigo-200"></i>
+                        <h3 class="text-xl font-bold">Inventory Overview</h3>
+                        <p class="text-sm text-slate-500">Manage 15,204 SKUs across 4 warehouses.</p>
+                        <button
+                            class="px-4 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 text-sm">Go
+                            to Inventory</button>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                        <i data-lucide="tags" class="w-12 h-12 text-emerald-200"></i>
+                        <h3 class="text-xl font-bold">Product Catalog</h3>
+                        <p class="text-sm text-slate-500">Update pricing, descriptions, and media.</p>
+                        <button
+                            class="px-4 py-2 border border-slate-300 dark:border-slate-600 font-bold rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-sm">Manage
+                            Products</button>
+                    </div>
+                    <!-- NEW POINT 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                        <i data-lucide="alert-triangle" class="w-12 h-12 text-amber-200"></i>
+                        <h3 class="text-xl font-bold">Low Stock Alerts</h3>
+                        <p class="text-sm text-slate-500">8 Items below threshold need reordering.</p>
+                        <button
+                            class="px-4 py-2 bg-amber-50 dark:bg-amber-900/20 text-amber-600 font-bold rounded-lg hover:bg-amber-100 dark:hover:bg-amber-900/40 text-sm">View
+                            Alerts</button>
+                    </div>
+                    <!-- NEW POINT 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                        <i data-lucide="truck" class="w-12 h-12 text-blue-200"></i>
+                        <h3 class="text-xl font-bold">Supplier DB</h3>
+                        <p class="text-sm text-slate-500">Manage contacts for 12 active suppliers.</p>
+                        <button
+                            class="px-4 py-2 border border-slate-300 dark:border-slate-600 font-bold rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 text-sm">View
+                            Suppliers</button>
+                    </div>
+                </div>
+
+                <!-- NEW ROW: Product Actions -->
+                <div class="grid lg:grid-cols-3 gap-6 mb-8">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                        <i data-lucide="clipboard-check" class="w-12 h-12 text-indigo-400"></i>
+                        <h3 class="text-xl font-bold">Quality Check</h3>
+                        <p class="text-sm text-slate-500">12 items awaiting QC approval.</p>
+                        <button
+                            class="px-4 py-2 bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400 font-bold rounded-lg hover:bg-indigo-100 dark:hover:bg-indigo-900/40 text-sm">Review
+                            Items</button>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                        <i data-lucide="users-2" class="w-12 h-12 text-blue-400"></i>
+                        <h3 class="text-xl font-bold">Wholesale Requests</h3>
+                        <p class="text-sm text-slate-500">3 new bulk purchase inquiries.</p>
+                        <button
+                            class="px-4 py-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-bold rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/40 text-sm">View
+                            Requests</button>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700 flex flex-col items-center justify-center text-center space-y-4">
+                        <i data-lucide="archive-restore" class="w-12 h-12 text-rose-400"></i>
+                        <h3 class="text-xl font-bold">Damaged Goods</h3>
+                        <p class="text-sm text-slate-500">5 items reported damaged in transit.</p>
+                        <button
+                            class="px-4 py-2 bg-rose-50 dark:bg-rose-900/20 text-rose-600 dark:text-rose-400 font-bold rounded-lg hover:bg-rose-100 dark:hover:bg-rose-900/40 text-sm">Process
+                            Claims</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4️⃣ USERS & ROLES -->
+            <section id="users" class="scroll-mt-24">
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8">Users & Roles</h2>
+
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm">
+                    <h3 class="text-lg font-bold mb-6">User Management Stats</h3>
+                    <div class="grid lg:grid-cols-5 gap-6">
+                        <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                            <span>Administrators</span>
+                            <span class="font-bold text-lg">3</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                            <span>Vendors</span>
+                            <span class="font-bold text-lg">12</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                            <span>Customer Support</span>
+                            <span class="font-bold text-lg">8</span>
+                        </div>
+                        <!-- NEW POINT 1 -->
+                        <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                            <span>Moderators</span>
+                            <span class="font-bold text-lg">5</span>
+                        </div>
+                        <!-- NEW POINT 2 -->
+                        <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                            <span>Beta Users</span>
+                            <span class="font-bold text-lg">42</span>
+                        </div>
+                    </div>
+
+                    <!-- NEW ROW: User Stats -->
+                    <div class="grid lg:grid-cols-3 gap-6 mt-6">
+                        <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                            <span>VIP Members</span>
+                            <span class="font-bold text-lg text-amber-500">128</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                            <span>Guest Users</span>
+                            <span class="font-bold text-lg text-slate-400">845</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-900 rounded-xl">
+                            <span>Banned Accounts</span>
+                            <span class="font-bold text-lg text-rose-500">2</span>
+                        </div>
+                    </div>
+                    <div class="mt-8 flex gap-4">
+                        <button class="px-6 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700">Add
+                            New User</button>
+                        <button
+                            class="px-6 py-2 border border-slate-300 dark:border-slate-600 font-bold rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">Export
+                            User List</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5️⃣ PAYMENTS & REPORTS -->
+            <section id="reports" class="scroll-mt-24">
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8">Payments & Reports</h2>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700 text-center col-span-1 lg:col-span-3">
+                        <i data-lucide="file-bar-chart" class="w-16 h-16 text-indigo-500 mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold mb-4">Financial Reports</h3>
+                        <p class="text-slate-500 mb-6">Detailed transaction logs and settlement statements are available
+                            for
+                            download.</p>
+                        <div class="flex justify-center gap-4">
+                            <button
+                                class="px-6 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700">Download
+                                PDF</button>
+                            <button
+                                class="px-6 py-2 bg-emerald-600 text-white font-bold rounded-lg hover:bg-emerald-700">Download
+                                Excel</button>
+                        </div>
+                    </div>
+                    <!-- NEW POINT 1 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-slate-700 dark:text-slate-300">Pending Payouts</h4>
+                            <p class="text-2xl font-black text-slate-900 dark:text-white">$12,450</p>
+                        </div>
+                        <div class="bg-amber-100 p-3 rounded-xl text-amber-600"><i data-lucide="clock"
+                                class="w-6 h-6"></i></div>
+                    </div>
+                    <!-- NEW POINT 2 -->
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-slate-700 dark:text-slate-300">Refund Ratio</h4>
+                            <p class="text-2xl font-black text-slate-900 dark:text-white">1.2%</p>
+                        </div>
+                        <div class="bg-indigo-100 p-3 rounded-xl text-indigo-600"><i data-lucide="percent"
+                                class="w-6 h-6"></i></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-slate-700 dark:text-slate-300">Net Profit</h4>
+                            <p class="text-2xl font-black text-emerald-600">+18%</p>
+                        </div>
+                        <div class="bg-emerald-100 p-3 rounded-xl text-emerald-600"><i data-lucide="trending-up"
+                                class="w-6 h-6"></i></div>
+                    </div>
+                </div>
+
+                <!-- NEW ROW: Payment Metrics -->
+                <div class="grid lg:grid-cols-3 gap-6 mt-8">
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-slate-700 dark:text-slate-300">Tax Collected</h4>
+                            <p class="text-2xl font-black text-slate-900 dark:text-white">$4,290</p>
+                        </div>
+                        <div class="bg-slate-100 dark:bg-slate-700 p-3 rounded-xl text-slate-600 dark:text-slate-300"><i
+                                data-lucide="landmark" class="w-6 h-6"></i></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-slate-700 dark:text-slate-300">Gateway Fees</h4>
+                            <p class="text-2xl font-black text-slate-900 dark:text-white">$842</p>
+                        </div>
+                        <div class="bg-rose-100 p-3 rounded-xl text-rose-600"><i data-lucide="credit-card"
+                                class="w-6 h-6"></i></div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow flex items-center justify-between">
+                        <div>
+                            <h4 class="font-bold text-slate-700 dark:text-slate-300">Chargebacks</h4>
+                            <p class="text-2xl font-black text-rose-500">0.4%</p>
+                        </div>
+                        <div class="bg-amber-100 p-3 rounded-xl text-amber-600"><i data-lucide="refresh-ccw"
+                                class="w-6 h-6"></i></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6️⃣ SUPPORT & OPERATIONS -->
+            <section id="support" class="scroll-mt-24">
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8">Support & Operations</h2>
+                <div
+                    class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-lg font-bold">Recent Tickets</h3>
+                        <button class="text-indigo-600 font-bold text-sm">View All</button>
+                    </div>
+                    <div class="space-y-4">
+                        <div
+                            class="flex items-center gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-slate-200">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center rounded-lg font-bold">
+                                #</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 dark:text-white">Login Issue</h4>
+                                <p class="text-sm text-slate-500">Reported by: d_chen@email.com</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">Pending</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-slate-200">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center rounded-lg font-bold">
+                                #</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 dark:text-white">Refund Request</h4>
+                                <p class="text-sm text-slate-500">Reported by: s_jenkins@email.com</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full">Resolved</span>
+                        </div>
+                        <!-- NEW POINT 1 -->
+                        <div
+                            class="flex items-center gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-slate-200">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center rounded-lg font-bold">
+                                #</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 dark:text-white">Feature Request</h4>
+                                <p class="text-sm text-slate-500">Reported by: m_scott@email.com</p>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">New</span>
+                        </div>
+                        <!-- NEW POINT 2 -->
+                        <div
+                            class="flex items-center gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-slate-200">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center rounded-lg font-bold">
+                                #</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 dark:text-white">Account Recovery</h4>
+                                <p class="text-sm text-slate-500">Reported by: l_halpert@email.com</p>
+                            </div>
+                            <span class="px-3 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">In
+                                Progress</span>
+                        </div>
+                        <!-- NEW POINT 3 -->
+                        <div
+                            class="flex items-center gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-slate-200">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center rounded-lg font-bold">
+                                #</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 dark:text-white">API Integration Help</h4>
+                                <p class="text-sm text-slate-500">Reported by: dev_team@partner.com</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">Escalated</span>
+                        </div>
+                        <!-- NEW POINT 4 -->
+                        <div
+                            class="flex items-center gap-4 p-4 hover:bg-slate-50 dark:hover:bg-slate-900 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-slate-200">
+                            <div
+                                class="w-10 h-10 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center rounded-lg font-bold">
+                                #</div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-slate-900 dark:text-white">Data Export Error</h4>
+                                <p class="text-sm text-slate-500">Reported by: analyst@internal.com</p>
+                            </div>
+                            <span class="px-3 py-1 bg-rose-100 text-rose-700 text-xs font-bold rounded-full">High
+                                Priority</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7️⃣ SYSTEM SETTINGS -->
+            <section id="settings" class="scroll-mt-24 pb-24">
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8">System Settings</h2>
+                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl border border-indigo-50 dark:border-slate-700">
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="text-lg font-bold mb-4">General Configuration</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-bold mb-2">Platform Name</label>
+                                    <input type="text" value="ElectraHub"
+                                        class="w-full p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold mb-2">Support Email</label>
+                                    <input type="email" value="admin@primevolt.com"
+                                        class="w-full p-3 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-6 border-t border-slate-100 dark:border-slate-700">
+                            <h3 class="text-lg font-bold mb-4">Feature Toggles</h3>
+                            <div class="flex items-center justify-between py-2">
+                                <span>Enable New Checkout Flow</span>
+                                <div class="w-12 h-6 bg-emerald-500 rounded-full cursor-pointer relative">
+                                    <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-2">
+                                <span>Maintenance Mode</span>
+                                <div
+                                    class="w-12 h-6 bg-slate-200 dark:bg-slate-700 rounded-full cursor-pointer relative">
+                                    <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <!-- NEW POINT 1 -->
+                            <div class="flex items-center justify-between py-2">
+                                <span>Public API Access</span>
+                                <div class="w-12 h-6 bg-emerald-500 rounded-full cursor-pointer relative">
+                                    <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <!-- NEW POINT 2 -->
+                            <div class="flex items-center justify-between py-2">
+                                <span>System Audit Logs</span>
+                                <div class="w-12 h-6 bg-emerald-500 rounded-full cursor-pointer relative">
+                                    <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-6 border-t border-slate-100 dark:border-slate-700">
+                            <h3 class="text-lg font-bold mb-4">Security Settings</h3>
+                            <div class="flex items-center justify-between py-2">
+                                <span>Require 2FA for Admin</span>
+                                <div class="w-12 h-6 bg-emerald-500 rounded-full cursor-pointer relative">
+                                    <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between py-2">
+                                <span>Session Timeout (15m)</span>
+                                <div
+                                    class="w-12 h-6 bg-slate-200 dark:bg-slate-700 rounded-full cursor-pointer relative">
+                                    <div class="absolute left-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-6">
+                            <button
+                                class="px-6 py-3 bg-indigo-600 text-white font-bold rounded-xl hover:bg-indigo-700">Save
+                                Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer -->
+            <footer class="bg-[#020617] text-white pt-20 pb-10 border-t border-slate-800/50">
+                <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-2xl font-bold">ElectraHub</span>
+                        </div>
+                        <p class="text-slate-400">Next-generation electrical & tech components provider.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-6">Explore</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li><a href="index.html" class="hover:text-indigo-400 transition-colors">Home</a></li>
+                            <li><a href="about.html" class="hover:text-indigo-400 transition-colors">About</a></li>
+                            <li><a href="services.html" class="hover:text-indigo-400 transition-colors">Services</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-6">Account</h4>
+                        <ul class="space-y-4 text-slate-400">
+                            <li><a href="login.html" class="hover:text-indigo-400 transition-colors">Log In</a></li>
+                            <li><a href="#" class="hover:text-indigo-400 transition-colors">Support</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg mb-6">Newsletter</h4>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="Email"
+                                class="bg-slate-900/50 border border-slate-800 rounded-lg px-4 py-3 w-full outline-none text-white focus:ring-2 focus:ring-indigo-500">
+                            <button
+                                class="bg-indigo-600 text-white font-bold px-6 rounded-lg hover:bg-indigo-500 transition-colors">Go</button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800 text-indigo-500/80 text-sm font-medium">
+                    &copy; 2026 ElectraHub Inc. All rights reserved.
+                </div>
+            </footer>
+        </main>
+    </div>
+
+
+
+    <!-- Chart Config Script -->
+    <script src="main.js"></script>
+    <script src="navbar.js"></script>
+    <script src="rtltoggle.js"></script>
+    <script src="global-reveal.js"></script>
+    <script>lucide.createIcons();</script>
+    <script>
+        const commonOptions = {
+            chart: {
+                fontFamily: 'Inter',
+                toolbar: { show: false },
+                background: 'transparent',
+                parentHeightOffset: 0,
+            },
+            grid: {
+                padding: { bottom: 20, left: 10, right: 10 }
+            },
+            theme: { mode: 'dark', palette: 'palette1' }, // Overridden below
+            stroke: { curve: 'smooth', width: 3 },
+            dataLabels: { enabled: false },
+            grid: { borderColor: '#334155', strokeDashArray: 4 },
+            colors: ['#4f46e5', '#06b6d4', '#f43f5e', '#8b5cf6', '#10b981']
+        };
+
+        const renderChart = (id, options) => {
+            new ApexCharts(document.querySelector(`#${id}`), { ...commonOptions, ...options, chart: { ...commonOptions.chart, ...options.chart, height: '100%', width: '100%' } }).render();
+        };
+
+        // 1. Revenue Overview (Line)
+        renderChart('chart-revenue-line', {
+            series: [{ name: 'Revenue', data: [30, 40, 35, 50, 49, 60, 70, 91, 125] }],
+            chart: { type: 'line', height: 300 },
+            xaxis: { categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'] }
+        });
+
+        // 2. Orders Volume (Area)
+        renderChart('chart-orders-area', {
+            series: [{ name: 'Orders', data: [120, 132, 101, 134, 190, 230, 210] }],
+            chart: { type: 'area', height: 300 },
+            colors: ['#06b6d4'],
+            xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }
+        });
+
+        // 2.5 Profit Trends (Bar)
+        renderChart('chart-profit-trends', {
+            series: [{ name: 'Profit', data: [1200, 1500, 1100, 1800, 900, 2000, 2400] }],
+            chart: { type: 'bar', height: 300 },
+            colors: ['#22c55e'],
+            xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }
+        });
+
+        // 3. Category Revenue (Bar)
+        renderChart('chart-revenue-category', {
+            series: [{ name: 'Revenue', data: [4400, 5500, 4100, 6700, 2200] }],
+            chart: { type: 'bar', height: 300 },
+            colors: ['#8b5cf6'],
+            xaxis: { categories: ['Phones', 'Laptops', 'Audio', 'Wearables', 'Acc.'] }
+        });
+
+        // 4. Avg Order Value (Line)
+        renderChart('chart-avg-order-value', {
+            series: [{ name: 'AOV', data: [210, 220, 215, 240, 235, 260] }],
+            chart: { type: 'line', height: 300 },
+            colors: ['#f43f5e']
+        });
+
+        // 5. Top Products (Horizontal Bar)
+        renderChart('chart-top-products', {
+            series: [{ data: [400, 430, 448, 470, 540] }],
+            chart: { type: 'bar', height: 300 },
+            plotOptions: { bar: { horizontal: true } },
+            xaxis: { categories: ['Cable Set', 'Pixel 8', 'Galaxy S23', 'Sony XM5', 'iPhone 15'] },
+            colors: ['#10b981']
+        });
+
+        // 6. Stock Levels (Stacked)
+        renderChart('chart-stock-levels', {
+            series: [
+                { name: 'In Stock', data: [44, 55, 41] },
+                { name: 'Low Stock', data: [13, 23, 20] }
+            ],
+            chart: { type: 'bar', height: 300, stacked: true },
+            xaxis: { categories: ['Electronics', 'Home', 'Services'] }
+        });
+
+        // 7. Low Stock (Radial)
+        renderChart('chart-low-stock', {
+            series: [76],
+            chart: { type: 'radialBar', height: 340, width: '100%' },
+            plotOptions: {
+                radialBar: {
+                    hollow: { size: '65%' },
+                    track: { margin: 0 },
+                    dataLabels: {
+                        name: { show: false },
+                        value: { fontSize: '36px', fontWeight: 900, color: '#f43f5e', offsetY: 10 }
+                    }
+                }
+            },
+            labels: ['Critical']
+        });
+
+        // 8. Lifecycle (Donut)
+        renderChart('chart-product-lifecycle', {
+            series: [44, 55, 13],
+            chart: { type: 'donut', height: 340, width: '100%' },
+            plotOptions: { pie: { donut: { size: '70%' } } },
+            labels: ['Active', 'Discontinued', 'Draft'],
+            legend: { position: 'bottom', horizontalAlign: 'center' }
+        });
+
+        // 9. Turnover (Line)
+        renderChart('chart-inventory-turnover', {
+            series: [{ name: 'Turnover Rate', data: [2.3, 3.1, 4.0, 3.8, 5.1] }],
+            chart: { type: 'line', height: 300 }
+        });
+
+        // 10. User Growth (Line)
+        renderChart('chart-user-growth', {
+            series: [{ name: 'New Users', data: [30, 40, 45, 50, 49, 60, 70, 91] }],
+            chart: { type: 'line', height: 300 }
+        });
+
+        // 11. User Types (Pie)
+        renderChart('chart-user-roles', {
+            series: [5, 20, 500],
+            chart: { type: 'pie', height: 340, width: '100%' },
+            labels: ['Admin', 'Vendor', 'Customer'],
+            legend: { position: 'bottom', horizontalAlign: 'center' }
+        });
+
+        // 12. Retention (Donut)
+        renderChart('chart-user-retention', {
+            series: [70, 30],
+            chart: { type: 'donut', height: 340, width: '100%' },
+            plotOptions: { pie: { donut: { size: '70%' } } },
+            labels: ['Returning', 'New'],
+            legend: { position: 'bottom', horizontalAlign: 'center' }
+        });
+
+        // 13. Heatmap
+        renderChart('chart-user-heatmap', {
+            series: [
+                { name: 'Mon', data: [0, 20, 40, 60, 20] },
+                { name: 'Tue', data: [10, 20, 50, 70, 10] },
+                { name: 'Wed', data: [20, 30, 60, 80, 20] }
+            ],
+            chart: { type: 'heatmap', height: 300 }
+        });
+
+        // 14. Order Status (Donut)
+        renderChart('chart-order-status', {
+            series: [44, 55, 41, 17],
+            chart: { type: 'donut', height: 340, width: '100%' },
+            plotOptions: { pie: { donut: { size: '65%' } } },
+            labels: ['Pending', 'Processing', 'Shipped', 'Delivered'],
+            legend: { position: 'bottom', horizontalAlign: 'center' }
+        });
+
+        // 15. Delivery Time (Bar)
+        renderChart('chart-delivery-time', {
+            series: [{ name: 'Hours', data: [24, 48, 36, 12, 50] }],
+            chart: { type: 'bar', height: 300 },
+            xaxis: { categories: ['Local', 'Express', 'Standard', 'Metro', 'Rural'] }
+        });
+
+        // 16. Return Rate (Line)
+        renderChart('chart-return-rate', {
+            series: [{ name: 'Returns %', data: [2, 3, 2.5, 4, 1.5, 2] }],
+            chart: { type: 'line', height: 300 }
+        });
+
+        // 17. Payment Methods (Pie)
+        renderChart('chart-payment-methods', {
+            series: [44, 55, 13, 43],
+            chart: { type: 'pie', height: 340, width: '100%' },
+            labels: ['Card', 'UPI', 'Wallet', 'EMI'],
+            legend: { position: 'bottom', horizontalAlign: 'center' }
+        });
+
+        // 18. EMI vs Full (Stacked)
+        renderChart('chart-emi-full', {
+            series: [{ name: 'Full', data: [44, 55, 41] }, { name: 'EMI', data: [13, 23, 20] }],
+            chart: { type: 'bar', height: 300, stacked: true }
+        });
+
+        // 19. Refund Trends (Line)
+        renderChart('chart-refund-trends', {
+            series: [{ name: 'Refunds', data: [30, 40, 45, 50, 49] }],
+            chart: { type: 'line', height: 300 },
+            colors: ['#f43f5e']
+        });
+
+        // 20. Support Status (Bar)
+        renderChart('chart-support-status', {
+            series: [{ data: [20, 15, 60] }],
+            chart: { type: 'bar', height: 300 },
+            xaxis: { categories: ['Open', 'In Progress', 'Resolved'] },
+            colors: ['#f43f5e', '#f59e0b', '#10b981']
+        });
+
+
+
+
+        // Mobile Toggle
+
+        // Initialize Lucide Icons safely
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Preloader & Page Transition
+        const preloader = document.getElementById('flash-preloader');
+
+        const removePreloader = () => {
+            if (preloader && preloader.style.display !== 'none') {
+                preloader.classList.add('opacity-0');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }
+        };
+
+        // Remove on window load
+        window.addEventListener('load', () => setTimeout(removePreloader, 300));
+
+        // Safety fallback: remove after 3 seconds max (in case load hangs)
+        setTimeout(removePreloader, 3000);
+
+        // Also remove on DOMContentLoaded if aggressive
+        document.addEventListener('DOMContentLoaded', () => setTimeout(removePreloader, 1000));
+
+        // Handle Internal Navigation
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && !href.startsWith('#') && !href.startsWith('mailto:') && !href.startsWith('tel:') && this.target !== '_blank') {
+                    e.preventDefault();
+                    if (preloader) {
+                        preloader.style.display = 'flex';
+                        void preloader.offsetWidth;
+                        preloader.classList.remove('opacity-0');
+                    }
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 400);
+                }
+            });
+        });
+
+        // Active Nav Highlighter
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const topNavLinks = document.querySelectorAll('nav a');
+
+        topNavLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPath) {
+                link.classList.add('nav-link', 'active-nav-link');
+            } else if (link.getAttribute('href') === 'admin_dashboard.html' && currentPath === '') {
+                link.classList.add('nav-link', 'active-nav-link');
+            } else if (link.classList.contains('nav-dropdown-trigger')) {
+            } else {
+                link.classList.add('nav-link');
+            }
+        });
+
+        // Theme Toggle (if needed)
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+            });
+        }
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // RTL Toggle
+        const rtlBtn = document.getElementById('rtl-toggle');
+        if (rtlBtn) {
+            rtlBtn.addEventListener('click', () => {
+                const html = document.documentElement;
+                if (html.getAttribute('dir') === 'rtl') {
+                    html.setAttribute('dir', 'ltr');
+                } else {
+                    html.setAttribute('dir', 'rtl');
+                }
+            });
+        }
+
+        // Chart.js / Dashboard Init 
+        // ... (Charts initialization moved here if outside) ...
+
+
+
+
+
+    </script>
+
+    <script src="main.js"></script>
+    <script src="navbar.js"></script>
+    <script>
+        // --- SCROLL SPY FUNCTIONALITY (Added) ---
+        const sections = document.querySelectorAll('main section');
+        const navItems = document.querySelectorAll('#nav-menu .nav-item');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active class from all
+                    navItems.forEach(item => {
+                        item.classList.remove('active');
+                        item.classList.replace('text-white', 'text-slate-400');
+                    });
+
+                    // Add active class to current
+                    const id = entry.target.getAttribute('id');
+                    const activeLink = document.querySelector(`#nav-menu a[href="#${id}"]`);
+                    if (activeLink) {
+                        activeLink.classList.add('active');
+                        activeLink.classList.replace('text-slate-400', 'text-white');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+
+    <script src="navbar.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

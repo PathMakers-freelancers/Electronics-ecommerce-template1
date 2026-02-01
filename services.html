@@ -1,0 +1,2200 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | ElectraHub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['Syne', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                        outfit: ['Outfit', 'sans-serif'],
+                        anime: ['Orbitron', 'sans-serif'],
+                        comic: ['Bangers', 'cursive'],
+                        sub: ['Rajdhani', 'sans-serif'],
+                    },
+                    colors: {
+                        light: {
+                            bg: '#FFFFFF',
+                            surface: '#F0F9FF', /* Very light blue instead of gray */
+                            text: {
+                                primary: '#020617', /* Deep Navy/Black */
+                                secondary: '#0369A1', /* Deep Sky Blue */
+                                accent: '#0EA5E9'
+                            },
+                        },
+                        dark: {
+                            bg: '#020617', /* Deepest Navy */
+                            surface: '#0F172A', /* Slate 900 (Blue-black) */
+                            text: {
+                                primary: '#FFFFFF',
+                                secondary: '#7DD3FC', /* Light Sky Blue */
+                                accent: '#38BDF8'
+                            }
+                        }
+                    },
+                    animation: {
+                        'float-3d': 'float3d 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float3d: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(2deg)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="background-lines.css">
+    <link rel="stylesheet" href="sparkles.css">
+    <link rel="stylesheet" href="global-reveal.css">
+    <link rel="stylesheet" href="text-effects.css">
+    <link rel="stylesheet" href="text-reveal.css">
+    <link rel="stylesheet" href="anime-fonts.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="navbar.css">
+
+    <link rel="stylesheet" href="folded-card.css">
+    <style>
+        /* Testimonials Marquee */
+        .marquee-container {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+
+        .marquee-content {
+            animation: marquee 40s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Custom Neon Glow for Dark Mode Borders */
+        .dark .border-white {
+            box-shadow: 0 0 15px rgba(34, 211, 238, 0.5), inset 0 0 10px rgba(34, 211, 238, 0.2);
+        }
+    </style>
+    <link rel="stylesheet" href="expanding-blocks.css">
+    <script src="expanding-blocks.js" defer></script>
+</head>
+
+<body
+    class="bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary transition-colors duration-300 overflow-x-hidden">
+
+    <div id="flash-preloader"
+        class="fixed inset-0 z-[9999] bg-white dark:bg-slate-950 flex items-center justify-center transition-opacity duration-500">
+        <div class="relative"><i data-lucide="zap"
+                class="w-24 h-24 text-indigo-600 dark:text-indigo-400 animate-pulse"></i>
+            <div class="absolute inset-0 bg-indigo-500/20 blur-3xl rounded-full animate-pulse"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav
+        class="nav-glow fixed z-50 top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
+        <div class="px-6 h-16 flex justify-between items-center">
+            <!-- Left: Logo & Brand -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div
+                    class="p-2 bg-indigo-600 rounded-full text-white shadow-lg group-hover:scale-110 transition-transform">
+                    <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
+                </div>
+                <span
+                    class="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">ElectraHub</span>
+            </a>
+
+            <!-- Center: Primary Menu -->
+            <div
+                class="hidden lg:flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/50 p-1 rounded-full border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm">
+                <!-- Home Dropdown -->
+                <div class="relative">
+                    <button data-target="nav-home-menu" aria-expanded="false"
+                        class="nav-dropdown-trigger px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all flex items-center gap-1.5 active:scale-95">
+                        Home <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div id="nav-home-menu"
+                        class="nav-dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-slate-900 shadow-custom-xl rounded-3xl p-2 border border-slate-100 dark:border-slate-800 ring-1 ring-black/5">
+                        <a href="index.html"
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <i data-lucide="home"
+                                class="w-4 h-4 text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Home 1</span>
+                        </a>
+                        <a href="index2.html"
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <i data-lucide="layout-grid"
+                                class="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Home 2</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Regular Links -->
+                <a href="about.html"
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    About
+                </a>
+                <a href="services.html"
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    Our Services
+                </a>
+                <a href="contact.html"
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    Contact
+                </a>
+
+                <!-- Dashboard Dropdown -->
+                <div class="relative">
+                    <button data-target="nav-dashboards-menu" aria-expanded="false"
+                        class="nav-dropdown-trigger px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all flex items-center gap-1.5 active:scale-95">
+                        Dashboard <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
+                    </button>
+                    <div id="nav-dashboards-menu"
+                        class="nav-dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 bg-white dark:bg-slate-900 shadow-custom-xl rounded-3xl p-2 border border-slate-100 dark:border-slate-800 ring-1 ring-black/5">
+                        <div class="px-4 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Access Panels
+                        </div>
+                        <a href="user_dashboard.html"
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                <i data-lucide="user" class="w-4 h-4"></i>
+                            </div>
+                            <span>User Panel</span>
+                        </a>
+                        <a href="admin_dashboard.html"
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <div
+                                class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            </div>
+                            <span>Admin Dashboard</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Actions -->
+            <div class="flex items-center gap-3">
+                <!-- Toggles -->
+                <div
+                    class="flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/20 p-1 rounded-full border border-slate-200/50 dark:border-slate-700/50">
+                    <button id="rtl-toggle"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        title="Toggle Direction">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                    </button>
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        title="Toggle Theme">
+                        <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+                        <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+                    </button>
+                </div>
+
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+
+                <!-- Auth Buttons -->
+                <a href="login.html"
+                    class="hidden sm:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
+                    Log In
+                </a>
+                <a href="signup.html"
+                    class="hidden sm:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
+                    Get Started
+                </a>
+
+                <!-- Mobile Menu Details -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="mobile-overlay backdrop-blur-sm bg-black/40"></div>
+    <div id="mobile-menu"
+        class="mobile-menu-drawer shadow-2xl p-6 rounded-r-3xl border-r border-white/20 dark:border-slate-800">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-black dark:text-white flex items-center gap-2">
+                <i data-lucide="zap" class="w-6 h-6 text-indigo-500"></i> ElectraHub
+            </span>
+            <button id="mobile-menu-close-btn"
+                class="p-2 rounded-full hover:bg-rose-100 text-slate-700 hover:text-rose-500 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div class="space-y-4">
+            <!-- Home Dropdown -->
+            <div class="relative group">
+                <button onclick="document.getElementById('mobile-home-menu').classList.toggle('hidden')"
+                    class="w-full flex justify-between items-center p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 font-bold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div id="mobile-home-menu" class="hidden pl-2 mt-2 space-y-1">
+                    <a href="index.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Home
+                        1</a>
+                    <a href="index2.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Home
+                        2</a>
+                </div>
+            </div>
+
+            <a href="about.html"
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">About</a>
+            <a href="services.html"
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Our
+                Services</a>
+            <a href="contact.html"
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Contact</a>
+
+            <!-- Dashboards Dropdown -->
+            <div class="relative group">
+                <button onclick="document.getElementById('mobile-dash-menu').classList.toggle('hidden')"
+                    class="w-full flex justify-between items-center p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 font-bold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                    Dashboards <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                </button>
+                <div id="mobile-dash-menu" class="hidden pl-2 mt-2 space-y-1">
+                    <a href="user_dashboard.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">User
+                        Panel</a>
+                    <a href="admin_dashboard.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Admin
+                        Panel</a>
+                </div>
+            </div>
+
+            <div class="pt-6 space-y-3">
+                <a href="login.html"
+                    class="block w-full text-center py-3.5 rounded-full border-2 border-indigo-100 dark:border-slate-700 font-bold text-indigo-600 dark:text-indigo-400 hover:border-indigo-200 transition-colors">
+                    Log In
+                </a>
+                <a href="signup.html"
+                    class="block w-full text-center py-3.5 rounded-full bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <link rel="stylesheet" href="background-lines.css">
+    <section
+        class="py-16 pt-32 bg-light-bg dark:bg-dark-bg min-h-[60vh] flex items-center justify-center relative overflow-hidden">
+        <div class="bg-lines-container">
+
+            <div class="bg-lines-svg"></div>
+
+            <div class="bg-lines-content">
+                <h2 class="bg-lines-title flex flex-col gap-4 font-comic-title">
+                    <div class="hero-text-reveal"><span
+                            class="hero-gradient-text drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-6xl md:text-8xl">Expert</span><span
+                            class="hero-gradient-text ml-2 drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-6xl md:text-8xl">Solutions</span>
+                    </div><span class="font-anime-sub text-3xl tracking-widest uppercase">Services
+                        That Power Your Tech Experience</span>
+                </h2>
+                <p class="bg-lines-desc font-anime-sub tracking-wider text-sm mt-4">From purchase to
+                    performance,
+                    we support you at every step with reliable,
+                    customer-first services. </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center"><a href="#consultation"
+                        class="px-8 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold font-anime rounded-full shadow-lg transition-all hover:scale-105 hover:shadow-indigo-500/50">Get
+                        Consultation </a><a href="#pricing"
+                        class="px-8 py-3 bg-white text-indigo-600 font-bold font-anime rounded-full shadow-lg transition-all hover:scale-105 hover:shadow-indigo-500/50 border border-indigo-100">View
+                        Pricing</a></div>
+            </div>
+    </section>
+    <script src="background-lines.js"></script>
+    <script src="global-reveal.js"></script>
+
+    <section class="py-20 bg-white dark:bg-dark-surface border-b border-indigo-50 dark:border-indigo-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16"><span
+                    class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider text-sm uppercase">PROCESS</span>
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mt-2">
+                    How It Works </h2>
+            </div>
+            <div class="grid md:grid-cols-4 gap-0 relative">
+                <!-- Global Connection Lines Container -->
+                <div
+                    class="hidden md:block absolute top-[72px] left-0 w-full h-1 z-20 pointer-events-none -translate-y-1/2">
+                    <div
+                        class="absolute h-full bg-black dark:bg-white opacity-80 left-[calc(12.5%_+_48px)] w-[calc(25%_-_96px)]">
+                    </div>
+                    <div
+                        class="absolute h-full bg-black dark:bg-white opacity-80 left-[calc(37.5%_+_48px)] w-[calc(25%_-_96px)]">
+                    </div>
+                    <div
+                        class="absolute h-full bg-black dark:bg-white opacity-80 left-[calc(62.5%_+_48px)] w-[calc(25%_-_96px)]">
+                    </div>
+                </div>
+
+
+
+                <div
+                    class="text-center group relative p-2 md:p-4 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors w-full">
+                    <div
+                        class="relative z-10 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-xl border border-white/20 dark:border-white/10 glow-box global-black-shadow h-full flex flex-col items-center justify-center">
+                        <div
+                            class="w-24 h-24 mx-auto bg-white dark:bg-slate-800 rounded-full border-2 border-indigo-100 dark:border-indigo-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg relative z-10">
+                            <span class="text-3xl font-black text-indigo-200 dark:text-indigo-900">01</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+                            Select Service</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+                            Choose the service that fits your needs from our dashboard.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="text-center group relative p-2 md:p-4 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors w-full">
+                    <div
+                        class="relative z-10 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-xl border border-white/20 dark:border-white/10 glow-box global-black-shadow h-full flex flex-col items-center justify-center">
+                        <div
+                            class="w-24 h-24 mx-auto bg-white dark:bg-slate-800 rounded-full border-2 border-indigo-100 dark:border-indigo-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg relative z-10">
+                            <span class="text-3xl font-black text-indigo-200 dark:text-indigo-900">02</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+                            Consultation </h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+                            Our experts review your requirements and guide you.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="text-center group relative p-2 md:p-4 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors w-full">
+                    <div
+                        class="relative z-10 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-xl border border-white/20 dark:border-white/10 glow-box global-black-shadow h-full flex flex-col items-center justify-center">
+                        <div
+                            class="w-24 h-24 mx-auto bg-white dark:bg-slate-800 rounded-full border-2 border-indigo-100 dark:border-indigo-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg relative z-10">
+                            <span class="text-3xl font-black text-indigo-200 dark:text-indigo-900">03</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+                            Deployment </h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+                            Service is executed with precision and care.</p>
+                    </div>
+                </div>
+
+                <div
+                    class="text-center group relative p-2 md:p-4 hover:bg-white/50 dark:hover:bg-slate-800/50 transition-colors w-full">
+                    <div
+                        class="relative z-10 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-xl border border-white/20 dark:border-white/10 glow-box global-black-shadow h-full flex flex-col items-center justify-center">
+                        <div
+                            class="w-24 h-24 mx-auto bg-white dark:bg-slate-800 rounded-full border-2 border-indigo-100 dark:border-indigo-900 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-lg">
+                            <span class="text-3xl font-black text-emerald-200 dark:text-emerald-900">04</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+                            Support</h3>
+                        <p class="text-sm text-light-text-secondary dark:text-dark-text-secondary">
+                            Post-service assistance and warranty coverage.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-light-surface dark:bg-dark-bg border-b border-indigo-50 dark:border-indigo-900/50">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0 items-stretch">
+            <div
+                class="space-y-6 order-2 md:order-1 flex flex-col justify-center p-8 bg-white dark:bg-slate-900 rounded-l-3xl shadow-xl z-10">
+                <span class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider text-sm uppercase">B2B
+                    Solutions</span>
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary">
+                    Enterprise & Bulk Orders</h2>
+                <p class="text-light-text-secondary dark:text-dark-text-secondary text-lg">Corporate
+                    procurement made simple with dedicated account support,
+                    API integrations,
+                    and custom pricing tiers.</p><a href="#"
+                    class="inline-flex items-center text-indigo-600 font-bold hover:gap-2 transition-all">Contact
+                    Sales Team <i data-lucide="arrow-right" class="w-4 h-4 ml-1"></i></a>
+            </div>
+
+            <div class="relative overflow-hidden aspect-video glow-box global-black-shadow cursor-pointer group order-1 md:order-2 rounded-r-3xl"
+                onclick="this.querySelector('.front-view').classList.toggle('opacity-0'); this.querySelector('.back-view').classList.toggle('opacity-100');">
+
+                <div
+                    class="front-view absolute inset-0 transition-opacity duration-500 z-20 bg-white dark:bg-slate-800">
+                    <img src="Assets/6.jpeg" class="w-full h-full object-cover opacity-100">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div
+                            class="bg-white/90 dark:bg-slate-900/90 p-4 rounded-full shadow-lg border border-indigo-100 dark:border-indigo-900 animate-pulse">
+                            <i data-lucide="bar-chart-2" class="w-12 h-12 text-indigo-600"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="back-view absolute inset-0 bg-indigo-900/95 backdrop-blur-md flex flex-col items-center justify-center text-center p-8 transition-opacity duration-500 opacity-0 z-10">
+                    <i data-lucide="zap"
+                        class="w-24 h-24 text-white mb-8 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] filter brightness-110"></i>
+                    <ul class="space-y-4 text-left text-white/90 font-medium text-lg">
+                        <li class="flex items-center gap-3">
+                            <div class="bg-green-500/20 p-1 rounded-full"><i data-lucide="check"
+                                    class="text-green-400 w-5 h-5"></i></div>Volume
+                            Discounts
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="bg-green-500/20 p-1 rounded-full"><i data-lucide="check"
+                                    class="text-green-400 w-5 h-5"></i></div>Dedicated
+                            Account Manager
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="bg-green-500/20 p-1 rounded-full"><i data-lucide="check"
+                                    class="text-green-400 w-5 h-5"></i></div>Net-30
+                            Payment Terms
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 bg-light-surface dark:bg-dark-bg border-b border-indigo-50 dark:border-indigo-900/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <h3 class="text-2xl font-bold text-center mb-12 text-light-text-primary dark:text-dark-text-primary">
+                Global Infrastructure</h3>
+            <div class="folded-card-section">
+
+                <div class="folded-card">
+                    <div class="fold"
+                        style="background-image: url('Assets/6.jpeg'); background-position: center !important;">
+                    </div>
+                    <div class="fold"
+                        style="background-image: url('Assets/7.jpeg'); background-position: center !important;">
+                    </div>
+                    <div class="fold"
+                        style="background-image: url('Assets/8.jpeg'); background-position: center !important;">
+                    </div>
+                    <div class="fold"
+                        style="background-image: url('Assets/9.jpeg'); background-position: center !important;">
+                    </div>
+                    <div class="fold"
+                        style="background-image: url('Assets/5.jpeg'); background-position: center !important;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 relative overflow-hidden bg-[url('Assets/home%20hero%202.jpeg')] bg-cover bg-center bg-fixed">
+        <div class="absolute inset-0 bg-white/90 dark:bg-slate-950/80 z-0"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16"><span
+                    class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider text-sm uppercase">Ecosystem</span>
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mt-2">
+                    Global Collaborators</h2>
+                <p class="text-light-text-secondary dark:text-dark-text-secondary mt-4 max-w-2xl mx-auto">
+                    Collaborating with industry leaders to deliver world-class performance
+                    and reliability. </p>
+            </div>
+            <div class="block-wrap">
+                <div class="block-col">
+                    <div class="block eb-purple"><i data-lucide="cpu" class="block-icon"></i>
+                        <div class="block-content">
+                            <div class="block-content__header">
+                                <h2 class="block-content__header__text">Silicon Tech</h2>
+                            </div>
+                            <p class="block-content__body font-outfit">Advanced Processing
+                                Units and custom semiconductor solutions for peak computing
+                                performance and energy efficiency.</p>
+                            <div class="block-content__button">Return to Grid</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-col">
+                    <div class="block eb-cyan"><i data-lucide="cloud" class="block-icon"></i>
+                        <div class="block-content">
+                            <div class="block-content__header">
+                                <h2 class="block-content__header__text">CloudScale</h2>
+                            </div>
+                            <p class="block-content__body font-outfit">Global Data
+                                Infrastructure providing the backbone for our seamless sync
+                                and cloud backup services worldwide.</p>
+                            <div class="block-content__button">Return to Grid</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-col">
+                    <div class="block eb-gold"><i data-lucide="shield-check" class="block-icon"></i>
+                        <div class="block-content">
+                            <div class="block-content__header">
+                                <h2 class="block-content__header__text">SecureNet</h2>
+                            </div>
+                            <p class="block-content__body font-outfit">Enterprise Grade
+                                Security protocols and encryption standards ensuring your
+                                data and transactions remain impenetrable.</p>
+                            <div class="block-content__button">Return to Grid</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="block-col">
+                    <div class="block eb-emerald"><i data-lucide="zap" class="block-icon"></i>
+                        <div class="block-content">
+                            <div class="block-content__header">
+                                <h2 class="block-content__header__text">VoltMatrix</h2>
+                            </div>
+                            <p class="block-content__body font-outfit">Smart Power
+                                Management systems that optimize energy consumption across
+                                all connected ElectraHub devices.</p>
+                            <div class="block-content__button">Return to Grid</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 dark:bg-slate-950 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-12 text-center"><span
+                class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider text-sm uppercase">Community</span>
+            <h2 class="text-4xl font-bold text-slate-900 dark:text-white mt-2">Trusted
+                by Innovators</h2>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div
+                class="p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-black dark:border-white shadow-xl hover:shadow-2xl transition-shadow text-center">
+                <div class="flex gap-1 text-amber-500 mb-4 justify-center"><i data-lucide="star"
+                        class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i
+                        data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star"
+                        class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                </div>
+                <p class="text-slate-700 dark:text-slate-300 italic mb-6">
+                    "ElectraHub's deployment speed is
+                    unmatched. They transformed our entire IT infrastructure
+                    in under 48 hours."</p>
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/50 rounded-full flex items-center justify-center font-bold text-indigo-700 dark:text-indigo-300">
+                        JD</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm">
+                            John Doe</h4>
+                        <p class="text-xs text-slate-500">CTO,
+                            TechFlow</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-black dark:border-white shadow-xl hover:shadow-2xl transition-shadow text-center">
+                <div class="flex gap-1 text-amber-500 mb-4 justify-center"><i data-lucide="star"
+                        class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i
+                        data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star"
+                        class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                <p class="text-slate-700 dark:text-slate-300 italic mb-6">
+                    "The bulk ordering process was seamless.
+                    We equipped 500 employees with new gear without a
+                    single hitch."</p>
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="w-12 h-12 bg-rose-100 dark:bg-rose-900/50 rounded-full flex items-center justify-center font-bold text-rose-700 dark:text-rose-300">
+                        AS</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm">
+                            Alice Smith</h4>
+                        <p class="text-xs text-slate-500">Ops Manager,
+                            GlobalCorp</p>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="p-8 rounded-3xl bg-white dark:bg-slate-900 border-2 border-black dark:border-white shadow-xl hover:shadow-2xl transition-shadow text-center">
+                <div class="flex gap-1 text-amber-500 mb-4 justify-center"><i data-lucide="star"
+                        class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i
+                        data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star"
+                        class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
+                <p class="text-slate-700 dark:text-slate-300 italic mb-6">
+                    "Their support team is legendary. Resolved
+                    a critical server issue for us at 2 AM on a
+                    Sunday."</p>
+                <div class="flex flex-col items-center gap-2">
+                    <div
+                        class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/50 rounded-full flex items-center justify-center font-bold text-emerald-700 dark:text-emerald-300">
+                        RK</div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm">
+                            Raj Kumar</h4>
+                        <p class="text-xs text-slate-500">Director,
+                            SoftSystems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white dark:bg-slate-950 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div
+                class="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border-2 border-black dark:border-white glow-box global-black-shadow hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group">
+                <img src="Assets/speaker.jpeg"
+                    class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none">
+                <div
+                    class="relative z-10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 dark:border-white/10 mt-auto">
+                    <div
+                        class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl flex items-center justify-center text-indigo-600 dark:text-indigo-400 mb-6">
+                        <i data-lucide="activity" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                        Risk Diagnostics</h3>
+                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 font-medium">
+                        Advanced AI-driven assessments to identify
+                        vulnerabilities
+                        before they happen.</p><a href="#" class="text-indigo-600 font-bold hover:underline">Learn
+                        more</a>
+                </div>
+            </div>
+            <div
+                class="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border-2 border-black dark:border-white glow-box global-black-shadow hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group">
+                <img src="Assets/speaker 2.jpeg"
+                    class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none">
+                <div
+                    class="relative z-10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 dark:border-white/10 mt-auto">
+                    <div
+                        class="w-16 h-16 bg-rose-100 dark:bg-rose-900/30 rounded-2xl flex items-center justify-center text-rose-600 dark:text-rose-400 mb-6">
+                        <i data-lucide="shield" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                        Pro Coverage</h3>
+                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 font-medium">
+                        Tailored plans for gadgets,
+                        properties,
+                        and health with zero deductible options.</p><a href="#"
+                        class="text-rose-600 font-bold hover:underline">Start
+                        Configurator</a>
+                </div>
+            </div>
+            <div
+                class="bg-slate-50 dark:bg-slate-900 p-8 rounded-3xl border-2 border-black dark:border-white glow-box global-black-shadow hover:-translate-y-2 transition-transform duration-300 relative overflow-hidden group">
+                <img src="Assets/speaker3.jpeg"
+                    class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none">
+                <div
+                    class="relative z-10 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 dark:border-white/10 mt-auto">
+                    <div
+                        class="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-2xl flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6">
+                        <i data-lucide="database" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                        Data Recovery</h3>
+                    <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 font-medium">
+                        Military-grade recovery for lost assets and digital
+                        footprints.</p><a href="#"
+                        class="text-emerald-600 font-bold hover:underline hover:text-emerald-500 transition-colors drop-shadow-md">Get
+                        Help</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gradient-to-r from-indigo-600 to-blue-600 text-white relative overflow-hidden">
+        <div class="absolute inset-0"><img src="Assets/9.jpeg"
+                class="w-full h-full object-cover opacity-20 mix-blend-overlay">
+        </div>
+        <div
+            class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-white/20 relative z-10">
+            <div>
+                <div class="text-4xl font-black mb-2"><span class="count-up" data-target="50">0</span>k+</div>
+                <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">
+                    Devices Serviced</div>
+            </div>
+            <div>
+                <div class="text-4xl font-black mb-2"><span class="count-up" data-target="98%">0%</span></div>
+                <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">
+                    Customer Satisfaction</div>
+            </div>
+            <div>
+                <div class="text-4xl font-black mb-2"><span class="count-up" data-target="24">0</span>h</div>
+                <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">
+                    Avg. Turnaround</div>
+            </div>
+            <div>
+                <div class="text-4xl font-black mb-2"><span class="count-up" data-target="15">0</span>+</div>
+                <div class="text-indigo-100 text-sm font-bold uppercase tracking-wider">
+                    Cities Covered</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-900 text-white relative">
+        <div class="absolute inset-0 bg-indigo-900/20"></div>
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl font-black mb-16">Simple <span class="text-indigo-500">Pricing</span></h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div
+                    class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-indigo-500 transition-all relative overflow-hidden group">
+                    <img src="Assets/tv.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none">
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-2">Basic</h3>
+                        <p class="text-4xl font-black mb-6">$<span class="count-up" data-target="49">0</span><span
+                                class="text-lg text-slate-400">/mo</span>
+                        </p><button
+                            class="w-full py-3 rounded-xl border border-slate-600 font-bold hover:bg-slate-700 hover:text-white transition-all shadow-lg hover:shadow-indigo-500/20">Choose</button>
+                    </div>
+                </div>
+                <div
+                    class="bg-indigo-600 rounded-3xl p-8 transform scale-105 shadow-2xl relative overflow-hidden group">
+                    <img src="Assets/tv2.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none mix-blend-overlay">
+                    <div class="relative z-10">
+                        <div
+                            class="absolute top-0 right-0 bg-white text-indigo-600 text-xs font-bold px-3 py-1 rounded-bl-xl">
+                            POPULAR</div>
+                        <h3 class="text-xl font-bold mb-2">Premium</h3>
+                        <p class="text-4xl font-black mb-6">$<span class="count-up" data-target="199">0</span><span
+                                class="text-lg text-indigo-200">/mo</span>
+                        </p><button
+                            class="w-full py-3 rounded-xl bg-white text-indigo-600 font-bold hover:bg-indigo-50 shadow-xl shadow-indigo-500/40 hover:shadow-indigo-500/60 transition-all hover:scale-105">Choose</button>
+                    </div>
+                </div>
+                <div
+                    class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-indigo-500 transition-all relative overflow-hidden group">
+                    <img src="Assets/tv3.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none">
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-2">Enterprise
+                        </h3>
+                        <p class="text-4xl font-black mb-6">Custom</p>
+                        <button
+                            class="w-full py-3 rounded-xl border border-slate-600 font-bold hover:bg-slate-700 hover:text-white transition-all shadow-lg hover:shadow-indigo-500/20">Contact
+                            Sales</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-light-surface dark:bg-dark-bg">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative order-2 md:order-1 animate-slide-right delay-100">
+
+                <div
+                    class="aspect-square md:h-[600px] rounded-[2.5rem] bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 border-2 border-indigo-50 dark:border-indigo-900 overflow-hidden flex items-center justify-center relative p-8 shadow-2xl shadow-indigo-500/10 group">
+                    <div class="absolute inset-0 bg-indigo-500/5 mix-blend-overlay z-0">
+                    </div><img src="Assets/per1.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700 z-0">
+                    <div
+                        class="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-indigo-900/90 to-transparent backdrop-blur-[2px]">
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 space-y-6"><span
+                    class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider text-sm uppercase">GUIDANCE</span>
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary">
+                    Expert Product Guidance</h2>
+                <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary">
+                    We don't just sell; we
+                    consult. Get help choosing the right device
+                    tailored
+                    to your budget and specific use-cases.</p>
+
+                <div class="flex gap-6 py-6">
+                    <div class="group relative">
+                        <div
+                            class="absolute -inset-2 bg-indigo-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="bg-indigo-600 p-4 rounded-2xl shadow-lg relative z-10 hover:scale-110 transition-transform cursor-pointer">
+                            <i data-lucide="zap" class="w-8 h-8 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="absolute -inset-2 bg-indigo-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg border border-indigo-100 dark:border-indigo-900 relative z-10 hover:scale-110 transition-transform cursor-pointer">
+                            <i data-lucide="user" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i>
+                        </div>
+                    </div>
+                    <div class="group relative">
+                        <div
+                            class="absolute -inset-2 bg-indigo-500/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-lg border border-indigo-100 dark:border-indigo-900 relative z-10 hover:scale-110 transition-transform cursor-pointer">
+                            <i data-lucide="headset" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-light-text-primary dark:text-dark-text-primary">
+                        <div
+                            class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                            <i data-lucide="check" class="w-4 h-4"></i>
+                        </div>
+                        Budget-based recommendations
+                    </li>
+                    <li class="flex items-center gap-3 text-light-text-primary dark:text-dark-text-primary">
+                        <div
+                            class="w-8 h-8 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                            <i data-lucide="check" class="w-4 h-4"></i>
+                        </div>Real-world
+                        use-case matching
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white dark:bg-dark-surface">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6"><span
+                    class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider text-sm uppercase">COMPARE</span>
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary">
+                    Side-by-Side Comparison</h2>
+                <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary">
+                    Compare specs visually with simplified
+                    technical
+                    language. We highlight key differences so
+                    you
+                    can decide instantly.</p>
+            </div>
+            <div class="relative">
+
+                <div
+                    class="bg-light-surface dark:bg-dark-bg rounded-3xl p-6 shadow-xl border border-indigo-50 dark:border-indigo-900">
+                    <div class="flex gap-4 mb-4">
+                        <div
+                            class="flex-1 bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-indigo-100 dark:border-slate-700 hover:scale-105 transition-transform group">
+                            <div class="w-full aspect-square rounded-lg mb-3 overflow-hidden">
+                                <img src="Assets/tv2.jpeg" class="w-full h-full object-cover">
+                            </div>
+                            <div class="h-4 w-3/4 bg-slate-200 dark:bg-slate-700 rounded mb-2">
+                            </div>
+                            <div class="h-2 w-full bg-indigo-500 rounded mb-1">
+                            </div>
+                            <div class="h-2 w-1/2 bg-indigo-300 rounded">
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-indigo-100 dark:border-slate-700 hover:scale-105 transition-transform group">
+                            <div class="w-full aspect-square rounded-lg mb-3 overflow-hidden">
+                                <img src="Assets/tv3.jpeg" class="w-full h-full object-cover">
+                            </div>
+                            <div class="h-4 w-3/4 bg-slate-200 dark:bg-slate-700 rounded mb-2">
+                            </div>
+                            <div class="h-2 w-full bg-emerald-500 rounded mb-1">
+                            </div>
+                            <div class="h-2 w-2/3 bg-emerald-300 rounded">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div
+                            class="px-4 py-1 bg-indigo-100 dark:bg-indigo-900 rounded-full text-xs font-bold text-indigo-700 dark:text-indigo-300">
+                            VS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-light-surface dark:bg-dark-bg text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mb-12">
+                Safe & Flexible Payments</h2>
+
+
+            <div class="grid md:grid-cols-2 gap-8 items-center justify-center max-w-4xl mx-auto">
+
+                <div class="relative overflow-hidden aspect-video glow-box global-black-shadow cursor-pointer group rounded-3xl"
+                    onclick="this.querySelector('.front-view').classList.toggle('opacity-0'); this.querySelector('.back-view').classList.toggle('opacity-100');">
+                    <div
+                        class="front-view absolute inset-0 transition-opacity duration-500 z-20 bg-white dark:bg-slate-800 flex flex-col items-center justify-center">
+                        <div class="bg-indigo-100 dark:bg-indigo-900/30 p-6 rounded-full mb-4">
+                            <i data-lucide="credit-card" class="w-12 h-12 text-indigo-600 dark:text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">
+                            Payment Options</h3>
+                        <p class="text-slate-500 mt-2">
+                            Click to view details
+                        </p>
+                    </div>
+                    <div
+                        class="back-view absolute inset-0 bg-indigo-900/95 backdrop-blur-md flex flex-col items-center justify-center text-center p-8 transition-opacity duration-500 opacity-0 z-10">
+                        <ul class="space-y-4 text-left text-white/90 font-medium text-lg mb-6">
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-400 w-5 h-5"></i>
+                                Credit/Debit Cards
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-400 w-5 h-5"></i>
+                                Digital Wallets
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i data-lucide="check" class="text-green-400 w-5 h-5"></i>
+                                UPI & Net Banking
+                            </li>
+                        </ul>
+                        <button
+                            class="px-6 py-2 bg-white text-indigo-900 font-bold rounded-full hover:bg-green-400 transition-colors">Select
+                            Method</button>
+                    </div>
+                </div>
+
+
+                <div class="relative overflow-hidden aspect-video glow-box global-black-shadow cursor-pointer group rounded-3xl"
+                    onclick="this.querySelector('.front-view').classList.toggle('opacity-0'); this.querySelector('.back-view').classList.toggle('opacity-100');">
+                    <div
+                        class="front-view absolute inset-0 transition-opacity duration-500 z-20 bg-white dark:bg-slate-800 flex flex-col items-center justify-center">
+                        <div class="bg-emerald-100 dark:bg-emerald-900/30 p-6 rounded-full mb-4">
+                            <i data-lucide="shield-check" class="w-12 h-12 text-emerald-600 dark:text-emerald-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">
+                            100% Secure</h3>
+                        <p class="text-slate-500 mt-2">
+                            Click to verify</p>
+                    </div>
+                    <div
+                        class="back-view absolute inset-0 bg-emerald-900/95 backdrop-blur-md flex flex-col items-center justify-center text-center p-8 transition-opacity duration-500 opacity-0 z-10">
+                        <p class="text-white text-lg leading-relaxed mb-6">
+                            Military-grade 256-bit
+                            encryption ensures your
+                            data never leaves the
+                            secure gateway.
+                        </p>
+                        <button
+                            class="px-6 py-2 bg-white text-emerald-900 font-bold rounded-full hover:bg-emerald-400 transition-colors">Verify
+                            Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-16 bg-indigo-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">
+                        Delivery You Can Count
+                        On</h2>
+                    <p class="text-indigo-200 text-lg mb-8">
+                        Full transparency from
+                        our warehouse
+                        to your doorstep.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-indigo-700 flex items-center justify-center">
+                                <i data-lucide="package" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">
+                                    Safe
+                                    Packaging
+                                </h4>
+                                <p class="text-indigo-300 text-sm">
+                                    Tamper-proof
+                                    protection
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 rounded bg-indigo-700 flex items-center justify-center">
+                                <i data-lucide="bell" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">
+                                    Real-time
+                                    Updates</h4>
+                                <p class="text-indigo-300 text-sm">
+                                    SMS & Email
+                                    notifications
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-800/50 p-8 rounded-3xl border border-indigo-700 relative overflow-hidden group">
+                    <img src="Assets/3d-boy-wave-removebg-preview.png"
+                        class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-80 transition-opacity duration-300">
+                    <div class="relative flex justify-between items-center text-indigo-300 z-10">
+                        <div class="absolute inset-x-0 h-1 bg-indigo-900 top-5 -z-10">
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-400 flex items-center justify-center text-indigo-900 shadow-lg shadow-green-400/50">
+                                <i data-lucide="check" class="w-5 h-5"></i>
+                            </div><span class="text-xs font-bold text-white">Ordered</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div
+                                class="w-10 h-10 rounded-full bg-green-400 flex items-center justify-center text-indigo-900 shadow-lg shadow-green-400/50">
+                                <i data-lucide="truck" class="w-5 h-5"></i>
+                            </div><span class="text-xs font-bold text-white">Shipped</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2">
+                            <div
+                                class="w-10 h-10 rounded-full bg-indigo-500 border-2 border-white flex items-center justify-center text-white animate-pulse">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div><span class="text-xs font-bold text-white">Arriving</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white dark:bg-dark-surface">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 relative">
+                <div
+                    class="absolute -inset-4 bg-gradient-to-r from-teal-500 to-emerald-500 rounded-[2rem] opacity-20 blur-2xl">
+                </div>
+                <div
+                    class="relative bg-teal-50 dark:bg-emerald-900/10 rounded-[2rem] border border-teal-100 dark:border-emerald-900 p-8 flex items-center justify-center aspect-square overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&q=80"
+                        class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700">
+                    <div
+                        class="absolute bottom-8 right-8 bg-white dark:bg-dark-surface p-4 rounded-xl shadow-lg border border-teal-100 dark:border-emerald-900 flex items-center gap-3 relative z-10 animate-bounce">
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse">
+                        </div><span class="font-bold text-sm text-slate-900 dark:text-white">Expert
+                            On-site</span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+                    Installation Made Easy
+                </h2>
+                <p class="text-lg text-light-text-secondary dark:text-dark-text-secondary mb-8">
+                    We don't just drop the
+                    box and leave. We ensure
+                    your
+                    devices are set up
+                    perfectly.</p>
+                <div class="grid grid-cols-2 gap-4">
+                    <div
+                        class="p-4 rounded-xl bg-light-surface dark:bg-dark-bg border border-indigo-50 dark:border-indigo-900/50">
+                        <i data-lucide="tv" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                        <h4 class="font-bold text-light-text-primary dark:text-dark-text-primary">
+                            Smart TVs</h4>
+                    </div>
+                    <div
+                        class="p-4 rounded-xl bg-light-surface dark:bg-dark-bg border border-indigo-50 dark:border-indigo-900/50">
+                        <i data-lucide="wifi" class="w-6 h-6 text-indigo-600 mb-2"></i>
+                        <h4 class="font-bold text-light-text-primary dark:text-dark-text-primary">
+                            Home Networks
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-light-surface dark:bg-dark-bg">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div
+                class="inline-block p-4 rounded-full bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 mb-8">
+                <i data-lucide="shield-check" class="w-10 h-10"></i>
+            </div>
+            <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+                Warranty & Protection
+                Plans</h2>
+            <div
+                class="bg-white dark:bg-dark-surface rounded-3xl p-8 shadow-xl border border-indigo-50 dark:border-indigo-900 mt-10">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold text-light-text-primary dark:text-dark-text-primary">
+                            Standard
+                            Brand
+                            Warranty
+                        </h3>
+                        <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                            Included
+                            with every
+                            purchase.
+                        </p>
+                    </div>
+                    <div class="h-12 w-[1px] bg-slate-200 dark:bg-slate-700 hidden md:block">
+                    </div>
+                    <div class="text-left">
+                        <h3 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
+                            PrimeShield+
+                        </h3>
+                        <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                            Optional
+                            extended
+                            protection.
+                        </p>
+                    </div><button
+                        class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition-colors">Compare
+                        Plans</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white dark:bg-dark-surface border-t border-slate-100 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mb-6">
+                    Hassle-Free
+                    Returns</h2>
+                <ul class="space-y-6">
+                    <li class="flex gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-black flex items-center justify-center flex-shrink-0">
+                            1</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">
+                                Initiate
+                                Return
+                            </h4>
+                            <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                                One
+                                click
+                                from
+                                your
+                                dashboard.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-black flex items-center justify-center flex-shrink-0">
+                            2</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">
+                                Instant
+                                Pickup
+                            </h4>
+                            <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                                Scheduled
+                                at
+                                your
+                                convenience.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="flex gap-4">
+                        <div
+                            class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white font-black flex items-center justify-center flex-shrink-0">
+                            3</div>
+                        <div>
+                            <h4 class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">
+                                Quick
+                                Refund
+                            </h4>
+                            <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                                Processed
+                                within
+                                24
+                                hours
+                                of
+                                pickup.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="relative h-[400px] w-full flex items-center justify-center">
+
+                <div
+                    class="absolute top-0 right-0 w-2/3 h-3/4 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 z-10 transform hover:scale-105 transition-transform duration-500">
+                    <img src="Assets/per2.jpeg" class="w-full h-full object-cover">
+                </div>
+
+                <div
+                    class="absolute bottom-0 left-0 w-2/3 h-3/4 rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 z-20 transform hover:scale-105 transition-transform duration-500">
+                    <img src="Assets/per3.jpeg" class="w-full h-full object-cover">
+                </div>
+
+                <div class="absolute inset-0 bg-indigo-500/10 blur-[80px] rounded-full z-0">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-light-surface dark:bg-dark-bg">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mb-16">
+                Support That
+                Stays With You
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="group p-8 bg-white dark:bg-dark-surface rounded-3xl hover:-translate-y-2 transition-transform shadow-lg border-2 border-black dark:border-white">
+                    <i data-lucide="message-circle"
+                        class="w-12 h-12 text-indigo-600 mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+                        Live
+                        Chat
+                    </h3>
+                    <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                        24/7
+                        Instant
+                        response
+                    </p>
+                </div>
+                <div
+                    class="group p-8 bg-white dark:bg-dark-surface rounded-3xl hover:-translate-y-2 transition-transform shadow-lg border-2 border-black dark:border-white">
+                    <i data-lucide="phone"
+                        class="w-12 h-12 text-indigo-600 mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+                        Phone
+                        Support
+                    </h3>
+                    <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                        Talk to
+                        an
+                        expert
+                    </p>
+                </div>
+                <div
+                    class="group p-8 bg-white dark:bg-dark-surface rounded-3xl hover:-translate-y-2 transition-transform shadow-lg border-2 border-black dark:border-white">
+                    <i data-lucide="mail"
+                        class="w-12 h-12 text-indigo-600 mx-auto mb-6 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="text-xl font-bold text-light-text-primary dark:text-dark-text-primary mb-2">
+                        Email
+                    </h3>
+                    <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                        Detailed
+                        troubleshooting
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gradient-to-r from-indigo-900 to-slate-900 text-white">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold">
+                    Upgrade
+                    with
+                    Ease
+                </h2>
+                <div class="text-indigo-200 text-lg">
+                    Exchange
+                    old
+                    devices
+                    for fair
+                    value.
+                    Sustainable
+                    reuse.
+                </div>
+                <div class="flex gap-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-white">
+                            Best
+                        </div>
+                        <div class="text-sm">
+                            Value
+                            Assurance
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-black text-white">
+                            Instant
+                        </div>
+                        <div class="text-sm">
+                            Discount
+                            Quote
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/20 w-full max-w-md">
+                <div class="flex justify-between items-center mb-6">
+                    <span>iPhone
+                        14
+                        Pro</span><span class="font-bold text-green-400">+$650
+                        Credit</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span>Galaxy
+                        S22</span><span class="font-bold text-green-400">+$400
+                        Credit</span>
+                </div>
+                <button
+                    class="w-full mt-8 py-3 bg-white text-indigo-900 font-bold rounded-xl hover:bg-indigo-50 transition-colors">Check
+                    Your
+                    Value</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white dark:bg-dark-surface">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary">
+                    Repair
+                    Assistance
+                </h2>
+                <p class="text-light-text-secondary dark:text-dark-text-secondary">
+                    Authorized
+                    service
+                    centers
+                    and
+                    seamless
+                    pickup
+                    coordination.
+                    Track
+                    repair
+                    status
+                    in
+                    real-time.
+                </p>
+            </div>
+            <div class="flex gap-4 justify-center">
+                <div
+                    class="w-32 h-32 rounded-full border-4 border-indigo-100 dark:border-indigo-900 flex flex-col items-center justify-center animate-bounce">
+                    <i data-lucide="settings" class="w-8 h-8 text-indigo-600 mb-1"></i><span
+                        class="text-xs font-bold text-light-text-primary dark:text-dark-text-primary">Diagnose</span>
+                </div>
+                <div
+                    class="w-32 h-32 rounded-full border-4 border-indigo-100 dark:border-indigo-900 flex flex-col items-center justify-center animate-bounce delay-100">
+                    <i data-lucide="wrench" class="w-8 h-8 text-indigo-600 mb-1"></i><span
+                        class="text-xs font-bold text-light-text-primary dark:text-dark-text-primary">Fix</span>
+                </div>
+                <div
+                    class="w-32 h-32 rounded-full border-4 border-indigo-100 dark:border-indigo-900 flex flex-col items-center justify-center animate-bounce delay-200">
+                    <i data-lucide="check-circle" class="w-8 h-8 text-indigo-600 mb-1"></i><span
+                        class="text-xs font-bold text-light-text-primary dark:text-dark-text-primary">Return</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-light-surface dark:bg-dark-bg">
+        <div class="max-w-7xl mx-auto px-6 relative">
+            <div class="flex justify-between items-end mb-12">
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary">
+                    Learn
+                    Before
+                    You
+                    Buy
+                </h2>
+                <a href="#" class="text-indigo-600 font-bold">View
+                    all
+                    guides</a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="group relative rounded-2xl overflow-hidden aspect-video shadow-lg cursor-pointer">
+                    <img src="Assets/1.jpeg"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
+                    </div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <span
+                            class="text-xs font-bold bg-indigo-600 px-2 py-1 rounded-md mb-2 inline-block">Unboxing</span>
+                        <h3 class="font-bold text-xl">
+                            How
+                            to
+                            choose
+                            a
+                            Laptop
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden aspect-video shadow-lg cursor-pointer">
+                    <img src="Assets/2.jpeg"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
+                    </div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <span
+                            class="text-xs font-bold bg-emerald-600 px-2 py-1 rounded-md mb-2 inline-block">Review</span>
+                        <h3 class="font-bold text-xl">
+                            2026
+                            Smartphone
+                            Guide
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="group relative rounded-2xl overflow-hidden aspect-video shadow-lg cursor-pointer">
+                    <img src="Assets/3.jpeg"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
+                    </div>
+                    <div class="absolute bottom-6 left-6 text-white">
+                        <span
+                            class="text-xs font-bold bg-purple-600 px-2 py-1 rounded-md mb-2 inline-block">Setup</span>
+                        <h3 class="font-bold text-xl">
+                            Smart
+                            Home
+                            Setup
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-indigo-950 text-white relative">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+        </div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <i data-lucide="fingerprint" class="w-20 h-20 text-indigo-400 mx-auto mb-8"></i>
+            <h2 class="text-4xl font-bold mb-6">
+                Your
+                Data,
+                Fully
+                Protected
+            </h2>
+            <p class="text-indigo-200 text-lg mb-12">
+                We
+                prioritize
+                your
+                privacy
+                with
+                industry-leading
+                encryption
+                and
+                strict
+                compliance
+                standards.
+            </p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="p-4 rounded-xl border border-indigo-800 bg-indigo-900/50">
+                    <div class="font-bold text-2xl mb-1">
+                        256-bit
+                    </div>
+                    <div class="text-xs text-indigo-300">
+                        Encryption
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-indigo-800 bg-indigo-900/50">
+                    <div class="font-bold text-2xl mb-1">
+                        GDPR
+                    </div>
+                    <div class="text-xs text-indigo-300">
+                        Compliant
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-indigo-800 bg-indigo-900/50">
+                    <div class="font-bold text-2xl mb-1">
+                        NO
+                    </div>
+                    <div class="text-xs text-indigo-300">
+                        Data
+                        Selling
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl border border-indigo-800 bg-indigo-900/50">
+                    <div class="font-bold text-2xl mb-1">
+                        2FA
+                    </div>
+                    <div class="text-xs text-indigo-300">
+                        Enabled
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-light-bg dark:bg-dark-bg">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-light-text-primary dark:text-dark-text-primary mb-16">
+                Real
+                Results,
+                Real
+                Customers
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="bg-white dark:bg-dark-surface p-8 rounded-3xl shadow-lg border-2 border-black dark:border-white flex gap-6">
+                    <div class="shrink-0 w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix" alt="User"
+                            class="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                        <p class="text-light-text-secondary dark:text-dark-text-secondary italic mb-4">
+                            "The
+                            consultation
+                            service
+                            saved
+                            me
+                            hours
+                            of
+                            research.
+                            I
+                            got
+                            exactly
+                            the
+                            setup
+                            I
+                            needed
+                            for
+                            my
+                            home
+                            office."
+                        </p>
+                        <h4 class="font-bold text-light-text-primary dark:text-dark-text-primary">
+                            Sarah
+                            J.
+                        </h4>
+                        <span class="text-sm text-indigo-500">Creative
+                            Director</span>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-dark-surface p-8 rounded-3xl shadow-lg border-2 border-black dark:border-white flex gap-6">
+                    <div class="shrink-0 w-16 h-16 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Aneka" alt="User"
+                            class="w-full h-full object-cover" />
+                    </div>
+                    <div>
+                        <p class="text-light-text-secondary dark:text-dark-text-secondary italic mb-4">
+                            "The
+                            exchange
+                            process
+                            was
+                            seamless.
+                            I
+                            got
+                            a
+                            great
+                            value
+                            for
+                            my
+                            old
+                            phone
+                            and
+                            the
+                            new
+                            one
+                            arrived
+                            next
+                            day."
+                        </p>
+                        <h4 class="font-bold text-light-text-primary dark:text-dark-text-primary">
+                            David
+                            M.
+                        </h4>
+                        <span class="text-sm text-indigo-500">Tech
+                            Enthusiast</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <section class="py-16 bg-light-surface dark:bg-dark-bg">
+        <div class="max-w-[1920px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <span
+                    class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider text-sm uppercase">GALLERY</span>
+                <h2 class="text-4xl font-bold text-light-text-primary dark:text-dark-text-primary mt-2">
+                    Service
+                    Showcase
+                </h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+
+                <img src="Assets/speaker 2.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"><img
+                    src="Assets/light3.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"><img
+                    src="Assets/Apple AirPods Pro 2 w_ Noise Canceling, Spatial Audio, USB-C & Hearing Assist-Bluetooth Headphones.jpg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"><img
+                    src="Assets/3.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"><img
+                    src="Assets/8.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+
+                <img src="Assets/2.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"><img
+                    src="Assets/4.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"><img
+                    src="Assets/6.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"><img
+                    src="Assets/tv.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer"><img
+                    src="Assets/speaker.jpeg"
+                    class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 cursor-pointer">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-white dark:bg-dark-surface">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-light-text-primary dark:text-dark-text-primary mb-12">
+                Frequently
+                Asked
+                Questions
+            </h2>
+            <div class="space-y-4">
+
+                <div class="border-2 border-black dark:border-white rounded-xl overflow-hidden">
+                    <button
+                        class="w-full flex justify-between items-center p-6 bg-light-surface dark:bg-dark-bg hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors text-left"
+                        onclick="this.nextElementSibling.classList.toggle('hidden')"><span
+                            class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">How
+                            do
+                            I
+                            track
+                            my
+                            service
+                            request?</span><i data-lucide="chevron-down" class="w-5 h-5 text-indigo-500"></i></button>
+                    <div
+                        class="hidden p-6 text-light-text-secondary dark:text-dark-text-secondary border-t border-indigo-50 dark:border-indigo-900/50">
+                        You
+                        can
+                        track
+                        your
+                        service
+                        status
+                        in
+                        real-time
+                        from
+                        your
+                        User
+                        Dashboard.
+                        We
+                        also
+                        send
+                        SMS
+                        and
+                        email
+                        updates
+                        at
+                        every
+                        stage.
+                    </div>
+                </div>
+
+                <div class="border-2 border-black dark:border-white rounded-xl overflow-hidden">
+                    <button
+                        class="w-full flex justify-between items-center p-6 bg-light-surface dark:bg-dark-bg hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors text-left"
+                        onclick="this.nextElementSibling.classList.toggle('hidden')"><span
+                            class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">Is
+                            there
+                            a
+                            warranty
+                            on
+                            repairs?</span><i data-lucide="chevron-down" class="w-5 h-5 text-indigo-500"></i></button>
+                    <div
+                        class="hidden p-6 text-light-text-secondary dark:text-dark-text-secondary border-t border-indigo-50 dark:border-indigo-900/50">
+                        Yes,
+                        all
+                        repairs
+                        come
+                        with
+                        a
+                        standard
+                        6-month
+                        warranty
+                        on
+                        parts
+                        and
+                        labor.
+                        Extended
+                        warranty
+                        plans
+                        are
+                        also
+                        available.
+                    </div>
+                </div>
+
+                <div class="border-2 border-black dark:border-white rounded-xl overflow-hidden">
+                    <button
+                        class="w-full flex justify-between items-center p-6 bg-light-surface dark:bg-dark-bg hover:bg-indigo-50 dark:hover:bg-slate-800 transition-colors text-left"
+                        onclick="this.nextElementSibling.classList.toggle('hidden')"><span
+                            class="font-bold text-lg text-light-text-primary dark:text-dark-text-primary">What
+                            payment
+                            methods
+                            do
+                            you
+                            accept?</span><i data-lucide="chevron-down" class="w-5 h-5 text-indigo-500"></i></button>
+                    <div
+                        class="hidden p-6 text-light-text-secondary dark:text-dark-text-secondary border-t border-indigo-50 dark:border-indigo-900/50">
+                        We
+                        accept
+                        all
+                        major
+                        credit/debit
+                        cards,
+                        UPI,
+                        Net
+                        Banking,
+                        and
+                        wallet
+                        payments.
+                        EMI
+                        options
+                        are
+                        available
+                        for
+                        amounts
+                        over
+                        $100.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-slate-50 dark:bg-[#0B1120]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-indigo-600 dark:text-indigo-400 font-bold tracking-widest uppercase text-sm">Tech
+                    Arsenal</span>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mt-2">
+                    Innovation
+                    Stack
+                </h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+                <div class="flip-card h-80 cursor-pointer group perspective-1000"
+                    onclick="this.classList.toggle('flipped')">
+                    <div
+                        class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transition-all duration-300">
+                        <div
+                            class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
+                            <img src="Assets/tv.jpeg" class="w-full h-40 object-contain mb-4">
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
+                                Smart
+                                Vision
+                            </h3>
+                            <button
+                                class="px-6 py-2 rounded-full border border-indigo-500/30 text-indigo-600 dark:text-indigo-400 font-bold text-sm bg-indigo-50/50 dark:bg-indigo-900/20 shadow-[0_0_15px_rgba(99,102,241,0.3)] group-hover:shadow-[0_0_25px_rgba(99,102,241,0.6)] transition-all">View
+                                Details</button>
+                        </div>
+                        <div
+                            class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-indigo-600 text-white transform rotate-y-180 flex flex-col items-center justify-center p-6">
+                            <h3 class="text-xl font-bold mb-4">
+                                Smart
+                                Vision
+                            </h3>
+                            <ul class="text-sm space-y-2 text-indigo-100 mb-4 text-left w-full pl-4 list-disc">
+                                <li>4K
+                                    AI
+                                    Upscaling
+                                </li>
+                                <li>Adaptive
+                                    Refresh
+                                </li>
+                                <li>Eye
+                                    Comfort
+                                </li>
+                            </ul>
+                            <button
+                                class="px-4 py-2 bg-white text-indigo-600 rounded-lg font-bold text-xs uppercase tracking-wider">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card h-80 cursor-pointer group perspective-1000"
+                    onclick="this.classList.toggle('flipped')">
+                    <div
+                        class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all duration-300">
+                        <div
+                            class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
+                            <img src="Assets/speaker.jpeg" class="w-full h-40 object-contain mb-4">
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
+                                Sonic
+                                Edge
+                            </h3>
+                            <button
+                                class="px-6 py-2 rounded-full border border-purple-500/30 text-purple-600 dark:text-purple-400 font-bold text-sm bg-purple-50/50 dark:bg-purple-900/20 shadow-[0_0_15px_rgba(168,85,247,0.3)] group-hover:shadow-[0_0_25px_rgba(168,85,247,0.6)] transition-all">View
+                                Details</button>
+                        </div>
+                        <div
+                            class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-purple-600 text-white transform rotate-y-180 flex flex-col items-center justify-center p-6">
+                            <h3 class="text-xl font-bold mb-4">
+                                Sonic
+                                Edge
+                            </h3>
+                            <ul class="text-sm space-y-2 text-purple-100 mb-4 text-left w-full pl-4 list-disc">
+                                <li>360
+                                    Audio
+                                </li>
+                                <li>Noise
+                                    Cancel
+                                </li>
+                                <li>Bass
+                                    Boost
+                                </li>
+                            </ul>
+                            <button
+                                class="px-4 py-2 bg-white text-purple-600 rounded-lg font-bold text-xs uppercase tracking-wider">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card h-80 cursor-pointer group perspective-1000"
+                    onclick="this.classList.toggle('flipped')">
+                    <div
+                        class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300">
+                        <div
+                            class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
+                            <img src="Assets/light2.jpeg" class="w-full h-40 object-contain mb-4">
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
+                                Lumina
+                            </h3>
+                            <button
+                                class="px-6 py-2 rounded-full border border-amber-500/30 text-amber-600 dark:text-amber-400 font-bold text-sm bg-amber-50/50 dark:bg-amber-900/20 shadow-[0_0_15px_rgba(245,158,11,0.3)] group-hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] transition-all">View
+                                Details</button>
+                        </div>
+                        <div
+                            class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-amber-500 text-white transform rotate-y-180 flex flex-col items-center justify-center p-6">
+                            <h3 class="text-xl font-bold mb-4">
+                                Lumina
+                            </h3>
+                            <ul class="text-sm space-y-2 text-amber-50 mb-4 text-left w-full pl-4 list-disc">
+                                <li>Adaptive
+                                    Sync
+                                </li>
+                                <li>RGB
+                                    Spectrum
+                                </li>
+                                <li>Voice
+                                    Control
+                                </li>
+                            </ul>
+                            <button
+                                class="px-4 py-2 bg-white text-amber-600 rounded-lg font-bold text-xs uppercase tracking-wider">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card h-80 cursor-pointer group perspective-1000"
+                    onclick="this.classList.toggle('flipped')">
+                    <div
+                        class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300">
+                        <div
+                            class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
+                            <img src="Assets/tv.jpeg" class="w-full h-40 object-contain mb-4">
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
+                                HoloView
+                            </h3>
+                            <button
+                                class="px-6 py-2 rounded-full border border-cyan-500/30 text-cyan-600 dark:text-cyan-400 font-bold text-sm bg-cyan-50/50 dark:bg-cyan-900/20 shadow-[0_0_15px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transition-all">View
+                                Details</button>
+                        </div>
+                        <div
+                            class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-cyan-600 text-white transform rotate-y-180 flex flex-col items-center justify-center p-6">
+                            <h3 class="text-xl font-bold mb-4">
+                                HoloView
+                            </h3>
+                            <ul class="text-sm space-y-2 text-cyan-100 mb-4 text-left w-full pl-4 list-disc">
+                                <li>3D
+                                    Projection
+                                </li>
+                                <li>Gesture
+                                    Control
+                                </li>
+                                <li>Cloud
+                                    Sync
+                                </li>
+                            </ul>
+                            <button
+                                class="px-4 py-2 bg-white text-cyan-600 rounded-lg font-bold text-xs uppercase tracking-wider">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card h-80 cursor-pointer group perspective-1000"
+                    onclick="this.classList.toggle('flipped')">
+                    <div
+                        class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all duration-300">
+                        <div
+                            class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
+                            <img src="Assets/speaker.jpeg" class="w-full h-40 object-contain mb-4">
+                            <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
+                                Echo
+                                Net
+                            </h3>
+                            <button
+                                class="px-6 py-2 rounded-full border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-bold text-sm bg-emerald-50/50 dark:bg-emerald-900/20 shadow-[0_0_15px_rgba(16,185,129,0.3)] group-hover:shadow-[0_0_25px_rgba(16,185,129,0.6)] transition-all">View
+                                Details</button>
+                        </div>
+                        <div
+                            class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-emerald-500 text-white transform rotate-y-180 flex flex-col items-center justify-center p-6">
+                            <h3 class="text-xl font-bold mb-4">
+                                Echo
+                                Net
+                            </h3>
+                            <ul class="text-sm space-y-2 text-emerald-100 mb-4 text-left w-full pl-4 list-disc">
+                                <li>Mesh
+                                    Audio
+                                </li>
+                                <li>Multi-Room
+                                </li>
+                                <li>AI
+                                    Equalizer
+                                </li>
+                            </ul>
+                            <button
+                                class="px-4 py-2 bg-white text-emerald-600 rounded-lg font-bold text-xs uppercase tracking-wider">Learn
+                                More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .perspective-1000 {
+                    perspective: 1000px;
+                }
+
+                .transform-style-3d {
+                    transform-style: preserve-3d;
+                }
+
+                .backface-hidden {
+                    backface-visibility: hidden;
+                }
+
+                .rotate-y-180 {
+                    transform: rotateY(180deg);
+                }
+
+                .flipped .flip-card-inner {
+                    transform: rotateY(180deg);
+                }
+            </style>
+        </div>
+    </section>
+
+
+    <section class="relative py-32 overflow-hidden bg-slate-900 clip-path-slant">
+
+        <div class="absolute inset-0 z-0 flex items-center justify-center select-none pointer-events-none hidden">
+            <!-- MARQUEE REMOVED -->
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div
+                    class="inline-flex items-center gap-2 px-4 py-1 bg-yellow-400 text-slate-900 font-bold uppercase tracking-widest text-sm skew-x-[-10deg]">
+                    <span class="animate-pulse">●</span>
+                    Speed
+                    Optimized
+                </div>
+
+                <h2 class="text-5xl md:text-7xl font-black font-outfit text-white italic">
+                    ACCELERATE
+                    <br>
+                    YOUR
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500">GROWTH</span>
+                </h2>
+
+                <p class="text-xl text-slate-300 max-w-lg">
+                    Don't
+                    let
+                    hardware
+                    hold
+                    you
+                    back.
+                    Upgrade
+                    to
+                    our
+                    enterprise-grade
+                    service
+                    tier
+                    today
+                    and
+                    experience
+                    the
+                    difference
+                    velocity
+                    makes.
+                </p>
+
+                <div class="flex gap-4">
+                    <a href="signup.html"
+                        class="group relative px-8 py-4 bg-white text-slate-900 font-bold uppercase tracking-wider skew-x-[-10deg] hover:bg-yellow-400 transition-colors duration-300">
+                        <span class="inline-block skew-x-[10deg] group-hover:translate-x-1 transition-transform">Start
+                            Project</span>
+                    </a>
+                    <a href="contact.html"
+                        class="group relative px-8 py-4 border-2 border-white text-white font-bold uppercase tracking-wider skew-x-[-10deg] hover:bg-white hover:text-slate-900 transition-colors duration-300">
+                        <span class="inline-block skew-x-[10deg]">Talk
+                            to
+                            Sales</span>
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="relative">
+                <div
+                    class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-500 blur-3xl opacity-20 transform skew-y-12">
+                </div>
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80"
+                    class="relative z-10 w-full rounded-sm border-4 border-white transform skew-x-[-10deg] hover:skew-x-0 transition-transform duration-500 shadow-2xl filter contrast-125 hover:scale-105">
+
+
+                <div
+                    class="absolute top-10 -right-10 w-32 h-2 bg-yellow-400 skew-x-[-20deg] animate-[slide-right_1s_infinite]">
+                </div>
+                <div
+                    class="absolute bottom-10 -left-10 w-48 h-2 bg-orange-500 skew-x-[-20deg] animate-[slide-left_1.5s_infinite]">
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .stroke-text {
+                -webkit-text-stroke: 2px rgba(255, 255, 255, 0.2);
+            }
+
+            .clip-path-slant {
+                clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+            }
+
+            @keyframes marquee-fast {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(-50%);
+                }
+            }
+
+            .animate-marquee-fast {
+                animation: marquee-fast 20s linear infinite;
+            }
+
+            @keyframes slide-right {
+                0% {
+                    transform: translateX(-100%) skewX(-20deg);
+                    opacity: 0;
+                }
+
+                50% {
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateX(100%) skewX(-20deg);
+                    opacity: 0;
+                }
+            }
+
+            @keyframes slide-left {
+                0% {
+                    transform: translateX(100%) skewX(-20deg);
+                    opacity: 0;
+                }
+
+                50% {
+                    opacity: 1;
+                }
+
+                100% {
+                    transform: translateX(-100%) skewX(-20deg);
+                    opacity: 0;
+                }
+            }
+        </style>
+    </section>
+
+
+    <footer class="bg-[#0F172A] text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="space-y-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-slate-900">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-bold">ElectraHub</span>
+                </div>
+                <p class="text-slate-400">
+                    Next-generation
+                    electrical
+                    &
+                    tech
+                    components
+                    provider.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-6">
+                    Explore
+                </h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
+                    </li>
+                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors">About</a>
+                    </li>
+                    <li><a href="services.html" class="hover:text-emerald-400 transition-colors">Services</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-6">
+                    Account
+                </h4>
+                <ul class="space-y-4 text-slate-400">
+                    <li><a href="login.html" class="hover:text-emerald-400 transition-colors">Log
+                            In</a>
+                    </li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Support</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-6">
+                    Newsletter
+                </h4>
+                <div class="flex gap-2">
+                    <input type="email" placeholder="Email"
+                        class="bg-slate-800 border-none rounded-lg px-4 py-3 w-full outline-none text-white">
+                    <button
+                        class="bg-emerald-400 text-slate-900 font-bold px-6 rounded-lg hover:bg-emerald-300">Go</button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800 text-slate-500 text-sm">
+            &copy;
+            2026
+            ElectraHub
+            Inc.
+            All
+            rights
+            reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="navbar.js"></script>
+</body>
+
+</html>

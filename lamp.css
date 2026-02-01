@@ -1,0 +1,235 @@
+/* Lamp Hero Styles */
+:root {
+    --cyan-400: #22d3ee;
+    --cyan-500: #06b6d4;
+    --slate-950: #020617;
+}
+
+.lamp-container {
+    position: relative;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--slate-950);
+    width: 100%;
+    z-index: 0;
+    margin-top: -5rem;
+    /* Offset navbar if needed, or just let it sit */
+    padding-top: 5rem;
+}
+
+.lamp-lights-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex: 1;
+    transform: scaleY(1.25);
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+    z-index: 0;
+}
+
+/* Light Beams */
+.lamp-beam {
+    position: absolute;
+    height: 14rem;
+    /* h-56 */
+    width: 30rem;
+    opacity: 0.5;
+    /* transition handled by animation */
+    animation: lamp-expand 0.8s ease-in-out forwards 0.3s;
+}
+
+.lamp-beam-right {
+    right: 50%;
+    /* from 70deg at center top */
+    background-image: conic-gradient(from 70deg at center top, var(--cyan-500), transparent, transparent);
+    background: conic-gradient(from 70deg at center top, var(--cyan-500), transparent, transparent);
+    /* mask-image: linear-gradient(to width, white, transparent) */
+    /* The masking logic in React code: 
+       mask-image: linear-gradient(to top, white, transparent) on nested divs. 
+       We will simplify with a direct mask on the beam or nested elements.
+    */
+}
+
+.lamp-beam-left {
+    left: 50%;
+    /* from 290deg at center top */
+    background-image: conic-gradient(from 290deg at center top, transparent, transparent, var(--cyan-500));
+    background: conic-gradient(from 290deg at center top, transparent, transparent, var(--cyan-500));
+}
+
+@keyframes lamp-expand {
+    from {
+        opacity: 0.5;
+        width: 15rem;
+    }
+
+    to {
+        opacity: 1;
+        width: 30rem;
+    }
+}
+
+/* Masks for beams (mimicking the nested absolute divs) */
+.lamp-beam::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    /* h-40 */
+    background-color: var(--slate-950);
+    z-index: 20;
+}
+
+/* This is getting tricky to replicate exactly with just pseudo elements for the masks.
+   Let's stick to the DOM structure for clarity. */
+
+/* Glow Elements */
+.lamp-glow-top {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 12rem;
+    transform: translateY(3rem) scaleX(1.5);
+    background-color: var(--slate-950);
+    filter: blur(40px);
+    /* blur-2xl */
+    z-index: 20;
+}
+
+.lamp-glow-overlay {
+    position: absolute;
+    top: 50%;
+    z-index: 50;
+    height: 12rem;
+    width: 100%;
+    background: transparent;
+    opacity: 0.1;
+    backdrop-filter: blur(12px);
+}
+
+.lamp-glow-cyan-bottom {
+    position: absolute;
+    z-index: 50;
+    height: 9rem;
+    /* h-36 */
+    width: 28rem;
+    margin-top: -2rem;
+    /* translate-y */
+    border-radius: 9999px;
+    background-color: var(--cyan-500);
+    opacity: 0.5;
+    filter: blur(64px);
+    /* blur-3xl */
+}
+
+/* The small lines */
+.lamp-line-top {
+    position: absolute;
+    z-index: 30;
+    height: 9rem;
+    width: 16rem;
+    margin-top: -6rem;
+    border-radius: 9999px;
+    background-color: var(--cyan-400);
+    filter: blur(40px);
+    animation: lamp-width-small 0.8s ease-in-out forwards 0.3s;
+}
+
+.lamp-line-bar {
+    position: absolute;
+    z-index: 50;
+    height: 0.125rem;
+    /* h-0.5 */
+    width: 30rem;
+    margin-top: -7rem;
+    background-color: var(--cyan-400);
+    animation: lamp-width-large 0.8s ease-in-out forwards 0.3s;
+}
+
+@keyframes lamp-width-small {
+    from {
+        width: 8rem;
+    }
+
+    to {
+        width: 16rem;
+    }
+}
+
+@keyframes lamp-width-large {
+    from {
+        width: 15rem;
+    }
+
+    to {
+        width: 30rem;
+    }
+}
+
+/* Blacks out the bottom of the conic gradient */
+.lamp-blackout {
+    position: absolute;
+    z-index: 40;
+    height: 11rem;
+    /* h-44 */
+    width: 100%;
+    margin-top: -12.5rem;
+    /* -translate-y-[12.5rem] */
+    background-color: var(--slate-950);
+}
+
+
+/* Content */
+.lamp-content {
+    position: relative;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1.25rem;
+    margin-top: -20rem;
+    /* -translate-y-80 (approx) */
+    text-align: center;
+}
+
+.lamp-title {
+    margin-top: 2rem;
+    background-image: linear-gradient(to bottom right, #cbd5e1, #64748b);
+    /* slate-300 to slate-500 */
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 2.25rem;
+    /* text-4xl */
+    font-weight: 500;
+    letter-spacing: -0.025em;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: lamp-text-up 0.8s ease-in-out forwards 0.3s;
+}
+
+@media (min-width: 768px) {
+    .lamp-title {
+        font-size: 4.5rem;
+        /* md:text-7xl */
+    }
+}
+
+@keyframes lamp-text-up {
+    from {
+        opacity: 0.5;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
