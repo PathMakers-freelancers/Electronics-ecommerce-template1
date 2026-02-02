@@ -1,0 +1,91 @@
+/* Custom Hero Text Animation */
+@keyframes fadeInUpReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) skewY(5deg);
+        filter: blur(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) skewY(0);
+        filter: blur(0);
+    }
+}
+
+.hero-text-reveal {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.hero-text-reveal span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInUpReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Stagger delays for characters/words */
+.hero-text-reveal span:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.hero-text-reveal span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.hero-text-reveal span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.hero-text-reveal span:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.hero-text-reveal span:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.hero-text-reveal span:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.hero-text-reveal span:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.hero-text-reveal span:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.hero-text-reveal span:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+.hero-text-reveal span:nth-child(10) {
+    animation-delay: 0.55s;
+}
+
+.hero-text-reveal span:nth-child(11) {
+    animation-delay: 0.6s;
+}
+
+.hero-text-reveal span:nth-child(12) {
+    animation-delay: 0.65s;
+}
+
+/* Gradient text support */
+.hero-gradient-text {
+    background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    /* Essential for transforms */
+}
+
+.dark .hero-gradient-text {
+    background: linear-gradient(135deg, #22D3EE 0%, #A855F7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}

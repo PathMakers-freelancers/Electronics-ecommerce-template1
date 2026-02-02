@@ -1,0 +1,243 @@
+/* Stacked Cards Feature Styles */
+
+.cards-section {
+    position: relative;
+    width: 100%;
+    min-height: 800px;
+    overflow: hidden;
+    background: #0F172A;
+    /* Matching site dark theme instead of #E3B23C */
+    padding: 50px 0;
+}
+
+/* Tabs */
+.tabs-controls {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 50px 0 100px;
+    list-style-type: none;
+}
+
+.tabs-controls__link {
+    position: relative;
+    display: block;
+    padding: 16px 32px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #94a3b8;
+    /* Slate-400 */
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: 'Rajdhani', sans-serif;
+    /* Using the anime font I added */
+    transition: color 0.3s;
+}
+
+.tabs-controls__link:hover,
+.tabs-controls__link--active {
+    color: #FFFFFF;
+}
+
+.tabs-controls__link::after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 0;
+    height: 4px;
+    background-color: #4f46e5;
+    /* Indigo-600 */
+    border-radius: 2px;
+    margin: auto;
+    content: '';
+    transition: width 0.4s;
+}
+
+.tabs-controls__link.tabs-controls__link--active::after {
+    width: 100%;
+}
+
+/* Cards Container */
+.cards-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+/* Card Styling */
+.cards-container .card {
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+    background-color: #1e293b;
+    /* Slate-800 */
+    border: 1px solid #334155;
+    /* Slate-700 */
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    box-sizing: border-box;
+    padding: 40px;
+    border-radius: 16px;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.2s;
+    color: #e2e8f0;
+}
+
+.cards-container .card h1 {
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    line-height: 1.2;
+    color: #ffffff;
+    font-family: 'Bangers', sans-serif;
+    /* Comic Title Font */
+    letter-spacing: 1px;
+}
+
+.cards-container .card p {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Stacking Logic (Unrolled loop) */
+/* Count: 6 */
+/* 
+    $i=1: z=6, x=0, y=0
+    $i=2: z=5, x=10px, y=10px
+    $i=3: z=4, x=20px, y=20px
+    $i=4: z=3, x=30px, y=30px
+    $i=5: z=2, x=40px, y=40px
+    $i=6: z=1, x=50px, y=50px
+*/
+
+.cards-container .card:nth-of-type(1) {
+    z-index: 6;
+    transform: translateX(0px) translateY(0px);
+}
+
+.cards-container .card:nth-of-type(2) {
+    z-index: 5;
+    transform: translateX(10px) translateY(10px);
+}
+
+.cards-container .card:nth-of-type(3) {
+    z-index: 4;
+    transform: translateX(20px) translateY(20px);
+}
+
+.cards-container .card:nth-of-type(4) {
+    z-index: 3;
+    transform: translateX(30px) translateY(30px);
+}
+
+.cards-container .card:nth-of-type(5) {
+    z-index: 2;
+    transform: translateX(40px) translateY(40px);
+}
+
+.cards-container .card:nth-of-type(6) {
+    z-index: 1;
+    transform: translateX(50px) translateY(50px);
+}
+
+/* Hidden Logic (Flying away) */
+.cards-container .card.hidden-card {
+    z-index: 100;
+    background-color: #ffffff;
+    color: #475569;
+    opacity: 0;
+    pointer-events: none;
+    transition: color 0.5s, background-color 0.5s, transform 1s cubic-bezier(0.6, -0.28, 0.735, 0.045), opacity 0.2s 0.4s;
+}
+
+.cards-container .card.hidden-card h1 {
+    color: #475569;
+    transition: color 0.5s;
+}
+
+/* Random Transforms for Hidden State */
+.cards-container .card.hidden-card:nth-of-type(1) {
+    transform: rotate(-25deg) translateX(150%) translateY(-30%) scale(0.6) skewX(5deg) skewY(10deg);
+}
+
+.cards-container .card.hidden-card:nth-of-type(2) {
+    transform: rotate(15deg) translateX(120%) translateY(40%) scale(0.7) skewX(-5deg) skewY(-10deg);
+}
+
+.cards-container .card.hidden-card:nth-of-type(3) {
+    transform: rotate(-45deg) translateX(180%) translateY(-10%) scale(0.5) skewX(10deg) skewY(-5deg);
+}
+
+.cards-container .card.hidden-card:nth-of-type(4) {
+    transform: rotate(30deg) translateX(140%) translateY(-50%) scale(0.8) skewX(-10deg) skewY(5deg);
+}
+
+.cards-container .card.hidden-card:nth-of-type(5) {
+    transform: rotate(-10deg) translateX(160%) translateY(20%) scale(0.6) skewX(5deg) skewY(5deg);
+}
+
+.cards-container .card.hidden-card:nth-of-type(6) {
+    transform: rotate(50deg) translateX(130%) translateY(-60%) scale(0.5) skewX(-5deg) skewY(15deg);
+}
+
+/* =========================================
+   Mobile Responsiveness
+   ========================================= */
+@media (max-width: 768px) {
+    .cards-section {
+        min-height: 600px;
+        padding-top: 30px;
+    }
+
+    /* Tabs: Stack vertically OR scroll horizontally */
+    .tabs-controls {
+        flex-wrap: wrap;
+        padding: 20px 0 50px;
+        gap: 10px;
+    }
+
+    .tabs-controls__link {
+        padding: 10px 15px;
+        font-size: 16px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+    }
+
+    .tabs-controls__link::after {
+        bottom: 0px;
+        height: 2px;
+    }
+
+    /* Cards Container */
+    .cards-container {
+        width: 90%;
+        height: auto;
+        min-height: 400px;
+    }
+
+    .cards-container .card {
+        padding: 25px;
+        min-height: 300px;
+        height: auto;
+    }
+
+    .cards-container .card h1 {
+        font-size: 24px;
+    }
+
+    .cards-container .card p {
+        font-size: 1rem;
+    }
+}

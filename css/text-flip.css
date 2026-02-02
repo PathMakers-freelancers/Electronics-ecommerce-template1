@@ -1,0 +1,188 @@
+/* Layout Text Flip Styles */
+
+/* Wrapper for the static text + dynamic box */
+.text-flip-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+    /* my-6 */
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .text-flip-container {
+        flex-direction: row;
+        margin: 0;
+    }
+}
+
+/* Static Text "Upgrade Your Life With" */
+.text-flip-static {
+    font-size: 1.5rem;
+    /* text-2xl */
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    /* tracking-tight */
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+    /* drop-shadow-lg */
+    color: #fff;
+    /* Assuming on dark/image bg, or text-neutral-800 if visible */
+}
+
+.dark .text-flip-static {
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .text-flip-static {
+        font-size: 2.25rem;
+        /* 4xl */
+    }
+}
+
+
+/* Dynamic Box Wrapper */
+.text-flip-box {
+    position: relative;
+    width: fit-content;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    /* rounded-md */
+    background-color: white;
+    padding: 0.5rem 1rem;
+    /* px-4 py-2 */
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    /* 2xl */
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: black;
+
+    /* Shadows/Rings from prompt */
+    /* shadow-sm ring shadow-black/10 ring-black/10 drop-shadow-lg */
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05), 0 0 0 1px rgb(0 0 0 / 0.1);
+    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+
+    /* Flex to center content */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 280px;
+    /* Prevent jitter */
+    height: 3.5rem;
+    /* Fixed height to prevent layout jumps */
+}
+
+@media (min-width: 768px) {
+    .text-flip-box {
+        font-size: 2.5rem;
+        /* Smaller Text as requested */
+        height: 6.5rem;
+        /* Larger Box */
+        min-width: 500px;
+        /* Wider Box */
+    }
+}
+
+.dark .text-flip-box {
+    background-color: #171717;
+    /* neutral-900 */
+    color: white;
+    box-shadow: 0 1px 2px 0 rgb(255 255 255 / 0.05), 0 0 0 1px rgb(255 255 255 / 0.1);
+}
+
+/* Word Animations */
+.text-flip-word {
+    position: absolute;
+    /* Stack on top of each other */
+    white-space: nowrap;
+    will-change: transform, filter, opacity;
+}
+
+/* Enter State */
+.tf-enter {
+    transform: translateY(-40px);
+    filter: blur(10px);
+    opacity: 0;
+}
+
+/* Active State */
+.tf-active {
+    transform: translateY(0);
+    filter: blur(0px);
+    opacity: 1;
+    transition: transform 0.5s ease-out, filter 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+/* Exit State */
+.tf-exit {
+    transform: translateY(50px);
+    filter: blur(10px);
+    opacity: 0;
+    transition: transform 0.5s ease-in, filter 0.5s ease-in, opacity 0.5s ease-in;
+}
+
+/* Buttons Container */
+.text-flip-actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .text-flip-actions {
+        flex-direction: row;
+    }
+}
+
+/* Button Base */
+.tf-btn {
+    width: 14rem;
+    /* w-56 */
+    height: 3.5rem;
+    /* h-14 */
+    border-radius: 0.75rem;
+    /* rounded-xl */
+    font-size: 0.875rem;
+    /* text-sm */
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+/* Primary Button: Browse Products */
+.tf-btn-primary {
+    background-color: black;
+    border: 1px solid transparent;
+    color: white;
+}
+
+.dark .tf-btn-primary {
+    border-color: white;
+}
+
+.tf-btn-primary:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Secondary Button: New Arrivals */
+.tf-btn-secondary {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.tf-btn-secondary:hover {
+    background-color: #f5f5f5;
+    transform: translateY(-1px);
+}

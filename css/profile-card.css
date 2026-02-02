@@ -1,0 +1,181 @@
+/* Profile Card Component */
+:root {
+    --card-bg: #FFFFFF;
+    --card-header: #0F172A;
+    --card-text-primary: #0F172A;
+    --card-text-secondary: rgba(15, 23, 42, 0.6);
+    --card-accent: #6366F1;
+    --card-border: rgba(15, 23, 42, 0.1);
+}
+
+.dark {
+    --card-bg: #0F172A;
+    --card-header: #020617;
+    --card-text-primary: #FFFFFF;
+    --card-text-secondary: rgba(255, 255, 255, 0.6);
+    --card-accent: #22D3EE;
+    --card-border: rgba(255, 255, 255, 0.1);
+}
+
+.profile-card {
+    height: 520px;
+    width: 100%;
+    max-width: 400px;
+    margin: 1.5rem auto;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    background: var(--card-bg);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--card-border);
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .card-image-wrapper {
+    height: 154px;
+    width: 100%;
+    background: var(--card-header);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card .card-image-wrapper img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 4px solid var(--card-bg);
+    object-fit: cover;
+    display: block;
+    margin-top: 2rem;
+    z-index: 2;
+}
+
+/* Background patterns for the header */
+.profile-card .card-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image: radial-gradient(circle at 2px 2px, var(--card-accent) 1px, transparent 0);
+    background-size: 12px 12px;
+}
+
+.profile-card .card-content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-card .card-content h2 {
+    font-family: 'Syne', sans-serif;
+    color: var(--card-text-primary);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 2.5rem 0 0.5rem;
+    text-align: center;
+}
+
+.profile-card .card-content p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--card-text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.profile-card .card-stats {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    width: 100%;
+    border-top: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    display: flex;
+}
+
+.profile-card .card-stats li {
+    flex: 1;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.profile-card .card-stats li:nth-child(2) {
+    border-left: 1px solid var(--card-border);
+    border-right: 1px solid var(--card-border);
+}
+
+.profile-card .card-stats li span {
+    display: block;
+}
+
+.profile-card .card-stats li span:first-child {
+    font-weight: 800;
+    color: var(--card-text-primary);
+    font-size: 1.125rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.profile-card .card-stats li span:last-child {
+    font-size: 0.75rem;
+    color: var(--card-text-secondary);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-top: 0.25rem;
+}
+
+.profile-card .card-footer {
+    width: 100%;
+    padding: 0 1.5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card .card-footer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    background: var(--card-accent);
+    color: var(--card-header);
+    text-align: center;
+    padding: 0.75rem 0;
+    border-radius: 9999px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+}
+
+.profile-card .card-footer a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+    filter: brightness(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-card {
+    animation: fadeIn 0.5s ease backwards;
+}

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="brandGrad" x1="0" y1="0" x2="100" y2="100">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#7C3AED" />
+    </linearGradient>
+  </defs>
+  <!-- Hexagon Base -->
+  <path d="M50 5 L93.3 30 V80 L50 105 L6.7 80 V30 L50 5 Z" fill="url(#brandGrad)" transform="scale(0.9) translate(5,0)" opacity="0.1"/>
+  <path d="M50 10 L88 32 V77 L50 99 L12 77 V32 L50 10 Z" stroke="url(#brandGrad)" stroke-width="8" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Bolt / P Shape -->
+  <path d="M45 25 H60 C70 25 70 45 60 45 H55 L65 45 L40 85 L45 55 H35 L45 25 Z" fill="url(#brandGrad)" stroke="white" stroke-width="2"/>
+</svg>
