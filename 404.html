@@ -24,8 +24,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="global-reveal.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/global-reveal.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -36,114 +37,195 @@
 
     <!-- Navbar -->
     <nav
-        class="nav-glow fixed z-50 top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl rounded-full backdrop-blur-2xl shadow-lg shadow-indigo-500/10 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-2">
-                <i data-lucide="zap" class="w-8 h-8 text-indigo-600 dark:text-indigo-400"></i>
-                <span class="text-2xl font-black tracking-tighter text-slate-900 dark:text-white">ElectraHub</span>
+        class="nav-glow fixed z-50 top-3 md:top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
+        <div class="px-6 h-16 flex justify-between items-center">
+            <!-- Left: Logo & Brand -->
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div
+                    class="p-2 bg-indigo-600 rounded-full text-white shadow-lg group-hover:scale-110 transition-transform">
+                    <i data-lucide="zap" class="w-5 h-5 fill-current"></i>
+                </div>
+                <span
+                    class="text-xl font-bold tracking-tight text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">ElectraHub</span>
             </a>
-            <div class="hidden lg:flex items-center gap-8 font-medium text-slate-700 dark:text-slate-200">
+
+            <!-- Center: Primary Menu -->
+            <div
+                class="hidden lg:flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/50 p-1 rounded-full border border-slate-200/50 dark:border-slate-700/50 backdrop-blur-sm">
+                <!-- Home Dropdown -->
                 <div class="relative">
-                    <button id="nav-home-btn" data-target="nav-home-menu"
-                        class="nav-dropdown-trigger flex items-center gap-1 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                        Home <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                    <button data-target="nav-home-menu" aria-expanded="false"
+                        class="nav-dropdown-trigger px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all flex items-center gap-1.5 active:scale-95">
+                        Home <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
                     </button>
+                    <!-- Dropdown Menu -->
                     <div id="nav-home-menu"
-                        class="nav-dropdown-menu absolute top-full start-0 mt-2 w-48 bg-white dark:bg-slate-900 shadow-xl rounded-xl p-2 hidden border border-indigo-50 dark:border-slate-800">
+                        class="nav-dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-4 w-48 bg-white dark:bg-slate-900 shadow-custom-xl rounded-3xl p-2 border border-slate-100 dark:border-slate-800 ring-1 ring-black/5">
                         <a href="index.html"
-                            class="block px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">Home 1</a>
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <i data-lucide="home"
+                                class="w-4 h-4 text-indigo-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Home 1</span>
+                        </a>
                         <a href="index2.html"
-                            class="block px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">Home 2</a>
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <i data-lucide="layout-grid"
+                                class="w-4 h-4 text-purple-500 group-hover:scale-110 transition-transform"></i>
+                            <span>Home 2</span>
+                        </a>
                     </div>
                 </div>
+
+                <!-- Regular Links -->
                 <a href="about.html"
-                    class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">About</a>
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    About
+                </a>
                 <a href="services.html"
-                    class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Services</a>
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    Our Services
+                </a>
                 <a href="contact.html"
-                    class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Contact</a>
+                    class="px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all active:scale-95">
+                    Contact
+                </a>
+
+                <!-- Dashboard Dropdown -->
                 <div class="relative">
-                    <button id="nav-dashboards-btn" data-target="nav-dashboards-menu"
-                        class="nav-dropdown-trigger flex items-center gap-1 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                        Dashboards <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-300"></i>
+                    <button data-target="nav-dashboards-menu" aria-expanded="false"
+                        class="nav-dropdown-trigger px-5 py-2 rounded-full text-sm font-semibold text-slate-700 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-white hover:bg-white dark:hover:bg-slate-700/50 transition-all flex items-center gap-1.5 active:scale-95">
+                        Dashboard <i data-lucide="chevron-down" class="w-3.5 h-3.5 opacity-70"></i>
                     </button>
                     <div id="nav-dashboards-menu"
-                        class="nav-dropdown-menu absolute top-full left-0 mt-2 w-48 bg-white dark:bg-slate-900 shadow-xl rounded-xl p-2 hidden border border-indigo-50 dark:border-slate-800">
+                        class="nav-dropdown-menu absolute top-full left-1/2 -translate-x-1/2 mt-4 w-52 bg-white dark:bg-slate-900 shadow-custom-xl rounded-3xl p-2 border border-slate-100 dark:border-slate-800 ring-1 ring-black/5">
+                        <div class="px-4 py-2 text-xs font-bold text-slate-400 uppercase tracking-wider">Access Panels
+                        </div>
                         <a href="user_dashboard.html"
-                            class="block px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">User Panel</a>
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <div
+                                class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                                <i data-lucide="user" class="w-4 h-4"></i>
+                            </div>
+                            <span>User Panel</span>
+                        </a>
                         <a href="admin_dashboard.html"
-                            class="block px-4 py-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800">Admin Panel</a>
+                            class="flex items-center gap-3 px-4 py-3 rounded-2xl hover:bg-indigo-50 dark:hover:bg-slate-800 text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors group">
+                            <div
+                                class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-purple-600 dark:text-purple-400 group-hover:scale-110 transition-transform">
+                                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                            </div>
+                            <span>Admin Dashboard</span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="flex items-center gap-6">
-                <!-- Buttons with Explicit Text Colors for Visibility -->
-                <button id="rtl-toggle"
-                    class="text-slate-700 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"><i
-                        data-lucide="globe" class="w-5 h-5"></i></button>
-                <button id="theme-toggle"
-                    class="text-slate-700 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"><i
-                        data-lucide="moon" class="w-5 h-5 hidden dark:block"></i><i data-lucide="sun"
-                        class="w-5 h-5 block dark:hidden"></i></button>
+
+            <!-- Right: Actions -->
+            <div class="flex items-center gap-3">
+                <!-- Toggles -->
+                <div
+                    class="flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/20 p-1 rounded-full border border-slate-200/50 dark:border-slate-700/50">
+                    <button id="rtl-toggle"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        title="Toggle Direction">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                    </button>
+                    <button id="theme-toggle"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-900 dark:text-white transition-all"
+                        title="Toggle Theme">
+                        <span class="block dark:hidden">
+                            <i data-lucide="moon" class="w-4 h-4"></i>
+                        </span>
+                        <span class="hidden dark:block">
+                            <i data-lucide="sun" class="w-4 h-4"></i>
+                        </span>
+                    </button>
+                </div>
+
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+
+                <!-- Auth Buttons -->
                 <a href="login.html"
-                    class="px-6 py-2.5 rounded-full bg-indigo-600 text-white font-bold transition-all shadow-[0_0_10px_rgba(99,102,241,0.3)] hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] hidden sm:block">Log
-                    In</a>
+                    class="hidden sm:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
+                    Log In
+                </a>
                 <a href="signup.html"
-                    class="px-6 py-2.5 border border-indigo-500/50 font-bold text-slate-700 dark:text-white rounded-full hover:shadow-lg hover:scale-105 transition-all text-sm hidden sm:block">GET
-                    STARTED</a>
-                <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 dark:text-white"><i data-lucide="menu"
-                        class="w-6 h-6"></i></button>
+                    class="hidden sm:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
+                    Get Started
+                </a>
+
+                <!-- Mobile Menu Details -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden p-2 text-slate-900 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="mobile-overlay"></div>
-    <div id="mobile-menu" class="mobile-menu-drawer shadow-2xl p-6">
+    <div id="mobile-menu-overlay" class="mobile-overlay backdrop-blur-sm bg-black/40"></div>
+    <div id="mobile-menu"
+        class="mobile-menu-drawer shadow-2xl p-6 rounded-r-3xl border-r border-white/20 dark:border-slate-800">
         <div class="flex justify-between items-center mb-8">
-            <span class="text-xl font-black dark:text-white">ElectraHub</span>
-            <button id="mobile-menu-close-btn" class="p-2 text-slate-700 hover:text-rose-500"><i data-lucide="x"
-                    class="w-6 h-6"></i></button>
+            <span class="text-xl font-black dark:text-white flex items-center gap-2">
+                <i data-lucide="zap" class="w-6 h-6 text-indigo-500"></i> ElectraHub
+            </span>
+            <button id="mobile-menu-close-btn"
+                class="p-2 rounded-full hover:bg-rose-100 text-slate-700 hover:text-rose-500 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
         </div>
         <div class="space-y-4">
             <!-- Home Dropdown -->
             <div class="relative group">
                 <button onclick="document.getElementById('mobile-home-menu').classList.toggle('hidden')"
-                    class="w-full flex justify-between items-center p-3 rounded-lg bg-slate-50 dark:bg-slate-900 font-bold text-slate-700 dark:text-white">
+                    class="w-full flex justify-between items-center p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 font-bold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     Home <i data-lucide="chevron-down" class="w-4 h-4"></i>
                 </button>
-                <div id="mobile-home-menu" class="hidden pl-4 mt-2 space-y-2">
-                    <a href="index.html" class="block p-2 text-slate-600 dark:text-slate-300">Home 1</a>
-                    <a href="index2.html" class="block p-2 text-slate-600 dark:text-slate-300">Home 2</a>
+                <div id="mobile-home-menu" class="hidden pl-2 mt-2 space-y-1">
+                    <a href="index.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Home
+                        1</a>
+                    <a href="index2.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Home
+                        2</a>
                 </div>
             </div>
 
             <a href="about.html"
-                class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200">About</a>
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">About</a>
             <a href="services.html"
-                class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200">Services</a>
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Our
+                Services</a>
             <a href="contact.html"
-                class="block p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200">Contact</a>
+                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Contact</a>
 
             <!-- Dashboards Dropdown -->
             <div class="relative group">
                 <button onclick="document.getElementById('mobile-dash-menu').classList.toggle('hidden')"
-                    class="w-full flex justify-between items-center p-3 rounded-lg bg-slate-50 dark:bg-slate-900 font-bold text-slate-700 dark:text-white">
+                    class="w-full flex justify-between items-center p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 font-bold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     Dashboards <i data-lucide="chevron-down" class="w-4 h-4"></i>
                 </button>
-                <div id="mobile-dash-menu" class="hidden pl-4 mt-2 space-y-2">
-                    <a href="user_dashboard.html" class="block p-2 text-slate-600 dark:text-slate-300">User Panel</a>
-                    <a href="admin_dashboard.html" class="block p-2 text-slate-600 dark:text-slate-300">Admin Panel</a>
+                <div id="mobile-dash-menu" class="hidden pl-2 mt-2 space-y-1">
+                    <a href="user_dashboard.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">User
+                        Panel</a>
+                    <a href="admin_dashboard.html"
+                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Admin
+                        Panel</a>
                 </div>
             </div>
 
-            <div class="pt-4 space-y-3">
+            <div class="pt-6 space-y-3">
                 <a href="login.html"
-                    class="block w-full text-center py-3 rounded-xl border border-indigo-200 dark:border-slate-700 font-bold text-indigo-600 dark:text-indigo-400">Log
-                    In</a>
+                    class="block w-full text-center py-3.5 rounded-full border-2 border-indigo-100 dark:border-slate-700 font-bold text-indigo-600 dark:text-indigo-400 hover:border-indigo-200 transition-colors">
+                    Log In
+                </a>
                 <a href="signup.html"
-                    class="block w-full text-center py-3 rounded-xl bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/30">Get
-                    STARTED</a>
+                    class="block w-full text-center py-3.5 rounded-full bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all">
+                    Get Started
+                </a>
             </div>
         </div>
     </div>
@@ -188,8 +270,9 @@
     <div class="absolute bottom-20 right-20 w-6 h-6 bg-indigo-500 rounded-full blur-sm animate-float-3d"
         style="animation-delay: 2s;"></div>
 
-    <script src="main.js"></script>
-    <script src="global-reveal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/global-reveal.js"></script>
     <script>
         // Preloader & Page Transition
         const preloader = document.getElementById('flash-preloader');

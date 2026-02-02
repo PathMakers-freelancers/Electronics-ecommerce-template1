@@ -43,8 +43,8 @@
 <link
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
     rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="auth-style.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth-style.css">
 <script src="https://unpkg.com/lucide@latest"></script>
 
 
@@ -146,10 +146,14 @@
                         <i data-lucide="globe" class="w-4 h-4"></i>
                     </button>
                     <button id="theme-toggle"
-                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-900 dark:text-white transition-all"
                         title="Toggle Theme">
-                        <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
-                        <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+                        <span class="block dark:hidden">
+                            <i data-lucide="moon" class="w-4 h-4"></i>
+                        </span>
+                        <span class="hidden dark:block">
+                            <i data-lucide="sun" class="w-4 h-4"></i>
+                        </span>
                     </button>
                 </div>
 
@@ -258,46 +262,43 @@
     <div class="w-full h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent"></div>
 
     <!-- Footer -->
-    <footer class="bg-[#0F172A] text-white pt-20 pb-10 relative z-20">
+    <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            <!-- Col 1: Branding -->
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-slate-900"><i
-                            data-lucide="zap" class="w-6 h-6"></i></div>
-                    <span class="text-2xl font-bold">ElectraHub</span>
+                    <div class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-black">
+                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-white">ElectraHub</span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed">Next-generation electrical & tech components provider.
-                </p>
+                <p class="text-slate-400">Next-generation electrical & tech components provider.</p>
             </div>
-
-            <!-- Col 2: Explore -->
             <div>
-                <h3 class="font-bold text-lg mb-6">Explore</h3>
+                <h4 class="font-bold text-lg mb-6 text-white">Explore</h4>
                 <ul class="space-y-4 text-slate-400">
-                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a></li>
-                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors">About</a></li>
-                    <li><a href="services.html" class="hover:text-emerald-400 transition-colors">Services</a></li>
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors text-slate-400">Home</a>
+                    </li>
+                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors text-slate-400">About</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="hover:text-emerald-400 transition-colors text-slate-400">Services</a>
+                    </li>
                 </ul>
             </div>
-
-            <!-- Col 3: Account -->
             <div>
-                <h3 class="font-bold text-lg mb-6">Account</h3>
+                <h4 class="font-bold text-lg mb-6 text-white">Account</h4>
                 <ul class="space-y-4 text-slate-400">
-                    <li><a href="login.html" class="hover:text-emerald-400 transition-colors">Log In</a></li>
-                    <li><a href="contact.html" class="hover:text-emerald-400 transition-colors">Support</a></li>
+                    <li><a href="login.html" class="hover:text-emerald-400 transition-colors text-slate-400">Log In</a>
+                    </li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors text-slate-400">Support</a></li>
                 </ul>
             </div>
-
-            <!-- Col 4: Newsletter -->
             <div>
-                <h3 class="font-bold text-lg mb-6">Newsletter</h3>
+                <h4 class="font-bold text-lg mb-6 text-white">Newsletter</h4>
                 <div class="flex gap-2">
                     <input type="email" placeholder="Email"
-                        class="bg-slate-800 border border-slate-700 rounded-lg px-4 py-3 w-full outline-none text-white focus:border-emerald-400 transition-colors">
-                    <button
-                        class="bg-emerald-400 text-slate-900 font-bold px-6 rounded-lg hover:bg-emerald-300 transition-colors">Go</button>
+                        class="bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 w-full outline-none text-white placeholder:text-slate-500">
+                    <button class="bg-emerald-400 text-black font-bold px-6 rounded-lg hover:bg-emerald-300">Go</button>
                 </div>
             </div>
         </div>
@@ -305,7 +306,7 @@
             &copy; 2026 ElectraHub Inc. All rights reserved.
         </div>
     </footer>
-    <script src="navbar.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>

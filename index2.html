@@ -89,16 +89,16 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <!-- stars.css removed -->
-    <link rel="stylesheet" href="text-generate.css">
-    <link rel="stylesheet" href="anime-fonts.css">
-    <link rel="stylesheet" href="global-reveal.css">
-    <link rel="stylesheet" href="text-effects.css">
-    <link rel="stylesheet" href="text-reveal.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="profile-card.css">
-    <link rel="stylesheet" href="community-favorites.css">
+    <link rel="stylesheet" href="css/text-generate.css">
+    <link rel="stylesheet" href="css/anime-fonts.css">
+    <link rel="stylesheet" href="css/global-reveal.css">
+    <link rel="stylesheet" href="css/text-effects.css">
+    <link rel="stylesheet" href="css/text-reveal.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/profile-card.css">
+    <link rel="stylesheet" href="css/community-favorites.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* Standard Body Scroll */
@@ -248,7 +248,7 @@
 </head>
 
 <body
-    class="home-2-body bg-[linear-gradient(135deg,#B0EACD,#FFDAB9,#FFC0CB)] dark:bg-midnight transition-colors duration-700 text-black dark:text-white antialiased selection:bg-cyan-electric selection:text-white">
+    class="bg-ivory dark:bg-gradient-to-b dark:from-[#000035] dark:to-black transition-colors duration-700 text-navy dark:text-white antialiased selection:bg-cyan-electric selection:text-white">
 
     <!-- Shooting Stars Background -->
     <!-- Shooting Stars Background REMOVED -->
@@ -257,7 +257,7 @@
 
     <!-- Navbar -->
     <nav
-        class="nav-glow fixed z-50 top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
+        class="nav-glow fixed z-50 top-3 md:top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
         <div class="px-6 h-16 flex justify-between items-center">
             <!-- Left: Logo & Brand -->
             <a href="index.html" class="flex items-center gap-3 group">
@@ -351,10 +351,14 @@
                         <i data-lucide="globe" class="w-4 h-4"></i>
                     </button>
                     <button id="theme-toggle"
-                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-900 dark:text-white transition-all"
                         title="Toggle Theme">
-                        <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
-                        <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+                        <span class="block dark:hidden">
+                            <i data-lucide="moon" class="w-4 h-4"></i>
+                        </span>
+                        <span class="hidden dark:block">
+                            <i data-lucide="sun" class="w-4 h-4"></i>
+                        </span>
                     </button>
                 </div>
 
@@ -465,7 +469,7 @@
                     </div>
 
                     <h1
-                        class="text-6xl md:text-8xl font-black font-anime leading-tight text-transparent bg-clip-text bg-gradient-to-r from-navy to-indigo-600 dark:from-white dark:to-cyan-electric drop-shadow-2xl">
+                        class="text-4xl md:text-8xl font-black font-anime leading-tight text-transparent bg-clip-text bg-gradient-to-r from-navy to-indigo-600 dark:from-white dark:to-cyan-electric drop-shadow-2xl">
                         NEXT GEN <br>
                         <span class="text-indigo-600 dark:text-neon">REALITY</span>
                     </h1>
@@ -537,13 +541,14 @@
                 </div>
             </div>
         </section>
+        <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
         <!-- Parallax Wrapper Continues -->
 
         <!-- MAIN STATIC CONTENT -->
         <main class="relative bg-transparent z-10">
 
             <!-- 2. CATEGORIES: FLOATING ORBS -->
-            <section class="py-16 relative z-10">
+            <section class="py-10 md:py-16 relative z-10">
                 <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
                     <h2 class="text-4xl font-outfit font-black text-navy dark:text-white mb-4">Core Systems</h2>
                     <p class="text-navy/60 dark:text-ivory/80">Select your upgrade path.</p>
@@ -636,6 +641,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 3. NEW ARRIVALS: ASYMMETRIC DEPTH -->
             <section class="py-16 relative z-10 overflow-hidden">
@@ -711,6 +717,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 3.1 NEW 3D PROTOTYPE CARDS (Tourist Attractions Style) -->
             <section class="py-24 relative z-10">
@@ -758,161 +765,99 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
-            <!-- SECTION 3.5: Quote Section with Lens Effect -->
-            <section class="py-32 flex items-center justify-center min-h-[60vh] relative z-20 mt-20">
-                <div class="max-w-5xl mx-auto px-6 text-center relative">
+            <!-- SECTION 3.5: Featured Creator Spotlight -->
+            <section class="py-24 relative z-20 overflow-hidden">
+                <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-                    <!-- Visible Container Box -->
-                    <div class="relative border-[3px] border-black dark:border-white rounded-[3rem] p-12 md:p-20 overflow-hidden bg-white/5 backdrop-blur-sm group cursor-none"
-                        id="lens-container">
+                    <!-- Creator Image / Visual -->
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-cyan-electric to-purple-600 rounded-full blur-xl opacity-20 group-hover:opacity-40 transition duration-1000 animate-pulse-glow">
+                        </div>
+                        <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
+                            <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?q=80&w=1470&auto=format&fit=crop"
+                                alt="Featured Creator"
+                                class="w-full h-[500px] object-cover filter brightness-110 hover:scale-105 transition-transform duration-700">
 
-                        <!-- Faint/Hidden Text (Placeholder) -->
-                        <p
-                            class="text-4xl md:text-6xl font-black font-heading leading-tight opacity-20 text-black dark:text-white select-none transition-opacity duration-300">
-                            Empower your life with the latest in electronics. From innovative designs to unbeatable
-                            performance, we bring you technology that transforms everyday living.
-                        </p>
+                            <!-- Overlay Tags -->
+                            <div class="absolute bottom-6 left-6 flex flex-wrap gap-2">
+                                <span
+                                    class="px-3 py-1 bg-black/60 backdrop-blur-md border border-cyan-electric/50 text-cyan-electric text-xs font-mono rounded-full">#TECH_REVIEWER</span>
+                                <span
+                                    class="px-3 py-1 bg-black/60 backdrop-blur-md border border-purple-500/50 text-purple-400 text-xs font-mono rounded-full">#VR_ENTHUSIAST</span>
+                            </div>
+                        </div>
 
-                        <!-- Reveal Layer (Clipped) -->
-                        <p class="absolute inset-0 flex items-center justify-center p-12 md:p-20 text-4xl md:text-6xl font-black font-heading leading-tight text-black dark:text-white pointer-events-none"
-                            style="clip-path: circle(0px at 0px 0px); transition: clip-path 0.05s linear;"
-                            id="lens-text">
-                            Empower your life with the latest in electronics. From innovative designs to unbeatable
-                            performance, we bring you technology that transforms everyday living.
-                        </p>
-
-                        <!-- Flashlight Cursor -->
-                        <div id="lens-cursor"
-                            class="absolute w-40 h-40 rounded-full border-2 border-black/30 dark:border-white/30 pointer-events-none -translate-x-1/2 -translate-y-1/2 hidden lg:block z-50 bg-white/10 backdrop-contrast-125 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                        <!-- Floating Social Proof -->
+                        <div
+                            class="absolute top-10 -right-6 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-800 animate-float-medium hidden md:block">
+                            <div class="flex items-center gap-3">
+                                <div class="p-2 bg-red-100 dark:bg-red-900/30 rounded-full text-red-600">
+                                    <i data-lucide="youtube" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-bold uppercase">Subscribers</div>
+                                    <div class="text-lg font-black text-slate-900 dark:text-white">1.2M+</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
+                    <!-- Creator Content -->
+                    <div class="space-y-8">
+                        <div>
+                            <div class="inline-flex items-center gap-2 mb-4">
+                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                <span class="text-sm font-bold tracking-widest text-slate-500 uppercase">Community
+                                    Spotlight</span>
+                            </div>
+                            <h2
+                                class="text-4xl md:text-5xl font-black font-outfit text-navy dark:text-white leading-tight">
+                                "The <span
+                                    class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-electric to-purple-500">Prism
+                                    Vision</span> headset isn't just a display. It's a portal."
+                            </h2>
+                        </div>
+
+                        <div
+                            class="p-6 bg-white/50 dark:bg-slate-800/50 rounded-2xl border-l-4 border-cyan-electric backdrop-blur-sm">
+                            <p class="text-lg text-slate-700 dark:text-slate-300 italic font-medium">
+                                "I've reviewed hundreds of VR units, but ElectraHub's latest prototype effectively
+                                dissolves the pixel grid. The immersion is absolute. This is the hardware we've been
+                                waiting for."
+                            </p>
+                        </div>
+
+                        <div
+                            class="flex items-center justify-between border-t border-slate-200 dark:border-slate-700 pt-8">
+                            <div class="flex items-center gap-4">
+                                <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?q=80&w=100&auto=format&fit=crop"
+                                    class="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-slate-700 shadow-lg">
+                                <div>
+                                    <div class="font-bold text-navy dark:text-white text-lg">Alex Chen</div>
+                                    <div class="text-cyan-electric dark:text-neon text-sm font-bold">@ChenTechReviews
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#"
+                                class="px-6 py-3 rounded-full bg-navy dark:bg-white text-white dark:text-navy font-bold hover:shadow-lg transition-all flex items-center gap-2 group">
+                                Watch Review <i data-lucide="play-circle"
+                                    class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-
-                <script>
-                    const lensContainer = document.getElementById('lens-container');
-                    const lensText = document.getElementById('lens-text');
-                    const lensCursor = document.getElementById('lens-cursor');
-
-                    if (lensContainer && lensText) {
-                        lensContainer.addEventListener('mousemove', (e) => {
-                            const rect = lensContainer.getBoundingClientRect();
-                            const x = e.clientX - rect.left;
-                            const y = e.clientY - rect.top;
-
-                            // Reveal text at cursor
-                            lensText.style.clipPath = `circle(120px at ${x}px ${y}px)`;
-
-                            // Move custom cursor
-                            if (lensCursor) {
-                                lensCursor.style.left = x + 'px';
-                                lensCursor.style.top = y + 'px';
-                                lensCursor.style.opacity = '1';
-                            }
-                        });
-
-                        lensContainer.addEventListener('mouseenter', () => {
-                            if (lensCursor) lensCursor.style.opacity = '1';
-                        });
-
-                        lensContainer.addEventListener('mouseleave', () => {
-                            if (lensCursor) lensCursor.style.opacity = '0';
-                            lensText.style.clipPath = `circle(0px at 50% 50%)`;
-                        });
-                    }
-                </script>
             </section>
+
+            <!-- Script removed -->
+            </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 4. BEST SELLERS: DEPTH STACK -->
-            <section class="py-16 relative z-10">
-                <div class="max-w-7xl mx-auto px-6">
-                    <div class="flex justify-between items-end mb-16">
-                        <h2 class="text-4xl font-outfit font-black text-navy dark:text-white">Community<br>Favorites
-                        </h2>
-                        <div class="hidden md:flex gap-2 opacity-0 pointer-events-none">
-                            <!-- Arrows Hidden as requested -->
-                        </div>
-                    </div>
+            <!-- Duplicate Community Favorites Removed -->
 
-                    <!-- New Animated Container -->
-                    <div class="community-container">
-                        <!-- Card 1 -->
-                        <div class="community-card">
-                            <div class="community-image">
-                                <img src="Assets/8.jpeg" alt="Neural Interface">
-                            </div>
-                            <div class="community-content">
-                                <h3>Neural Interface</h3>
-                                <p>Next-generation brain-computer link for seamless digital interaction and control.
-                                </p>
-                                <div class="flex justify-center gap-1 mb-4">
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                </div>
-                                <div class="price">$3,200</div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="community-card">
-                            <div class="community-image">
-                                <img src="Assets/tv.jpeg" alt="Cyber Deck">
-                            </div>
-                            <div class="community-content">
-                                <h3>Cyber Deck</h3>
-                                <p>High-performance portable hacking terminal with multi-frequency broadcast
-                                    capabilities.
-                                </p>
-                                <div class="flex justify-center gap-1 mb-4">
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                </div>
-                                <div class="price">$899</div>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="community-card">
-                            <div class="community-image">
-                                <img src="Assets/7.jpeg" alt="Vision Lens">
-                            </div>
-                            <div class="community-content">
-                                <h3>Vision Lens</h3>
-                                <p>Advanced AR contact lenses with real-time HUD and bio-metric integration.</p>
-                                <div class="flex justify-center gap-1 mb-4">
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star"
-                                        class="w-4 h-4 fill-cyan-electric text-cyan-electric dark:fill-neon dark:text-neon"></i>
-                                    <i data-lucide="star" class="w-4 h-4 text-navy/20 dark:text-white/20"></i>
-                                </div>
-                                <div class="price">$1,450</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             <!-- 5. OFFERS: HOLOGRAPHIC BANNER -->
             <section class="py-12 px-6 md:px-0 relative">
@@ -947,12 +892,13 @@
                             <div
                                 class="absolute inset-0 bg-cyan-electric/20 dark:bg-neon/20 blur-[80px] rounded-full animate-pulse-glow">
                             </div>
-                            <img src="Assets/light.jpeg"
+                            <img src="Assets/light.jpeg" loading="lazy"
                                 class="relative z-10 w-64 md:w-80 object-contain rotate-12 filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.5)] animate-float-medium hover:rotate-0 transition-transform duration-500">
                         </div>
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 6. FEATURED: PERSPECTIVE VIEW -->
             <section class="py-16 bg-pastel-bg dark:bg-midnight relative">
@@ -962,7 +908,7 @@
                         <div
                             class="absolute -inset-10 bg-gradient-to-r from-cyan-electric/20 to-navy/20 dark:from-neon/20 dark:to-purple-600/20 rounded-full blur-[100px] group-hover:opacity-100 transition-opacity">
                         </div>
-                        <img src="Assets/tv.jpeg"
+                        <img src="Assets/tv.jpeg" loading="lazy"
                             class="relative z-10 w-full rounded-2xl shadow-2xl transform rotate-y-12 rotate-x-6 group-hover:rotate-0 transition-all duration-700 ease-out filter grayscale group-hover:grayscale-0">
                     </div>
 
@@ -1030,6 +976,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 7. WHY CHOOSE US: INTERACTIVE ICONS -->
             <section class="py-16 relative z-10">
@@ -1072,10 +1019,10 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 8. BRANDS: HOLOGRAPHIC STRIP -->
-            <section
-                class="py-16 border-y border-pastel-pink dark:border-white/5 bg-pastel-pink/10 dark:bg-white/5 backdrop-blur-sm overflow-hidden relative">
+            <section class="py-16 bg-pastel-pink/10 dark:bg-white/5 backdrop-blur-sm overflow-hidden relative">
 
                 <style>
                     @keyframes brands-marquee {
@@ -1173,6 +1120,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 9. REVIEWS: GLASS PANELS -->
             <section class="py-16 relative z-10">
@@ -1229,6 +1177,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 10. APP: IMMERSIVE CLOSE (Auto Scroll) -->
             <section class="py-16 bg-navy dark:bg-midnight relative overflow-hidden group">
@@ -1302,6 +1251,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 11. HOLOGRAPHIC SPECS: 3D TABLE -->
             <section class="py-16 relative z-10">
@@ -1345,6 +1295,7 @@
                             </div>
                         </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 12. SECRET PROJECTS: THE FOUNDRY -->
             <section class="py-16 bg-navy/5 dark:bg-white/5 overflow-hidden relative">
@@ -1385,6 +1336,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 13. ECOSYSTEM MAP: NODE NETWORK -->
             <section class="py-16 relative">
@@ -1413,36 +1365,34 @@
                         <!-- Center Node -->
                         <div
                             class="relative z-10 w-40 h-48 rounded-full bg-navy dark:bg-white flex items-center justify-center p-2 shadow-[0_0_50px_rgba(6,182,212,0.4)] animate-pulse-glow">
-                            <img src="Assets/light4.jpeg" class="w-full h-full object-cover">
+                            <img src="Assets/light4.jpeg" class="w-full h-full object-cover" loading="lazy">
                         </div>
 
                         <!-- Satellite Nodes -->
                         <!-- Top Left -->
                         <div
                             class="absolute top-[20%] left-[20%] -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-white dark:bg-midnight p-1 border border-cyan-electric shadow-lg z-10 hover:scale-110 transition-transform">
-                            <img src="Assets/6.jpeg" class="w-full h-full object-cover rounded-full">
+                            <img src="Assets/6.jpeg" class="w-full h-full object-cover rounded-full" loading="lazy">
                         </div>
                         <!-- Top Right -->
                         <div
                             class="absolute top-[20%] right-[20%] translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-white dark:bg-midnight p-1 border border-cyan-electric shadow-lg z-10 hover:scale-110 transition-transform">
-                            <img src="Assets/7.jpeg" class="w-full h-full object-cover rounded-full">
+                            <img src="Assets/7.jpeg" class="w-full h-full object-cover rounded-full" loading="lazy">
                         </div>
                         <!-- Bottom Left -->
                         <div
                             class="absolute bottom-[20%] left-[20%] -translate-x-1/2 translate-y-1/2 w-24 h-24 rounded-full bg-white dark:bg-midnight p-1 border border-cyan-electric shadow-lg z-10 hover:scale-110 transition-transform">
-                            <img src="Assets/8.jpeg" class="w-full h-full object-cover rounded-full">
+                            <img src="Assets/8.jpeg" class="w-full h-full object-cover rounded-full" loading="lazy">
                         </div>
                         <!-- Bottom Right -->
                         <div
                             class="absolute bottom-[20%] right-[20%] translate-x-1/2 translate-y-1/2 w-24 h-24 rounded-full bg-white dark:bg-midnight p-1 border border-cyan-electric shadow-lg z-10 hover:scale-110 transition-transform">
-                            <img src="Assets/9.jpeg" class="w-full h-full object-cover rounded-full">
+                            <img src="Assets/9.jpeg" class="w-full h-full object-cover rounded-full" loading="lazy">
                         </div>
                     </div>
                 </div>
             </section>
-
-
-
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 17. MATERIAL SCIENCE: MACRO SHOTS -->
             <section class="py-16 relative z-10">
@@ -1454,12 +1404,13 @@
                             aerospace-grade composites.</p>
                         <div class="grid grid-cols-2 gap-4">
                             <div>
-                                <img src="Assets/light.jpeg" class="rounded-xl h-24 w-full object-cover">
+                                <img src="Assets/light.jpeg" class="rounded-xl h-24 w-full object-cover" loading="lazy">
                                 <span
                                     class="text-xs font-mono font-bold mt-2 block text-cyan-electric dark:text-neon">GRAPHENE</span>
                             </div>
                             <div>
-                                <img src="Assets/light2.jpeg" class="rounded-xl h-24 w-full object-cover">
+                                <img src="Assets/light2.jpeg" class="rounded-xl h-24 w-full object-cover"
+                                    loading="lazy">
                                 <span
                                     class="text-xs font-mono font-bold mt-2 block text-cyan-electric dark:text-neon">LIQUID
                                     CRYSTAL</span>
@@ -1467,14 +1418,16 @@
                         </div>
                     </div>
                     <div class="relative h-[400px] w-full bg-black rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="Assets/speaker 2.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-80">
+                        <img src="Assets/speaker 2.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-80"
+                            loading="lazy">
                         <div class="absolute inset-0 bg-scan-line animate-scan"></div>
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 18. SUSTAINABILITY: CIRCULAR DATA -->
-            <section class="py-12 border-y border-navy/5 dark:border-white/5">
+            <section class="py-12">
                 <div class="max-w-7xl mx-auto px-6 flex justify-around flex-wrap gap-8 text-center">
                     <div
                         class="w-40 h-40 rounded-full border-4 border-cyan-electric/30 flex items-center justify-center relative">
@@ -1500,6 +1453,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 19. SERVER STATUS: MAP -->
             <section class="py-16 bg-midnight relative overflow-hidden">
@@ -1514,6 +1468,94 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
+
+            <!-- 19.5 COMMUNITY FAVORITES: RESTORED -->
+            <section class="py-24 relative z-10 bg-slate-50 dark:bg-slate-900/50">
+                <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+                    <h2 class="text-4xl font-black font-outfit text-navy dark:text-white">Community Favorites</h2>
+                </div>
+                <!-- Restored structure matching community-favorites.css -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Card 1 -->
+                    <div class="flip-card h-96 cursor-pointer group perspective-1000">
+                        <div
+                            class="flip-card-inner relative w-full h-full transition-transform duration-500 transform-style-3d border border-navy/20 dark:border-neon/30 bg-white/5 backdrop-blur-sm rounded-2xl">
+                            <!-- Front -->
+                            <div
+                                class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden">
+                                <img src="Assets/3.jpeg" alt="Smart Lamp" class="w-full h-full object-cover">
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-navy dark:bg-slate-900 transform rotate-y-180 flex flex-col items-center justify-center border border-cyan-electric dark:border-neon p-6 text-center">
+                                <h3 class="text-white font-bold font-outfit text-xl mb-2">Zenith Lamp</h3>
+                                <p class="text-slate-300 text-sm mb-4">Ambient lighting for modern spaces.</p>
+                                <div class="text-cyan-electric font-bold text-2xl">$149</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="flip-card h-96 cursor-pointer group perspective-1000">
+                        <div
+                            class="flip-card-inner relative w-full h-full transition-transform duration-500 transform-style-3d border border-navy/20 dark:border-neon/30 bg-white/5 backdrop-blur-sm rounded-2xl">
+                            <!-- Front -->
+                            <div
+                                class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden">
+                                <img src="Assets/6.jpeg" alt="Audio" class="w-full h-full object-cover">
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-navy dark:bg-slate-900 transform rotate-y-180 flex flex-col items-center justify-center border border-cyan-electric dark:border-neon p-6 text-center">
+                                <h3 class="text-white font-bold font-outfit text-xl mb-2">Sonic Pro</h3>
+                                <p class="text-slate-300 text-sm mb-4">Noise cancelling heavyweights.</p>
+                                <div class="text-cyan-electric font-bold text-2xl">$299</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="flip-card h-96 cursor-pointer group perspective-1000">
+                        <div
+                            class="flip-card-inner relative w-full h-full transition-transform duration-500 transform-style-3d border border-navy/20 dark:border-neon/30 bg-white/5 backdrop-blur-sm rounded-2xl">
+                            <!-- Front -->
+                            <div
+                                class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden">
+                                <img src="Assets/speaker3.jpeg" alt="Camera" class="w-full h-full object-cover">
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-navy dark:bg-slate-900 transform rotate-y-180 flex flex-col items-center justify-center border border-cyan-electric dark:border-neon p-6 text-center">
+                                <h3 class="text-white font-bold font-outfit text-xl mb-2">Lens X1</h3>
+                                <p class="text-slate-300 text-sm mb-4">Professional grade optics.</p>
+                                <div class="text-cyan-electric font-bold text-2xl">$1,299</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="flip-card h-96 cursor-pointer group perspective-1000">
+                        <div
+                            class="flip-card-inner relative w-full h-full transition-transform duration-500 transform-style-3d border border-navy/20 dark:border-neon/30 bg-white/5 backdrop-blur-sm rounded-2xl">
+                            <!-- Front -->
+                            <div
+                                class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden">
+                                <img src="Assets/Apple AirPods Pro 2 w_ Noise Canceling, Spatial Audio, USB-C & Hearing Assist-Bluetooth Headphones.jpg"
+                                    alt="Watch" class="w-full h-full object-cover">
+                            </div>
+                            <!-- Back -->
+                            <div
+                                class="flip-card-back absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-navy dark:bg-slate-900 transform rotate-y-180 flex flex-col items-center justify-center border border-cyan-electric dark:border-neon p-6 text-center">
+                                <h3 class="text-white font-bold font-outfit text-xl mb-2">Chrono Smart</h3>
+                                <p class="text-slate-300 text-sm mb-4">Timekeeping evolved.</p>
+                                <div class="text-cyan-electric font-bold text-2xl">$399</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 20. FAQ: ACCORDION -->
             <section class="py-16 relative z-10">
@@ -1558,6 +1600,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- 7. NEURAL NETWORK (Flip Cards) -->
             <section class="py-16 relative z-10 px-6">
@@ -1600,8 +1643,7 @@
                         </div>
 
                         <!-- Node 2 -->
-                        <div class="flip-card h-64 cursor-pointer group perspective-1000"
-                            onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card h-64 cursor-pointer group perspective-1000">
                             <div
                                 class="flip-card-inner relative w-full h-full transition-transform duration-500 transform-style-3d border border-navy/20 dark:border-neon/30 bg-white/5 backdrop-blur-sm rounded-xl">
                                 <div
@@ -1628,8 +1670,7 @@
                         </div>
 
                         <!-- Node 3 -->
-                        <div class="flip-card h-64 cursor-pointer group perspective-1000"
-                            onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card h-64 cursor-pointer group perspective-1000">
                             <div
                                 class="flip-card-inner relative w-full h-full transition-transform duration-500 transform-style-3d border border-navy/20 dark:border-neon/30 bg-white/5 backdrop-blur-sm rounded-xl">
                                 <div
@@ -1654,8 +1695,7 @@
                         </div>
 
                         <!-- Node 4 -->
-                        <div class="flip-card h-64 cursor-pointer group perspective-1000"
-                            onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card h-64 cursor-pointer group perspective-1000">
                             <div
                                 class="flip-card-inner relative w-full h-full transition-transform duration-500 transform-style-3d border border-navy/20 dark:border-neon/30 bg-white/5 backdrop-blur-sm rounded-xl">
                                 <div
@@ -1680,8 +1720,7 @@
                         </div>
 
                         <!-- Node 5 -->
-                        <div class="flip-card h-64 cursor-pointer group perspective-1000"
-                            onclick="this.classList.toggle('flipped')">
+                        <div class="flip-card h-64 cursor-pointer group perspective-1000">
                             <div
                                 class="flip-card-inner relative w-full h-full transition-transform duration-500 transform-style-3d border border-navy/20 dark:border-neon/30 bg-white/5 backdrop-blur-sm rounded-xl">
                                 <div
@@ -1723,17 +1762,13 @@
                             transform: rotateY(180deg);
                         }
 
-                        .flipped .flip-card-inner {
+                        .group:hover .flip-card-inner {
                             transform: rotateY(180deg);
                         }
                     </style>
                 </div>
             </section>
-
-
-
-
-
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- NEW SECTION 1: AI INTEGRATION -->
             <section class="py-16 relative z-10 bg-navy dark:bg-black/50 overflow-hidden">
@@ -1775,6 +1810,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- NEW SECTION 2: QUANTUM PROCESSING -->
             <section class="py-16 relative z-10">
@@ -1822,6 +1858,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- NEW SECTION 3: HOLOGRAPHIC DISPLAY -->
             <section class="py-16 relative z-10 bg-ivory dark:bg-midnight/30 overflow-hidden">
@@ -1876,6 +1913,7 @@
                     </div>
                 </div>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- SECTION: CTA (Holographic Future) -->
             <section class="py-16 px-6 relative overflow-hidden z-20">
@@ -2013,44 +2051,51 @@
                     }
                 </style>
             </section>
+            <div class="w-full h-px bg-slate-200 dark:bg-slate-600 opacity-50 my-0"></div>
 
             <!-- Footer -->
-            <footer class="bg-[#0F172A] text-white pt-20 pb-10">
+            <!-- Footer -->
+            <!-- Footer -->
+            <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800">
                 <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div class="space-y-6">
                         <div class="flex items-center gap-3">
                             <div
-                                class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-slate-900">
+                                class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-black">
                                 <i data-lucide="zap" class="w-6 h-6"></i>
                             </div>
-                            <span class="text-2xl font-bold">ElectraHub</span>
+                            <span class="text-2xl font-bold text-white">ElectraHub</span>
                         </div>
                         <p class="text-slate-400">Next-generation electrical & tech components provider.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-6">Explore</h4>
+                        <h4 class="font-bold text-lg mb-6 text-white">Explore</h4>
                         <ul class="space-y-4 text-slate-400">
-                            <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a></li>
-                            <li><a href="about.html" class="hover:text-emerald-400 transition-colors">About</a></li>
-                            <li><a href="services.html" class="hover:text-emerald-400 transition-colors">Services</a>
+                            <li><a href="index.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Home</a></li>
+                            <li><a href="about.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">About</a></li>
+                            <li><a href="services.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Services</a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-6">Account</h4>
+                        <h4 class="font-bold text-lg mb-6 text-white">Account</h4>
                         <ul class="space-y-4 text-slate-400">
-                            <li><a href="login.html" class="hover:text-emerald-400 transition-colors">Log In</a>
+                            <li><a href="login.html" class="hover:text-emerald-400 transition-colors text-slate-400">Log
+                                    In</a></li>
+                            <li><a href="#" class="hover:text-emerald-400 transition-colors text-slate-400">Support</a>
                             </li>
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Support</a></li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-6">Newsletter</h4>
+                        <h4 class="font-bold text-lg mb-6 text-white">Newsletter</h4>
                         <div class="flex gap-2">
                             <input type="email" placeholder="Email"
-                                class="bg-slate-800 border-none rounded-lg px-4 py-3 w-full outline-none text-white">
+                                class="bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 w-full outline-none text-white placeholder:text-slate-500">
                             <button
-                                class="bg-emerald-400 text-slate-900 font-bold px-6 rounded-lg hover:bg-emerald-300">Go</button>
+                                class="bg-emerald-400 text-black font-bold px-6 rounded-lg hover:bg-emerald-300">Go</button>
                         </div>
                     </div>
                 </div>
@@ -2060,11 +2105,11 @@
             </footer>
     </div>
 
-    <script src="main.js"></script>
-    <script src="navbar.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
 
-    <script src="text-generate.js"></script>
-    <script src="global-reveal.js"></script>
+    <script src="js/text-generate.js"></script>
+    <script src="js/global-reveal.js"></script>
 
     <script>
         // Digital Rain Generation

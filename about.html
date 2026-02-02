@@ -87,12 +87,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="3d-marquee.css">
-    <link rel="stylesheet" href="global-reveal.css">
-    <link rel="stylesheet" href="anime-fonts.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="profile-card.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/3d-marquee.css">
+    <link rel="stylesheet" href="css/global-reveal.css">
+    <link rel="stylesheet" href="css/anime-fonts.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/profile-card.css">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         /* CORE 3D ENGINE */
@@ -224,7 +224,7 @@
 
     <!-- Navbar -->
     <nav
-        class="nav-glow fixed z-50 top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
+        class="nav-glow fixed z-50 top-3 md:top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
         <div class="px-6 h-16 flex justify-between items-center">
             <!-- Left: Logo & Brand -->
             <a href="index.html" class="flex items-center gap-3 group">
@@ -318,10 +318,14 @@
                         <i data-lucide="globe" class="w-4 h-4"></i>
                     </button>
                     <button id="theme-toggle"
-                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-900 dark:text-white transition-all"
                         title="Toggle Theme">
-                        <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
-                        <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+                        <span class="block dark:hidden">
+                            <i data-lucide="moon" class="w-4 h-4"></i>
+                        </span>
+                        <span class="hidden dark:block">
+                            <i data-lucide="sun" class="w-4 h-4"></i>
+                        </span>
                     </button>
                 </div>
 
@@ -500,15 +504,15 @@
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/speaker.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/tv.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/4.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                 </div>
 
@@ -518,36 +522,36 @@
                                     <!-- Images Col 2 -->
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/5.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img
                                             src="Assets/logo_elec_services-removebg-preview.png"
-                                            class="marquee-img bg-black/50 p-2 rounded-xl">
+                                            class="marquee-img bg-black/50 p-2 rounded-xl" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/6.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/7.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/light2.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/speaker 2.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/tv2.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/8.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                 </div>
 
@@ -557,37 +561,37 @@
                                     <!-- Images Col 3 -->
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/9.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img
                                             src="Assets/logo_elec_contact-removebg-preview.png"
-                                            class="marquee-img bg-black/50 p-2 rounded-xl">
+                                            class="marquee-img bg-black/50 p-2 rounded-xl" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/light3.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/speaker3.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/tv3.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img
                                             src="Assets/Apple AirPods Pro 2 w_ Noise Canceling, Spatial Audio, USB-C & Hearing Assist-Bluetooth Headphones.jpg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/per1.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/per2.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                 </div>
 
@@ -597,31 +601,31 @@
                                     <!-- Images Col 4 -->
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/per3.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/light4.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/speaker4.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/per4.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/per5.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/girl_cart.png"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                     <div class="marquee-image-wrapper">
                                         <div class="grid-line-horizontal"></div><img src="Assets/light.jpeg"
-                                            class="marquee-img">
+                                            class="marquee-img" loading="lazy">
                                     </div>
                                 </div>
                             </div>
@@ -660,12 +664,13 @@
                             class="absolute -inset-4 bg-navy/5 dark:bg-white/5 rounded-3xl transform rotate-3 transition-transform group-hover:rotate-6">
                         </div>
                         <img src="Assets/1.jpeg"
-                            class="relative rounded-2xl shadow-2xl filter grayscale group-hover:grayscale-0 transition-all duration-700 transform rotate-y-12 rotate-x-6 group-hover:rotate-0">
+                            class="relative rounded-2xl shadow-2xl filter grayscale group-hover:grayscale-0 transition-all duration-700 transform rotate-y-12 rotate-x-6 group-hover:rotate-0"
+                            loading="lazy">
                     </div>
                 </div>
             </section>
 
-            <link rel="stylesheet" href="about-timeline.css">
+            <link rel="stylesheet" href="css/about-timeline.css">
 
             <!-- TIMELINE SECTION -->
             <div class="timeline-container bg-white dark:bg-black">
@@ -693,8 +698,8 @@
                                     electronics accessible, reliable, and affordable for everyone.</p>
                             </div>
                             <div class="timeline-content-grid">
-                                <img src="Assets/1.jpeg" class="timeline-img">
-                                <img src="Assets/2.jpeg" class="timeline-img">
+                                <img src="Assets/1.jpeg" class="timeline-img" loading="lazy">
+                                <img src="Assets/2.jpeg" class="timeline-img" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -715,8 +720,8 @@
                                     genuine products, transparent pricing, and customer satisfaction.</p>
                             </div>
                             <div class="timeline-content-grid">
-                                <img src="Assets/3.jpeg" class="timeline-img">
-                                <img src="Assets/4.jpeg" class="timeline-img">
+                                <img src="Assets/3.jpeg" class="timeline-img" loading="lazy">
+                                <img src="Assets/4.jpeg" class="timeline-img" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -737,8 +742,8 @@
                                     and home electronics from leading global brands.</p>
                             </div>
                             <div class="timeline-content-grid">
-                                <img src="Assets/5.jpeg" class="timeline-img">
-                                <img src="Assets/6.jpeg" class="timeline-img">
+                                <img src="Assets/5.jpeg" class="timeline-img" loading="lazy">
+                                <img src="Assets/6.jpeg" class="timeline-img" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -760,8 +765,8 @@
                                     secure payments, and personalized recommendations.</p>
                             </div>
                             <div class="timeline-content-grid">
-                                <img src="Assets/7.jpeg" class="timeline-img">
-                                <img src="Assets/8.jpeg" class="timeline-img">
+                                <img src="Assets/7.jpeg" class="timeline-img" loading="lazy">
+                                <img src="Assets/8.jpeg" class="timeline-img" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -783,9 +788,9 @@
                                     support, and introduced easy return policies.</p>
                             </div>
                             <div class="timeline-content-grid">
-                                <img src="Assets/9.jpeg" class="timeline-img">
+                                <img src="Assets/9.jpeg" class="timeline-img" loading="lazy">
                                 <img src="Assets/Apple AirPods Pro 2 w_ Noise Canceling, Spatial Audio, USB-C & Hearing Assist-Bluetooth Headphones.jpg"
-                                    class="timeline-img">
+                                    class="timeline-img" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -806,8 +811,8 @@
                                     tech categories with exclusive deals and faster delivery.</p>
                             </div>
                             <div class="timeline-content-grid">
-                                <img src="Assets/light.jpeg" class="timeline-img">
-                                <img src="Assets/speaker4.jpeg" class="timeline-img">
+                                <img src="Assets/light.jpeg" class="timeline-img" loading="lazy">
+                                <img src="Assets/speaker4.jpeg" class="timeline-img" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -828,8 +833,8 @@
                                     suggestions, eco-friendly packaging, and next-gen tech solutions.</p>
                             </div>
                             <div class="timeline-content-grid">
-                                <img src="Assets/light3.jpeg" class="timeline-img">
-                                <img src="Assets/speaker.jpeg" class="timeline-img">
+                                <img src="Assets/light3.jpeg" class="timeline-img" loading="lazy">
+                                <img src="Assets/speaker.jpeg" class="timeline-img" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -850,7 +855,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 perspective-1000">
                         <!-- Value 1 -->
                         <div
-                            class="group relative p-8 bg-ivory dark:bg-midnight border border-cyan-electric/30 dark:border-neon/30 rounded-3xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(6,182,212,0.2)] dark:hover:shadow-[0_20px_40px_rgba(34,211,238,0.2)]">
+                            class="group relative p-8 bg-ivory dark:bg-midnight border border-cyan-electric/30 dark:border-neon/30 rounded-3xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(160,82,45,0.6)] dark:hover:shadow-[0_20px_40px_rgba(160,82,45,0.6)]">
                             <div
                                 class="w-16 h-16 bg-navy/5 dark:bg-white/5 rounded-2xl flex items-center justify-center mb-6 text-cyan-electric dark:text-neon group-hover:scale-110 transition-transform">
                                 <i data-lucide="zap" class="w-8 h-8"></i>
@@ -861,7 +866,7 @@
                                 standard for what comes next.</p>
                         </div>
                         <!-- Value 2 -->
-                        <div class="group relative p-8 bg-ivory dark:bg-midnight border border-cyan-electric/30 dark:border-neon/30 rounded-3xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(6,182,212,0.2)] dark:hover:shadow-[0_20px_40px_rgba(34,211,238,0.2)]"
+                        <div class="group relative p-8 bg-ivory dark:bg-midnight border border-cyan-electric/30 dark:border-neon/30 rounded-3xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(160,82,45,0.6)] dark:hover:shadow-[0_20px_40px_rgba(160,82,45,0.6)]"
                             style="transition-delay: 100ms;">
                             <div
                                 class="w-16 h-16 bg-navy/5 dark:bg-white/5 rounded-2xl flex items-center justify-center mb-6 text-cyan-electric dark:text-neon group-hover:scale-110 transition-transform">
@@ -873,7 +878,7 @@
                                 doesn't make the catalog.</p>
                         </div>
                         <!-- Value 3 -->
-                        <div class="group relative p-8 bg-ivory dark:bg-midnight border border-cyan-electric/30 dark:border-neon/30 rounded-3xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(6,182,212,0.2)] dark:hover:shadow-[0_20px_40px_rgba(34,211,238,0.2)]"
+                        <div class="group relative p-8 bg-ivory dark:bg-midnight border border-cyan-electric/30 dark:border-neon/30 rounded-3xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(160,82,45,0.6)] dark:hover:shadow-[0_20px_40px_rgba(160,82,45,0.6)]"
                             style="transition-delay: 200ms;">
                             <div
                                 class="w-16 h-16 bg-navy/5 dark:bg-white/5 rounded-2xl flex items-center justify-center mb-6 text-cyan-electric dark:text-neon group-hover:scale-110 transition-transform">
@@ -885,7 +890,7 @@
                                 just spec sheets.</p>
                         </div>
                         <!-- Value 4 -->
-                        <div class="group relative p-8 bg-ivory dark:bg-midnight border border-cyan-electric/30 dark:border-neon/30 rounded-3xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(6,182,212,0.2)] dark:hover:shadow-[0_20px_40px_rgba(34,211,238,0.2)]"
+                        <div class="group relative p-8 bg-ivory dark:bg-midnight border border-cyan-electric/30 dark:border-neon/30 rounded-3xl transform transition-all duration-500 hover:-translate-y-4 hover:shadow-[0_20px_40px_rgba(160,82,45,0.6)] dark:hover:shadow-[0_20px_40px_rgba(160,82,45,0.6)]"
                             style="transition-delay: 300ms;">
                             <div
                                 class="w-16 h-16 bg-navy/5 dark:bg-white/5 rounded-2xl flex items-center justify-center mb-6 text-cyan-electric dark:text-neon group-hover:scale-110 transition-transform">
@@ -930,7 +935,7 @@
                             <div
                                 class="absolute inset-0 bg-cyan-electric/20 dark:bg-neon/20 rounded-3xl transform translate-x-4 translate-y-4">
                             </div>
-                            <img src="Assets/2.jpeg" class="relative rounded-3xl shadow-xl z-10">
+                            <img src="Assets/2.jpeg" class="relative rounded-3xl shadow-xl z-10" loading="lazy">
                         </div>
                     </div>
 
@@ -961,7 +966,7 @@
                             <div
                                 class="absolute inset-0 bg-navy/10 dark:bg-white/10 rounded-3xl transform -translate-x-4 translate-y-4">
                             </div>
-                            <img src="Assets/3.jpeg" class="relative rounded-3xl shadow-xl z-10">
+                            <img src="Assets/3.jpeg" class="relative rounded-3xl shadow-xl z-10" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1716,41 +1721,47 @@
             </section>
 
             <!-- Footer -->
-            <footer class="bg-[#0F172A] text-white pt-20 pb-10">
+            <!-- Footer -->
+            <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800">
                 <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
                     <div class="space-y-6">
                         <div class="flex items-center gap-3">
                             <div
-                                class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-slate-900">
+                                class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-black">
                                 <i data-lucide="zap" class="w-6 h-6"></i>
                             </div>
-                            <span class="text-2xl font-bold">ElectraHub</span>
+                            <span class="text-2xl font-bold text-white">ElectraHub</span>
                         </div>
                         <p class="text-slate-400">Next-generation electrical & tech components provider.</p>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-6">Explore</h4>
+                        <h4 class="font-bold text-lg mb-6 text-white">Explore</h4>
                         <ul class="space-y-4 text-slate-400">
-                            <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a></li>
-                            <li><a href="about.html" class="hover:text-emerald-400 transition-colors">About</a></li>
-                            <li><a href="services.html" class="hover:text-emerald-400 transition-colors">Services</a>
+                            <li><a href="index.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Home</a></li>
+                            <li><a href="about.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">About</a></li>
+                            <li><a href="services.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Services</a>
                             </li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-6">Account</h4>
+                        <h4 class="font-bold text-lg mb-6 text-white">Account</h4>
                         <ul class="space-y-4 text-slate-400">
-                            <li><a href="login.html" class="hover:text-emerald-400 transition-colors">Log In</a></li>
-                            <li><a href="#" class="hover:text-emerald-400 transition-colors">Support</a></li>
+                            <li><a href="login.html" class="hover:text-emerald-400 transition-colors text-slate-400">Log
+                                    In</a></li>
+                            <li><a href="#" class="hover:text-emerald-400 transition-colors text-slate-400">Support</a>
+                            </li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-lg mb-6">Newsletter</h4>
+                        <h4 class="font-bold text-lg mb-6 text-white">Newsletter</h4>
                         <div class="flex gap-2">
                             <input type="email" placeholder="Email"
-                                class="bg-slate-800 border-none rounded-lg px-4 py-3 w-full outline-none text-white">
+                                class="bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 w-full outline-none text-white placeholder:text-slate-500">
                             <button
-                                class="bg-emerald-400 text-slate-900 font-bold px-6 rounded-lg hover:bg-emerald-300">Go</button>
+                                class="bg-emerald-400 text-black font-bold px-6 rounded-lg hover:bg-emerald-300">Go</button>
                         </div>
                     </div>
                 </div>
@@ -1762,10 +1773,10 @@
         </div> <!-- End Parallax Base -->
     </div> <!-- End Parallax Wrapper -->
 
-    <script src="main.js"></script>
-    <script src="navbar.js"></script>
-    <script src="about-timeline.js"></script>
-    <script src="global-reveal.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/about-timeline.js"></script>
+    <script src="js/global-reveal.js"></script>
     <script>
         // Hero & Flip Card Logic (Page Specific)
         document.addEventListener('DOMContentLoaded', () => {
@@ -1810,7 +1821,6 @@
             });
         }
     </script>
-    <script src="navbar.js"></script>
 </body>
 
 </html>

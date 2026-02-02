@@ -56,19 +56,19 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="background-lines.css">
-    <link rel="stylesheet" href="sparkles.css">
-    <link rel="stylesheet" href="global-reveal.css">
-    <link rel="stylesheet" href="text-effects.css">
-    <link rel="stylesheet" href="text-reveal.css">
-    <link rel="stylesheet" href="anime-fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/background-lines.css">
+    <link rel="stylesheet" href="css/sparkles.css">
+    <link rel="stylesheet" href="css/global-reveal.css">
+    <link rel="stylesheet" href="css/text-effects.css">
+    <link rel="stylesheet" href="css/text-reveal.css">
+    <link rel="stylesheet" href="css/anime-fonts.css">
 
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="css/navbar.css">
 
-    <link rel="stylesheet" href="folded-card.css">
+    <link rel="stylesheet" href="css/folded-card.css">
     <style>
         /* Testimonials Marquee */
         .marquee-container {
@@ -94,8 +94,8 @@
             box-shadow: 0 0 15px rgba(34, 211, 238, 0.5), inset 0 0 10px rgba(34, 211, 238, 0.2);
         }
     </style>
-    <link rel="stylesheet" href="expanding-blocks.css">
-    <script src="expanding-blocks.js" defer></script>
+    <link rel="stylesheet" href="css/expanding-blocks.css">
+    <script src="js/expanding-blocks.js" defer></script>
 </head>
 
 <body
@@ -111,7 +111,7 @@
 
     <!-- Navbar -->
     <nav
-        class="nav-glow fixed z-50 top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
+        class="nav-glow fixed z-50 top-3 md:top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
         <div class="px-6 h-16 flex justify-between items-center">
             <!-- Left: Logo & Brand -->
             <a href="index.html" class="flex items-center gap-3 group">
@@ -197,18 +197,21 @@
             <!-- Right: Actions -->
             <div class="flex items-center gap-3">
                 <!-- Toggles -->
-                <div
-                    class="flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/20 p-1 rounded-full border border-slate-200/50 dark:border-slate-700/50">
+                <div class="flex items-center gap-1">
                     <button id="rtl-toggle"
                         class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
                         title="Toggle Direction">
                         <i data-lucide="globe" class="w-4 h-4"></i>
                     </button>
                     <button id="theme-toggle"
-                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
+                        class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-900 dark:text-white transition-all"
                         title="Toggle Theme">
-                        <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
-                        <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+                        <span class="block dark:hidden">
+                            <span class="text-lg leading-none">&#9790;</span>
+                        </span>
+                        <span class="hidden dark:block">
+                            <i data-lucide="sun" class="w-4 h-4"></i>
+                        </span>
                     </button>
                 </div>
 
@@ -301,9 +304,9 @@
     </div>
 
 
-    <link rel="stylesheet" href="background-lines.css">
+    <link rel="stylesheet" href="css/background-lines.css">
     <section
-        class="py-16 pt-32 bg-light-bg dark:bg-dark-bg min-h-[60vh] flex items-center justify-center relative overflow-hidden">
+        class="py-10 pt-24 md:py-16 md:pt-32 bg-light-bg dark:bg-dark-bg min-h-[60vh] flex items-center justify-center relative overflow-hidden">
         <div class="bg-lines-container">
 
             <div class="bg-lines-svg"></div>
@@ -311,9 +314,9 @@
             <div class="bg-lines-content">
                 <h2 class="bg-lines-title flex flex-col gap-4 font-comic-title">
                     <div class="hero-text-reveal"><span
-                            class="hero-gradient-text drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-6xl md:text-8xl">Expert</span><span
-                            class="hero-gradient-text ml-2 drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-6xl md:text-8xl">Solutions</span>
-                    </div><span class="font-anime-sub text-3xl tracking-widest uppercase">Services
+                            class="hero-gradient-text drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-4xl md:text-8xl">Expert</span><span
+                            class="hero-gradient-text ml-2 drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-4xl md:text-8xl">Solutions</span>
+                    </div><span class="font-anime-sub text-xl md:text-3xl tracking-widest uppercase">Services
                         That Power Your Tech Experience</span>
                 </h2>
                 <p class="bg-lines-desc font-anime-sub tracking-wider text-sm mt-4">From purchase to
@@ -328,10 +331,10 @@
                         Pricing</a></div>
             </div>
     </section>
-    <script src="background-lines.js"></script>
-    <script src="global-reveal.js"></script>
+    <script src="js/background-lines.js"></script>
+    <script src="js/global-reveal.js"></script>
 
-    <section class="py-20 bg-white dark:bg-dark-surface border-b border-indigo-50 dark:border-indigo-900/50">
+    <section class="py-10 md:py-20 bg-white dark:bg-dark-surface border-b border-indigo-50 dark:border-indigo-900/50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16"><span
                     class="text-indigo-600 dark:text-indigo-400 font-bold tracking-wider text-sm uppercase">PROCESS</span>
@@ -418,7 +421,8 @@
         </div>
     </section>
 
-    <section class="py-16 bg-light-surface dark:bg-dark-bg border-b border-indigo-50 dark:border-indigo-900/50">
+    <section
+        class="py-10 md:py-16 bg-light-surface dark:bg-dark-bg border-b border-indigo-50 dark:border-indigo-900/50">
         <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-0 items-stretch">
             <div
                 class="space-y-6 order-2 md:order-1 flex flex-col justify-center p-8 bg-white dark:bg-slate-900 rounded-l-3xl shadow-xl z-10">
@@ -439,7 +443,7 @@
 
                 <div
                     class="front-view absolute inset-0 transition-opacity duration-500 z-20 bg-white dark:bg-slate-800">
-                    <img src="Assets/6.jpeg" class="w-full h-full object-cover opacity-100">
+                    <img src="Assets/6.jpeg" class="w-full h-full object-cover opacity-100" loading="lazy">
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div
                             class="bg-white/90 dark:bg-slate-900/90 p-4 rounded-full shadow-lg border border-indigo-100 dark:border-indigo-900 animate-pulse">
@@ -474,7 +478,7 @@
         </div>
     </section>
 
-    <section class="py-12 bg-light-surface dark:bg-dark-bg border-b border-indigo-50 dark:border-indigo-900/50">
+    <section class="py-8 md:py-12 bg-light-surface dark:bg-dark-bg border-b border-indigo-50 dark:border-indigo-900/50">
         <div class="max-w-7xl mx-auto px-6">
             <h3 class="text-2xl font-bold text-center mb-12 text-light-text-primary dark:text-dark-text-primary">
                 Global Infrastructure</h3>
@@ -749,19 +753,19 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div
                     class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-indigo-500 transition-all relative overflow-hidden group">
-                    <img src="Assets/tv.jpeg"
+                    <img src="Assets/tv.jpeg" loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none">
                     <div class="relative z-10">
                         <h3 class="text-xl font-bold mb-2">Basic</h3>
                         <p class="text-4xl font-black mb-6">$<span class="count-up" data-target="49">0</span><span
                                 class="text-lg text-slate-400">/mo</span>
                         </p><button
-                            class="w-full py-3 rounded-xl border border-slate-600 font-bold hover:bg-slate-700 hover:text-white transition-all shadow-lg hover:shadow-indigo-500/20">Choose</button>
+                            class="w-full py-3 rounded-xl bg-slate-700 text-white font-bold hover:bg-slate-600 transition-all shadow-lg hover:shadow-indigo-500/20 border border-slate-600">Choose</button>
                     </div>
                 </div>
                 <div
                     class="bg-indigo-600 rounded-3xl p-8 transform scale-105 shadow-2xl relative overflow-hidden group">
-                    <img src="Assets/tv2.jpeg"
+                    <img src="Assets/tv2.jpeg" loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none mix-blend-overlay">
                     <div class="relative z-10">
                         <div
@@ -776,14 +780,14 @@
                 </div>
                 <div
                     class="bg-slate-800 rounded-3xl p-8 border border-slate-700 hover:border-indigo-500 transition-all relative overflow-hidden group">
-                    <img src="Assets/tv3.jpeg"
+                    <img src="Assets/tv3.jpeg" loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none">
                     <div class="relative z-10">
                         <h3 class="text-xl font-bold mb-2">Enterprise
                         </h3>
                         <p class="text-4xl font-black mb-6">Custom</p>
                         <button
-                            class="w-full py-3 rounded-xl border border-slate-600 font-bold hover:bg-slate-700 hover:text-white transition-all shadow-lg hover:shadow-indigo-500/20">Contact
+                            class="w-full py-3 rounded-xl bg-slate-700 text-white font-bold hover:bg-slate-600 transition-all shadow-lg hover:shadow-indigo-500/20 border border-slate-600">Contact
                             Sales</button>
                     </div>
                 </div>
@@ -885,7 +889,7 @@
                         <div
                             class="flex-1 bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-indigo-100 dark:border-slate-700 hover:scale-105 transition-transform group">
                             <div class="w-full aspect-square rounded-lg mb-3 overflow-hidden">
-                                <img src="Assets/tv2.jpeg" class="w-full h-full object-cover">
+                                <img src="Assets/tv2.jpeg" class="w-full h-full object-cover" loading="lazy">
                             </div>
                             <div class="h-4 w-3/4 bg-slate-200 dark:bg-slate-700 rounded mb-2">
                             </div>
@@ -897,7 +901,7 @@
                         <div
                             class="flex-1 bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-indigo-100 dark:border-slate-700 hover:scale-105 transition-transform group">
                             <div class="w-full aspect-square rounded-lg mb-3 overflow-hidden">
-                                <img src="Assets/tv3.jpeg" class="w-full h-full object-cover">
+                                <img src="Assets/tv3.jpeg" class="w-full h-full object-cover" loading="lazy">
                             </div>
                             <div class="h-4 w-3/4 bg-slate-200 dark:bg-slate-700 rounded mb-2">
                             </div>
@@ -1405,7 +1409,7 @@
             <div class="grid md:grid-cols-3 gap-6">
 
                 <div class="group relative rounded-2xl overflow-hidden aspect-video shadow-lg cursor-pointer">
-                    <img src="Assets/1.jpeg"
+                    <img src="Assets/1.jpeg" loading="lazy"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
                     </div>
@@ -1423,7 +1427,7 @@
                 </div>
 
                 <div class="group relative rounded-2xl overflow-hidden aspect-video shadow-lg cursor-pointer">
-                    <img src="Assets/2.jpeg"
+                    <img src="Assets/2.jpeg" loading="lazy"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
                     </div>
@@ -1439,7 +1443,7 @@
                 </div>
 
                 <div class="group relative rounded-2xl overflow-hidden aspect-video shadow-lg cursor-pointer">
-                    <img src="Assets/3.jpeg"
+                    <img src="Assets/3.jpeg" loading="lazy"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent">
                     </div>
@@ -1781,7 +1785,7 @@
                         class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(99,102,241,0.5)] transition-all duration-300">
                         <div
                             class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
-                            <img src="Assets/tv.jpeg" class="w-full h-40 object-contain mb-4">
+                            <img src="Assets/tv.jpeg" class="w-full h-40 object-contain mb-4" loading="lazy">
                             <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
                                 Smart
                                 Vision
@@ -1821,7 +1825,7 @@
                         class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all duration-300">
                         <div
                             class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
-                            <img src="Assets/speaker.jpeg" class="w-full h-40 object-contain mb-4">
+                            <img src="Assets/speaker.jpeg" class="w-full h-40 object-contain mb-4" loading="lazy">
                             <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
                                 Sonic
                                 Edge
@@ -1860,7 +1864,7 @@
                         class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(245,158,11,0.5)] transition-all duration-300">
                         <div
                             class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
-                            <img src="Assets/light2.jpeg" class="w-full h-40 object-contain mb-4">
+                            <img src="Assets/light2.jpeg" class="w-full h-40 object-contain mb-4" loading="lazy">
                             <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
                                 Lumina
                             </h3>
@@ -1897,7 +1901,7 @@
                         class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] transition-all duration-300">
                         <div
                             class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
-                            <img src="Assets/tv.jpeg" class="w-full h-40 object-contain mb-4">
+                            <img src="Assets/tv.jpeg" class="w-full h-40 object-contain mb-4" loading="lazy">
                             <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
                                 HoloView
                             </h3>
@@ -1934,7 +1938,7 @@
                         class="flip-card-inner relative w-full h-full text-center transition-transform duration-700 transform-style-3d shadow-xl rounded-2xl group-hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] transition-all duration-300">
                         <div
                             class="flip-card-front absolute w-full h-full backface-hidden rounded-2xl overflow-hidden bg-white dark:bg-slate-800 p-8 flex flex-col items-center justify-center">
-                            <img src="Assets/speaker.jpeg" class="w-full h-40 object-contain mb-4">
+                            <img src="Assets/speaker.jpeg" class="w-full h-40 object-contain mb-4" loading="lazy">
                             <h3 class="font-bold text-xl text-slate-900 dark:text-white mb-6">
                                 Echo
                                 Net
@@ -2127,74 +2131,53 @@
     </section>
 
 
-    <footer class="bg-[#0F172A] text-white pt-20 pb-10">
+    <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-slate-900">
+                    <div class="w-10 h-10 bg-emerald-400 rounded-xl flex items-center justify-center text-black">
                         <i data-lucide="zap" class="w-6 h-6"></i>
                     </div>
-                    <span class="text-2xl font-bold">ElectraHub</span>
+                    <span class="text-2xl font-bold text-white">ElectraHub</span>
                 </div>
-                <p class="text-slate-400">
-                    Next-generation
-                    electrical
-                    &
-                    tech
-                    components
-                    provider.
-                </p>
+                <p class="text-slate-400">Next-generation electrical & tech components provider.</p>
             </div>
             <div>
-                <h4 class="font-bold text-lg mb-6">
-                    Explore
-                </h4>
+                <h4 class="font-bold text-lg mb-6 text-white">Explore</h4>
                 <ul class="space-y-4 text-slate-400">
-                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors">Home</a>
+                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors text-slate-400">Home</a>
                     </li>
-                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors">About</a>
+                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors text-slate-400">About</a>
                     </li>
-                    <li><a href="services.html" class="hover:text-emerald-400 transition-colors">Services</a>
+                    <li><a href="services.html"
+                            class="hover:text-emerald-400 transition-colors text-slate-400">Services</a>
                     </li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-lg mb-6">
-                    Account
-                </h4>
+                <h4 class="font-bold text-lg mb-6 text-white">Account</h4>
                 <ul class="space-y-4 text-slate-400">
-                    <li><a href="login.html" class="hover:text-emerald-400 transition-colors">Log
-                            In</a>
+                    <li><a href="login.html" class="hover:text-emerald-400 transition-colors text-slate-400">Log In</a>
                     </li>
-                    <li><a href="#" class="hover:text-emerald-400 transition-colors">Support</a>
-                    </li>
+                    <li><a href="#" class="hover:text-emerald-400 transition-colors text-slate-400">Support</a></li>
                 </ul>
             </div>
             <div>
-                <h4 class="font-bold text-lg mb-6">
-                    Newsletter
-                </h4>
+                <h4 class="font-bold text-lg mb-6 text-white">Newsletter</h4>
                 <div class="flex gap-2">
                     <input type="email" placeholder="Email"
-                        class="bg-slate-800 border-none rounded-lg px-4 py-3 w-full outline-none text-white">
-                    <button
-                        class="bg-emerald-400 text-slate-900 font-bold px-6 rounded-lg hover:bg-emerald-300">Go</button>
+                        class="bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 w-full outline-none text-white placeholder:text-slate-500">
+                    <button class="bg-emerald-400 text-black font-bold px-6 rounded-lg hover:bg-emerald-300">Go</button>
                 </div>
             </div>
         </div>
         <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800 text-slate-500 text-sm">
-            &copy;
-            2026
-            ElectraHub
-            Inc.
-            All
-            rights
-            reserved.
+            &copy; 2026 ElectraHub Inc. All rights reserved.
         </div>
     </footer>
 
-    <script src="main.js"></script>
-    <script src="navbar.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/navbar.js"></script>
 </body>
 
 </html>
