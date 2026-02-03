@@ -240,3 +240,30 @@
     color: #818CF8;
     /* Indigo 400 */
 }
+/* ROBUST THEME TOGGLE FIX */
+/* Default (Light Mode): Show Moon (Dark Icon), Hide Sun */
+#theme-toggle .moon-wrapper {
+    display: block !important;
+}
+#theme-toggle .sun-wrapper {
+    display: none !important;
+}
+
+/* Dark Mode: Hide Moon, Show Sun (White Icon) */
+html.dark #theme-toggle .moon-wrapper {
+    display: none !important;
+}
+html.dark #theme-toggle .sun-wrapper {
+    display: block !important;
+}
+
+/* Force Icon Colors */
+#theme-toggle .moon-wrapper svg {
+    color: #000000 !important;
+    stroke: #000000 !important;
+}
+html.dark #theme-toggle .sun-wrapper svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
