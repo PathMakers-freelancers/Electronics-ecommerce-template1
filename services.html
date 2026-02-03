@@ -111,8 +111,8 @@
 
     <!-- Navbar -->
     <nav
-        class="nav-glow fixed z-50 top-3 md:top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
-        <div class="px-6 h-16 flex justify-between items-center">
+        class="nav-glow fixed z-[100] top-3 md:top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl rounded-full backdrop-blur-3xl shadow-2xl shadow-indigo-500/10 transition-all duration-300 border border-white/20 dark:border-slate-700/30 bg-white/70 dark:bg-slate-900/80">
+        <div class="px-4 md:px-6 h-16 flex justify-between items-center">
             <!-- Left: Logo & Brand -->
             <a href="index.html" class="flex items-center gap-3 group">
                 <div
@@ -196,8 +196,9 @@
 
             <!-- Right: Actions -->
             <div class="flex items-center gap-3">
-                <!-- Toggles -->
-                <div class="flex items-center gap-1">
+                <!-- Toggles (Hidden on Mobile) -->
+                <div
+                    class="hidden lg:flex items-center gap-1 bg-slate-100/50 dark:bg-slate-800/20 p-1 rounded-full border border-slate-200/50 dark:border-slate-700/50">
                     <button id="rtl-toggle"
                         class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all"
                         title="Toggle Direction">
@@ -207,7 +208,7 @@
                         class="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-900 dark:text-white transition-all"
                         title="Toggle Theme">
                         <span class="block dark:hidden">
-                            <span class="text-lg leading-none">&#9790;</span>
+                            <i data-lucide="moon" class="w-4 h-4"></i>
                         </span>
                         <span class="hidden dark:block">
                             <i data-lucide="sun" class="w-4 h-4"></i>
@@ -290,7 +291,29 @@
                 </div>
             </div>
 
-            <div class="pt-6 space-y-3">
+            <!-- Mobile Toggles -->
+            <div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900/50 rounded-2xl">
+                <span class="font-bold text-slate-700 dark:text-slate-200">Settings</span>
+                <div class="flex items-center gap-2">
+                    <button id="mobile-rtl-toggle"
+                        class="p-2 rounded-full bg-white dark:bg-slate-800 shadow-sm text-slate-600 dark:text-slate-300"
+                        title="Toggle Direction">
+                        <i data-lucide="globe" class="w-5 h-5"></i>
+                    </button>
+                    <button id="mobile-theme-toggle"
+                        class="p-2 rounded-full bg-white dark:bg-slate-800 shadow-sm text-slate-900 dark:text-white"
+                        title="Toggle Theme">
+                        <span class="block dark:hidden">
+                            <i data-lucide="moon" class="w-5 h-5"></i>
+                        </span>
+                        <span class="hidden dark:block">
+                            <i data-lucide="sun" class="w-5 h-5"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="pt-2 space-y-3">
                 <a href="login.html"
                     class="block w-full text-center py-3.5 rounded-full border-2 border-indigo-100 dark:border-slate-700 font-bold text-indigo-600 dark:text-indigo-400 hover:border-indigo-200 transition-colors">
                     Log In
@@ -482,7 +505,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <h3 class="text-2xl font-bold text-center mb-12 text-light-text-primary dark:text-dark-text-primary">
                 Global Infrastructure</h3>
-            <div class="folded-card-section">
+            <div class="folded-card-section hidden md:block">
 
                 <div class="folded-card">
                     <div class="fold"
