@@ -237,12 +237,14 @@
             </div>
 
             <a href="about.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">About</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="info" class="w-5 h-5 text-indigo-500"></i> About</a>
             <a href="services.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Our
-                Services</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="layers" class="w-5 h-5 text-indigo-500"></i> Our Services</a>
             <a href="contact.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Contact</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="phone" class="w-5 h-5 text-indigo-500"></i> Contact</a>
 
             <!-- Dashboards Dropdown -->
             <div class="relative group">
@@ -276,44 +278,57 @@
     <div class="flex min-h-screen pt-20">
         <!-- Sticky Sidebar -->
         <aside
-            class="fixed inset-y-0 start-0 w-72 bg-slate-900 border-e border-slate-800 z-[110] transition-transform lg:translate-x-0 ltr:-translate-x-full rtl:translate-x-full shadow-2xl flex flex-col"
+            class="fixed inset-y-0 start-0 w-72 bg-white dark:bg-slate-900 border-e border-indigo-50 dark:border-slate-800 z-[110] transition-transform lg:translate-x-0 ltr:-translate-x-full rtl:translate-x-full shadow-2xl flex flex-col"
             id="sidebar">
-            <div class="h-20 flex items-center px-8 border-b border-slate-800 shrink-0 bg-slate-900 z-10">
+            <div
+                class="h-20 flex items-center px-8 border-b border-indigo-50 dark:border-slate-800 shrink-0 bg-white dark:bg-slate-900 z-10">
                 <a href="index.html" class="flex items-center gap-3">
                     <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-slate-900">
                         <i data-lucide="zap" class="w-5 h-5"></i>
                     </div>
-                    <span class="text-xl font-black text-black">ElectraHub Admin</span>
+                    <span class="text-xl font-black text-slate-900 dark:text-white">ElectraHub Admin</span>
                 </a>
             </div>
 
             <nav class="flex-1 p-4 space-y-1 overflow-y-auto no-scrollbar" id="nav-menu">
                 <a href="#overview"
-                    class="nav-item active flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
-                    <i data-lucide="layout-grid" class="w-5 h-5 group-hover:text-white transition-colors"></i> Overview
+                    class="nav-item active flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="layout-grid"
+                        class="w-5 h-5 group-hover:text-indigo-600 dark:group-hover:text-white transition-colors"></i>
+                    Overview
                 </a>
                 <a href="#orders"
-                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
-                    <i data-lucide="shopping-bag" class="w-5 h-5 group-hover:text-white transition-colors"></i> Order
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="shopping-bag"
+                        class="w-5 h-5 group-hover:text-indigo-600 dark:group-hover:text-white transition-colors"></i>
+                    Order
                     Management
                 </a>
                 <a href="#products"
-                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
-                    <i data-lucide="package" class="w-5 h-5 group-hover:text-white transition-colors"></i> Product &
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="package"
+                        class="w-5 h-5 group-hover:text-indigo-600 dark:group-hover:text-white transition-colors"></i>
+                    Product &
                     Inventory
                 </a>
                 <a href="#users"
-                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
-                    <i data-lucide="users" class="w-5 h-5 group-hover:text-white transition-colors"></i> Users & Roles
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="users"
+                        class="w-5 h-5 group-hover:text-indigo-600 dark:group-hover:text-white transition-colors"></i>
+                    Users & Roles
                 </a>
                 <a href="#reports"
-                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
-                    <i data-lucide="bar-chart-2" class="w-5 h-5 group-hover:text-white transition-colors"></i> Payments
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="bar-chart-2"
+                        class="w-5 h-5 group-hover:text-indigo-600 dark:group-hover:text-white transition-colors"></i>
+                    Payments
                     & Reports
                 </a>
                 <a href="#support"
-                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-400 hover:bg-slate-800 hover:text-white rounded-xl font-medium transition-all duration-300 group">
-                    <i data-lucide="life-buoy" class="w-5 h-5 group-hover:text-white transition-colors"></i> Support &
+                    class="nav-item flex items-center gap-3 px-4 py-3 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-600 dark:hover:text-white rounded-xl font-medium transition-all duration-300 group">
+                    <i data-lucide="life-buoy"
+                        class="w-5 h-5 group-hover:text-indigo-600 dark:group-hover:text-white transition-colors"></i>
+                    Support &
                     Ops
                 </a>
                 <a href="#settings"
@@ -392,119 +407,119 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Row 1 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">1. Total Revenue</h3>
                         <div id="chart-revenue-line" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">2. Orders Volume</h3>
                         <div id="chart-orders-area" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">3. Profit Trends</h3>
                         <div id="chart-profit-trends" class="flex-1 w-full min-h-0"></div>
                     </div>
 
                     <!-- Row 2 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">4. Revenue by Category</h3>
                         <div id="chart-revenue-category" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">5. Avg Order Value</h3>
                         <div id="chart-avg-order-value" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">6. Top Products</h3>
                         <div id="chart-top-products" class="flex-1 w-full min-h-0"></div>
                     </div>
 
                     <!-- Row 3 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">7. Stock Levels</h3>
                         <div id="chart-stock-levels" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">8. Low Stock Alerts</h3>
                         <div id="chart-low-stock" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">9. Product Lifecycle</h3>
                         <div id="chart-product-lifecycle" class="flex-1 w-full min-h-0"></div>
                     </div>
 
                     <!-- Row 4 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">10. Inventory Turnover</h3>
                         <div id="chart-inventory-turnover" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">11. New User Growth</h3>
                         <div id="chart-user-growth" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">12. User Roles</h3>
                         <div id="chart-user-roles" class="flex-1 w-full min-h-0"></div>
                     </div>
 
                     <!-- Row 5 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">13. User Retention</h3>
                         <div id="chart-user-retention" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">14. Activity Heatmap</h3>
                         <div id="chart-user-heatmap" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">15. Order Status</h3>
                         <div id="chart-order-status" class="flex-1 w-full min-h-0"></div>
                     </div>
 
                     <!-- Row 6 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
-                        <h3 class="text-lg font-bold mb-4 shrink-0">16. Delivery Times</h3>
-                        <div id="chart-delivery-time" class="flex-1 w-full min-h-0"></div>
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
+                        <h3 class="text-lg font-bold mb-4 shrink-0">16. Logistics Efficiency</h3>
+                        <div id="chart-logistics-radar" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">17. Return Rate</h3>
                         <div id="chart-return-rate" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">18. Payment Methods</h3>
                         <div id="chart-payment-methods" class="flex-1 w-full min-h-0"></div>
                     </div>
 
                     <!-- Row 7 -->
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">19. Payment Types</h3>
                         <div id="chart-emi-full" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">20. Refund Trends</h3>
                         <div id="chart-refund-trends" class="flex-1 w-full min-h-0"></div>
                     </div>
                     <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[26rem] flex flex-col overflow-hidden">
+                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow h-[30rem] flex flex-col overflow-hidden">
                         <h3 class="text-lg font-bold mb-4 shrink-0">21. Support Tickets</h3>
                         <div id="chart-support-status" class="flex-1 w-full min-h-0"></div>
                     </div>
@@ -1000,50 +1015,67 @@
             </section>
 
             <div class="h-px bg-amber-900/10 dark:bg-amber-100/10 my-10"></div>
-            <!-- Footer -->
-            <footer class="bg-white text-slate-900 pt-20 pb-10 border-t border-slate-200">
+            <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800">
                 <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <!-- Col 1: Branding -->
                     <div class="space-y-6">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white">
+                            <div
+                                class="w-10 h-10 bg-emerland-400 rounded-xl flex items-center justify-center text-white">
                                 <i data-lucide="zap" class="w-6 h-6"></i>
                             </div>
-                            <span class="text-2xl font-bold text-black">ElectraHub</span>
+                            <span class="text-2xl font-bold text-white">ElectraHub</span>
                         </div>
-                        <p class="text-slate-500">Next-generation electrical & tech components provider.</p>
-                    </div>
+                        <p class="text-slate-400 text-sm leading-relaxed">Next-generation electrical & tech components
+                            provider.
+                        </p>
+                    </div> <!-- Col 1: Branding -->
+
+
+
+                    <!-- Col 2: Explore -->
                     <div>
-                        <h4 class="font-bold text-lg mb-6 text-slate-900">Explore</h4>
-                        <ul class="space-y-4 text-slate-500">
-                            <li><a href="index.html" class="hover:text-black transition-colors text-slate-500">Home</a>
+                        <h3 class="font-bold text-lg mb-6 text-white">Explore</h3>
+                        <ul class="space-y-4 text-slate-400">
+                            <li><a href="index.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Home</a>
                             </li>
-                            <li><a href="about.html" class="hover:text-black transition-colors text-slate-500">About</a>
+                            <li><a href="about.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">About</a>
                             </li>
                             <li><a href="services.html"
-                                    class="hover:text-black transition-colors text-slate-500">Services</a>
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Services</a>
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Col 3: Account -->
                     <div>
-                        <h4 class="font-bold text-lg mb-6 text-slate-900">Account</h4>
-                        <ul class="space-y-4 text-slate-500">
-                            <li><a href="login.html" class="hover:text-black transition-colors text-slate-500">Log
-                                    In</a></li>
-                            <li><a href="#" class="hover:text-black transition-colors text-slate-500">Support</a>
+                        <h3 class="font-bold text-lg mb-6 text-white">Account</h3>
+                        <ul class="space-y-4 text-slate-400">
+                            <li><a href="login.html" class="hover:text-emerald-400 transition-colors text-slate-400">Log
+                                    In</a>
+                            </li>
+                            <li><a href="contact.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Support</a>
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Col 4: Newsletter -->
                     <div>
-                        <h4 class="font-bold text-lg mb-6 text-slate-900">Newsletter</h4>
+                        <h3 class="font-bold text-lg mb-6 text-white">Newsletter</h3>
                         <div class="flex gap-2">
                             <input type="email" placeholder="Email"
-                                class="bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 w-full outline-none text-slate-900 placeholder:text-slate-400">
+                                class="bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 w-full outline-none text-white focus:border-black-400 transition-colors placeholder:text-slate-500">
                             <button
-                                class="bg-black text-white font-bold px-6 rounded-lg hover:bg-neutral-800">Go</button>
+                                class="bg-black-400 text-emerald-500 font-bold px-6 rounded-lg hover:bg-black-300 transition-colors">
+                                Go
+                            </button>
                         </div>
                     </div>
                 </div>
-                <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-200 text-slate-500 text-sm">
+                <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800 text-slate-500 text-sm">
                     &copy; 2026 ElectraHub Inc. All rights reserved.
                 </div>
             </footer>
@@ -1059,19 +1091,54 @@
     <script>
         const chartInstances = {};
 
+        // 1. Initialize Theme (Run BEFORE charts)
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        // 2. Setup Toggles
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                updateChartsTheme();
+            });
+        }
+
+        const rtlBtn = document.getElementById('rtl-toggle');
+        if (rtlBtn) {
+            rtlBtn.addEventListener('click', () => {
+                const html = document.documentElement;
+                if (html.getAttribute('dir') === 'rtl') {
+                    html.setAttribute('dir', 'ltr');
+                } else {
+                    html.setAttribute('dir', 'rtl');
+                }
+            });
+        }
+
+
         const getChartThemeOptions = () => {
             const isDark = document.documentElement.classList.contains('dark');
             return {
                 theme: { mode: isDark ? 'dark' : 'light' },
-                grid: { borderColor: isDark ? '#334155' : '#e2e8f0' },
+                chart: {
+                    foreColor: isDark ? '#FFFFFF' : '#475569'
+                },
+                grid: { borderColor: isDark ? 'rgba(255,255,255,0.15)' : '#e2e8f0' },
                 xaxis: {
                     labels: {
-                        style: { colors: isDark ? '#cbd5e1' : '#475569' }
-                    }
+                        style: { colors: isDark ? '#FFFFFF' : '#475569' }
+                    },
+                    axisBorder: { color: isDark ? 'rgba(255,255,255,0.3)' : '#e2e8f0' },
+                    axisTicks: { color: isDark ? 'rgba(255,255,255,0.3)' : '#e2e8f0' }
                 },
                 yaxis: {
                     labels: {
-                        style: { colors: isDark ? '#cbd5e1' : '#475569' }
+                        style: { colors: isDark ? '#FFFFFF' : '#475569' }
                     }
                 }
             };
@@ -1090,9 +1157,11 @@
                 toolbar: { show: false },
                 background: 'transparent',
                 parentHeightOffset: 0,
+                height: '92%',
+                width: '100%'
             },
             grid: {
-                padding: { bottom: 20, left: 10, right: 10 }
+                padding: { top: 20, bottom: 20, left: 10, right: 10 }
             },
             stroke: { curve: 'smooth', width: 3 },
             dataLabels: { enabled: false },
@@ -1133,14 +1202,14 @@
         // 1. Revenue Overview (Line)
         renderChart('chart-revenue-line', {
             series: [{ name: 'Revenue', data: [30, 40, 35, 50, 49, 60, 70, 91, 125] }],
-            chart: { type: 'line', height: 300 },
+            chart: { type: 'line' },
             xaxis: { categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'] }
         });
 
         // 2. Orders Volume (Area)
         renderChart('chart-orders-area', {
             series: [{ name: 'Orders', data: [120, 132, 101, 134, 190, 230, 210] }],
-            chart: { type: 'area', height: 300 },
+            chart: { type: 'area' },
             colors: ['#06b6d4'],
             xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }
         });
@@ -1148,7 +1217,7 @@
         // 2.5 Profit Trends (Bar)
         renderChart('chart-profit-trends', {
             series: [{ name: 'Profit', data: [1200, 1500, 1100, 1800, 900, 2000, 2400] }],
-            chart: { type: 'bar', height: 300 },
+            chart: { type: 'bar' },
             colors: ['#22c55e'],
             xaxis: { categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }
         });
@@ -1156,7 +1225,7 @@
         // 3. Category Revenue (Bar)
         renderChart('chart-revenue-category', {
             series: [{ name: 'Revenue', data: [4400, 5500, 4100, 6700, 2200] }],
-            chart: { type: 'bar', height: 300 },
+            chart: { type: 'bar' },
             colors: ['#8b5cf6'],
             xaxis: { categories: ['Phones', 'Laptops', 'Audio', 'Wearables', 'Acc.'] }
         });
@@ -1164,14 +1233,14 @@
         // 4. Avg Order Value (Line)
         renderChart('chart-avg-order-value', {
             series: [{ name: 'AOV', data: [210, 220, 215, 240, 235, 260] }],
-            chart: { type: 'line', height: 300 },
+            chart: { type: 'line' },
             colors: ['#f43f5e']
         });
 
         // 5. Top Products (Horizontal Bar)
         renderChart('chart-top-products', {
             series: [{ data: [400, 430, 448, 470, 540] }],
-            chart: { type: 'bar', height: 300 },
+            chart: { type: 'bar' },
             plotOptions: { bar: { horizontal: true } },
             xaxis: { categories: ['Cable Set', 'Pixel 8', 'Galaxy S23', 'Sony XM5', 'iPhone 15'] },
             colors: ['#10b981']
@@ -1183,14 +1252,14 @@
                 { name: 'In Stock', data: [44, 55, 41] },
                 { name: 'Low Stock', data: [13, 23, 20] }
             ],
-            chart: { type: 'bar', height: 300, stacked: true },
+            chart: { type: 'bar', stacked: true },
             xaxis: { categories: ['Electronics', 'Home', 'Services'] }
         });
 
         // 7. Low Stock (Radial)
         renderChart('chart-low-stock', {
             series: [76],
-            chart: { type: 'radialBar', height: 340, width: '100%' },
+            chart: { type: 'radialBar' },
             plotOptions: {
                 radialBar: {
                     hollow: { size: '65%' },
@@ -1207,7 +1276,7 @@
         // 8. Lifecycle (Donut)
         renderChart('chart-product-lifecycle', {
             series: [44, 55, 13],
-            chart: { type: 'donut', height: 340, width: '100%' },
+            chart: { type: 'donut' },
             plotOptions: { pie: { donut: { size: '70%' } } },
             labels: ['Active', 'Discontinued', 'Draft'],
             legend: { position: 'bottom', horizontalAlign: 'center' }
@@ -1216,19 +1285,19 @@
         // 9. Turnover (Line)
         renderChart('chart-inventory-turnover', {
             series: [{ name: 'Turnover Rate', data: [2.3, 3.1, 4.0, 3.8, 5.1] }],
-            chart: { type: 'line', height: 300 }
+            chart: { type: 'line' }
         });
 
         // 10. User Growth (Line)
         renderChart('chart-user-growth', {
             series: [{ name: 'New Users', data: [30, 40, 45, 50, 49, 60, 70, 91] }],
-            chart: { type: 'line', height: 300 }
+            chart: { type: 'line' }
         });
 
         // 11. User Types (Pie)
         renderChart('chart-user-roles', {
             series: [5, 20, 500],
-            chart: { type: 'pie', height: 340, width: '100%' },
+            chart: { type: 'pie' },
             labels: ['Admin', 'Vendor', 'Customer'],
             legend: { position: 'bottom', horizontalAlign: 'center' }
         });
@@ -1236,7 +1305,7 @@
         // 12. Retention (Donut)
         renderChart('chart-user-retention', {
             series: [70, 30],
-            chart: { type: 'donut', height: 340, width: '100%' },
+            chart: { type: 'donut' },
             plotOptions: { pie: { donut: { size: '70%' } } },
             labels: ['Returning', 'New'],
             legend: { position: 'bottom', horizontalAlign: 'center' }
@@ -1249,56 +1318,60 @@
                 { name: 'Tue', data: [10, 20, 50, 70, 10] },
                 { name: 'Wed', data: [20, 30, 60, 80, 20] }
             ],
-            chart: { type: 'heatmap', height: 300 }
+            chart: { type: 'heatmap' }
         });
 
         // 14. Order Status (Donut)
         renderChart('chart-order-status', {
             series: [44, 55, 41, 17],
-            chart: { type: 'donut', height: 340, width: '100%' },
+            chart: { type: 'donut' },
             plotOptions: { pie: { donut: { size: '65%' } } },
             labels: ['Pending', 'Processing', 'Shipped', 'Delivered'],
             legend: { position: 'bottom', horizontalAlign: 'center' }
         });
 
-        // 15. Delivery Time (Bar)
-        renderChart('chart-delivery-time', {
-            series: [{ name: 'Hours', data: [24, 48, 36, 12, 50] }],
-            chart: { type: 'bar', height: 300 },
-            xaxis: { categories: ['Local', 'Express', 'Standard', 'Metro', 'Rural'] }
+        // 15. Logistics Efficiency (Radar)
+        renderChart('chart-logistics-radar', {
+            series: [{ name: 'Efficiency', data: [80, 50, 30, 40, 100, 20] }],
+            chart: { type: 'radar' },
+            labels: ['Speed', 'Reliability', 'Cost', 'Flexibility', 'Quality', 'Support'],
+            plotOptions: { radar: { polygons: { strokeColors: '#e2e8f0', connectorColors: '#e2e8f0' } } }
         });
 
         // 16. Return Rate (Line)
         renderChart('chart-return-rate', {
             series: [{ name: 'Returns %', data: [2, 3, 2.5, 4, 1.5, 2] }],
-            chart: { type: 'line', height: 300 }
+            chart: { type: 'line' }
         });
 
         // 17. Payment Methods (Pie)
         renderChart('chart-payment-methods', {
             series: [44, 55, 13, 43],
-            chart: { type: 'pie', height: 340, width: '100%' },
+            chart: { type: 'pie' },
             labels: ['Card', 'UPI', 'Wallet', 'EMI'],
             legend: { position: 'bottom', horizontalAlign: 'center' }
         });
 
-        // 18. EMI vs Full (Stacked)
+        // 18. EMI vs Full (Donut - Resized)
         renderChart('chart-emi-full', {
-            series: [{ name: 'Full', data: [44, 55, 41] }, { name: 'EMI', data: [13, 23, 20] }],
-            chart: { type: 'bar', height: 300, stacked: true }
+            series: [65, 35],
+            chart: { type: 'donut' },
+            labels: ['Full Payment', 'EMI'],
+            plotOptions: { pie: { donut: { size: '75%' } } },
+            legend: { position: 'bottom' }
         });
 
         // 19. Refund Trends (Line)
         renderChart('chart-refund-trends', {
             series: [{ name: 'Refunds', data: [30, 40, 45, 50, 49] }],
-            chart: { type: 'line', height: 300 },
+            chart: { type: 'line' },
             colors: ['#f43f5e']
         });
 
         // 20. Support Status (Bar)
         renderChart('chart-support-status', {
             series: [{ data: [20, 15, 60] }],
-            chart: { type: 'bar', height: 300 },
+            chart: { type: 'bar' },
             xaxis: { categories: ['Open', 'In Progress', 'Resolved'] },
             colors: ['#f43f5e', '#f59e0b', '#10b981']
         });
@@ -1372,35 +1445,10 @@
 
 
 
-        // Theme Toggle (if needed)
-        const themeBtn = document.getElementById('theme-toggle');
-        if (themeBtn) {
-            themeBtn.addEventListener('click', () => {
-                document.documentElement.classList.toggle('dark');
-                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-                updateChartsTheme();
-            });
-        }
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        // RTL Toggle
-        const rtlBtn = document.getElementById('rtl-toggle');
-        if (rtlBtn) {
-            rtlBtn.addEventListener('click', () => {
-                const html = document.documentElement;
-                if (html.getAttribute('dir') === 'rtl') {
-                    html.setAttribute('dir', 'ltr');
-                } else {
-                    html.setAttribute('dir', 'rtl');
-                }
-            });
-        }
-
         // Chart.js / Dashboard Init 
+
+
+        // Chart.js / Dashboard Init
         // ... (Charts initialization moved here if outside) ...
 
 

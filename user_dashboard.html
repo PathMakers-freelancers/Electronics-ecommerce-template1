@@ -251,12 +251,14 @@
             </div>
 
             <a href="about.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">About</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="info" class="w-5 h-5 text-indigo-500"></i> About</a>
             <a href="services.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Our
-                Services</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="layers" class="w-5 h-5 text-indigo-500"></i> Our Services</a>
             <a href="contact.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Contact</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="phone" class="w-5 h-5 text-indigo-500"></i> Contact</a>
 
             <!-- Dashboards Dropdown -->
             <div class="relative group">
@@ -333,380 +335,404 @@
             </div>
         </aside>
 
-        <!-- Main Content (Scrollable) -->
-        <main
-            class="flex-1 lg:ltr:ml-72 lg:rtl:mr-72 p-6 lg:px-16 lg:pb-12 lg:pt-8 space-y-12 relative overflow-x-hidden">
+        <!-- Main Content Wrapper -->
+        <div class="flex-1 lg:ltr:ml-72 lg:rtl:mr-72 flex flex-col min-h-screen transition-all duration-300">
+            <main class="flex-1 p-6 lg:px-16 lg:pb-12 lg:pt-8 space-y-12 relative overflow-x-hidden">
 
-            <!-- Mobile Header (Visible only on small screens) -->
-            <header class="lg:hidden flex justify-between items-center mb-8">
-                <div class="flex items-center gap-4">
-                    <span class="text-xl font-black text-slate-900 dark:text-white">ElectraHub</span>
-                </div>
-                <button id="sidebar-toggle"
-                    class="p-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-lg hover:bg-indigo-200 dark:hover:bg-indigo-900/50 transition-colors">
-                    <i data-lucide="panel-left" class="w-6 h-6"></i>
-                </button>
-            </header>
-
-            <!-- 1️⃣ OVERVIEW -->
-            <section id="overview" class="scroll-mt-24 min-h-[60vh]">
-                <div class="flex justify-between items-center mb-4 animate-fade-in-up">
-                    <div>
-                        <div
-                            class="inline-block bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md tracking-wider uppercase">
-                            User Dashboard</div>
-                        <h1 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-1">Welcome back,
-                            Alex</h1>
-                        <p class="text-slate-600 dark:text-slate-400 font-medium">Here's what's happening today.</p>
+                <!-- Mobile Header (Visible only on small screens) -->
+                <header class="lg:hidden flex justify-between items-center mb-8">
+                    <div class="flex items-center gap-4">
+                        <span class="text-xl font-black text-slate-900 dark:text-white">ElectraHub</span>
                     </div>
-                    <button id="theme-toggle"
-                        class="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg border border-indigo-50 dark:border-slate-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:scale-105">
-                        <span class="block dark:hidden">
-                            <i data-lucide="sun" class="w-5 h-5 text-black fill-black"></i>
-                        </span>
-                        <span class="hidden dark:block">
-                            <i data-lucide="moon" class="w-5 h-5"></i>
-                        </span>
+                    <button id="sidebar-toggle"
+                        class="p-2 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 rounded-lg hover:bg-indigo-200 dark:hover:bg-indigo-900/50 transition-colors">
+                        <i data-lucide="panel-left" class="w-6 h-6"></i>
                     </button>
-                </div>
+                </header>
 
-                <!-- Stats Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 animate-fade-in-up"
-                    style="animation-delay: 0.1s">
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow hover:shadow-md transition-shadow group">
-                        <div class="flex items-center gap-4 mb-4">
+                <!-- 1️⃣ OVERVIEW -->
+                <section id="overview" class="scroll-mt-24 min-h-[60vh]">
+                    <div class="flex justify-between items-center mb-4 animate-fade-in-up">
+                        <div>
                             <div
-                                class="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl text-indigo-600 group-hover:scale-110 transition-transform">
-                                <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                            </div>
-                            <span class="font-bold text-slate-700 dark:text-slate-300">Total Orders</span>
+                                class="inline-block bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 shadow-md tracking-wider uppercase">
+                                User Dashboard</div>
+                            <h1 class="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-1">Welcome
+                                back,
+                                Alex</h1>
+                            <p class="text-slate-600 dark:text-slate-400 font-medium">Here's what's happening today.</p>
                         </div>
-                        <p class="text-4xl font-black text-slate-900 dark:text-white">24</p>
+                        <button id="theme-toggle"
+                            class="p-3 rounded-full bg-white dark:bg-slate-800 shadow-lg border border-indigo-50 dark:border-slate-700 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:scale-105">
+                            <span class="block dark:hidden">
+                                <i data-lucide="sun" class="w-5 h-5 text-black fill-black"></i>
+                            </span>
+                            <span class="hidden dark:block">
+                                <i data-lucide="moon" class="w-5 h-5"></i>
+                            </span>
+                        </button>
                     </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow hover:shadow-md transition-shadow group">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div
-                                class="p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl text-emerald-600 group-hover:scale-110 transition-transform">
-                                <i data-lucide="smartphone" class="w-6 h-6"></i>
-                            </div>
-                            <span class="font-bold text-slate-700 dark:text-slate-300">Active Devices</span>
-                        </div>
-                        <p class="text-4xl font-black text-slate-900 dark:text-white">3</p>
-                    </div>
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow hover:shadow-md transition-shadow group">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div
-                                class="p-3 bg-rose-100 dark:bg-rose-900/30 rounded-xl text-rose-600 group-hover:scale-110 transition-transform">
-                                <i data-lucide="life-buoy" class="w-6 h-6"></i>
-                            </div>
-                            <span class="font-bold text-slate-700 dark:text-slate-300">Open Tickets</span>
-                        </div>
-                        <p class="text-4xl font-black text-slate-900 dark:text-white">1</p>
-                    </div>
-                </div>
 
-                <!-- Analytics Charts (Row 1) -->
-                <div class="grid lg:grid-cols-3 gap-8 mb-8 animate-fade-in-up" style="animation-delay: 0.15s">
-                    <!-- Spend Chart -->
-                    <!-- Spend Chart -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Monthly Spending</h3>
-                        <div id="u-chart-spend"></div>
-                    </div>
-                    <!-- Categories Chart -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Top Categories</h3>
-                        <div id="u-chart-categories"></div>
-                    </div>
-                    <!-- Activity Chart -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Login Activity</h3>
-                        <div id="u-chart-activity"></div>
-                    </div>
-                </div>
-
-                <!-- Analytics Charts (Row 2 - NEW) -->
-                <div class="grid lg:grid-cols-3 gap-8 mb-8 animate-fade-in-up" style="animation-delay: 0.18s">
-                    <!-- Orders Overview Chart -->
-                    <!-- Orders Overview Chart -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Orders Overview</h3>
-                        <div id="u-chart-orders"></div>
-                    </div>
-                    <!-- Warranty Status Chart -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Warranty Status</h3>
-                        <div id="u-chart-warranty"></div>
-                    </div>
-                    <!-- Support Metrics Chart -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Support Metrics</h3>
-                        <div id="u-chart-support"></div>
-                    </div>
-                </div>
-
-                <!-- Recent Activity -->
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm animate-fade-in-up"
-                    style="animation-delay: 0.2s">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Latest Activity</h3>
-                    <div class="space-y-4">
+                    <!-- Stats Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 animate-fade-in-up"
+                        style="animation-delay: 0.1s">
                         <div
-                            class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                            <div class="flex items-center gap-4">
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow hover:shadow-md transition-shadow group">
+                            <div class="flex items-center gap-4 mb-4">
                                 <div
-                                    class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600">
-                                    <i data-lucide="package" class="w-5 h-5"></i>
+                                    class="p-3 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl text-indigo-600 group-hover:scale-110 transition-transform">
+                                    <i data-lucide="shopping-bag" class="w-6 h-6"></i>
                                 </div>
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">Order shipped</p>
-                                    <p class="text-xs text-slate-700 dark:text-slate-400">Sony XM5 Headphones • 2 hrs
-                                        ago</p>
-                                </div>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">Total Orders</span>
                             </div>
-                            <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400"></i>
+                            <p class="text-4xl font-black text-slate-900 dark:text-white">24</p>
                         </div>
                         <div
-                            class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
-                            <div class="flex items-center gap-4">
+                            class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow hover:shadow-md transition-shadow group">
+                            <div class="flex items-center gap-4 mb-4">
                                 <div
-                                    class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600">
-                                    <i data-lucide="check-circle" class="w-5 h-5"></i>
+                                    class="p-3 bg-emerald-100 dark:bg-emerald-900/30 rounded-xl text-emerald-600 group-hover:scale-110 transition-transform">
+                                    <i data-lucide="smartphone" class="w-6 h-6"></i>
                                 </div>
-                                <div>
-                                    <p class="font-bold text-slate-900 dark:text-white">Warranty Approved</p>
-                                    <p class="text-xs text-slate-700 dark:text-slate-400">iPhone 14 Pro • Yesterday</p>
-                                </div>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">Active Devices</span>
                             </div>
-                            <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400"></i>
+                            <p class="text-4xl font-black text-slate-900 dark:text-white">3</p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow hover:shadow-md transition-shadow group">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="p-3 bg-rose-100 dark:bg-rose-900/30 rounded-xl text-rose-600 group-hover:scale-110 transition-transform">
+                                    <i data-lucide="life-buoy" class="w-6 h-6"></i>
+                                </div>
+                                <span class="font-bold text-slate-700 dark:text-slate-300">Open Tickets</span>
+                            </div>
+                            <p class="text-4xl font-black text-slate-900 dark:text-white">1</p>
                         </div>
                     </div>
-                </div>
-            </section>
 
-            <!-- 2️⃣ MY ORDERS -->
-            <section id="orders" class="scroll-mt-24">
-                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-                    <i data-lucide="shopping-bag" class="text-indigo-600"></i> My Orders
-                </h2>
-                <div class="space-y-8">
-                    <!-- Active Order -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border-l-4 border-indigo-600 shadow-lg relative overflow-hidden group">
+                    <!-- Analytics Charts (Row 1) -->
+                    <div class="grid lg:grid-cols-3 gap-8 mb-8 animate-fade-in-up" style="animation-delay: 0.15s">
+                        <!-- Spend Chart -->
+                        <!-- Spend Chart -->
                         <div
-                            class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
-                            IN TRANSIT</div>
-                        <div class="flex flex-col md:flex-row gap-6 items-center">
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Monthly Spending</h3>
+                            <div id="u-chart-spend"></div>
+                        </div>
+                        <!-- Categories Chart -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Top Categories</h3>
+                            <div id="u-chart-categories"></div>
+                        </div>
+                        <!-- New Pie Chart -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Device Distribution</h3>
+                            <div id="u-chart-device-dist"></div>
+                        </div>
+                    </div>
+
+                    <!-- Analytics Charts (Row 2 - NEW) -->
+                    <div class="grid lg:grid-cols-3 gap-8 mb-8 animate-fade-in-up" style="animation-delay: 0.18s">
+                        <!-- New Radar Chart -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Efficiency Radar</h3>
+                            <div id="u-chart-radar"></div>
+                        </div>
+                        <!-- Warranty Status Chart -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Warranty Status</h3>
+                            <div id="u-chart-warranty"></div>
+                        </div>
+                        <!-- Support Metrics Chart -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm global-black-shadow">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Support Metrics</h3>
+                            <div id="u-chart-support"></div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 shadow-sm animate-fade-in-up"
+                        style="animation-delay: 0.2s">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Latest Activity</h3>
+                        <div class="space-y-4">
                             <div
-                                class="w-24 h-24 bg-slate-100 dark:bg-slate-900 rounded-xl flex items-center justify-center shrink-0">
-                                <i data-lucide="headphones" class="w-10 h-10 text-slate-400"></i>
+                                class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center text-indigo-600">
+                                        <i data-lucide="package" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">Order shipped</p>
+                                        <p class="text-xs text-slate-700 dark:text-slate-400">Sony XM5 Headphones • 2
+                                            hrs
+                                            ago</p>
+                                    </div>
+                                </div>
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400"></i>
                             </div>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Sony WH-1000XM5</h3>
-                                <p class="text-sm text-slate-700 dark:text-slate-400 mb-4">Order #PV-8839 • Placed on
-                                    Jan 24, 2026</p>
+                            <div
+                                class="flex items-center justify-between p-4 bg-slate-50 dark:bg-slate-900 rounded-2xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600">
+                                        <i data-lucide="check-circle" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-slate-900 dark:text-white">Warranty Approved</p>
+                                        <p class="text-xs text-slate-700 dark:text-slate-400">iPhone 14 Pro • Yesterday
+                                        </p>
+                                    </div>
+                                </div>
+                                <i data-lucide="chevron-right" class="w-5 h-5 text-slate-400"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2️⃣ MY ORDERS -->
+                <section id="orders" class="scroll-mt-24">
+                    <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                        <i data-lucide="shopping-bag" class="text-indigo-600"></i> My Orders
+                    </h2>
+                    <div class="space-y-8">
+                        <!-- Active Order -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border-l-4 border-indigo-600 shadow-lg relative overflow-hidden group">
+                            <div
+                                class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
+                                IN TRANSIT</div>
+                            <div class="flex flex-col md:flex-row gap-6 items-center">
+                                <div
+                                    class="w-24 h-24 bg-slate-100 dark:bg-slate-900 rounded-xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="headphones" class="w-10 h-10 text-slate-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Sony WH-1000XM5
+                                    </h3>
+                                    <p class="text-sm text-slate-700 dark:text-slate-400 mb-4">Order #PV-8839 • Placed
+                                        on
+                                        Jan 24, 2026</p>
+                                    <div class="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-indigo-600 h-full w-2/3 animate-pulse"></div>
+                                    </div>
+                                    <div
+                                        class="flex justify-between text-xs font-bold mt-2 text-indigo-600 dark:text-indigo-400">
+                                        <span>Processing</span>
+                                        <span>Out for Delivery</span>
+                                        <span class="text-slate-400">Delivered</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2 w-full md:w-auto">
+                                    <button
+                                        class="px-6 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors">Track</button>
+                                    <button
+                                        class="px-6 py-2 border border-slate-200 dark:border-slate-700 font-bold rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors dark:text-white">Invoice</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Past Order -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 opacity-80 hover:opacity-100 transition-opacity">
+                            <div class="flex flex-col md:flex-row gap-6 items-center">
+                                <div
+                                    class="w-24 h-24 bg-slate-100 dark:bg-slate-900 rounded-xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="laptop" class="w-10 h-10 text-slate-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">MacBook Pro 14"
+                                    </h3>
+                                    <p class="text-sm text-slate-700 dark:text-slate-400">Order #PV-1029 • Delivered Dec
+                                        10,
+                                        2025</p>
+                                    <span
+                                        class="inline-block mt-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 text-xs font-bold rounded-full">Delivered</span>
+                                </div>
+                                <button
+                                    class="px-6 py-2 border border-indigo-100 dark:border-slate-700 text-indigo-600 dark:text-indigo-400 font-bold rounded-lg hover:bg-indigo-50 transition-colors">Buy
+                                    Again</button>
+                            </div>
+                        </div>
+
+                        <!-- NEW ROW: Returned Order -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 opacity-70 hover:opacity-100 transition-opacity">
+                            <div class="flex flex-col md:flex-row gap-6 items-center">
+                                <div
+                                    class="w-24 h-24 bg-slate-100 dark:bg-slate-900 rounded-xl flex items-center justify-center shrink-0">
+                                    <i data-lucide="smartphone" class="w-10 h-10 text-slate-400"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Google Pixel 8
+                                    </h3>
+                                    <p class="text-sm text-slate-700 dark:text-slate-400">Order #PV-1001 • Returned Nov
+                                        15,
+                                        2025</p>
+                                    <span
+                                        class="inline-block mt-2 px-3 py-1 bg-rose-100 dark:bg-rose-900/30 text-rose-600 text-xs font-bold rounded-full">Refunded</span>
+                                </div>
+                                <button
+                                    class="px-6 py-2 border border-indigo-100 dark:border-slate-700 text-indigo-600 dark:text-indigo-400 font-bold rounded-lg hover:bg-indigo-50 transition-colors">View
+                                    Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3️⃣ MY DEVICES -->
+                <section id="devices" class="scroll-mt-24">
+                    <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                        <i data-lucide="smartphone" class="text-indigo-600"></i> My Devices
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Device Card 1 -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 transition-transform shadow-lg group flex flex-col h-full">
+                            <div class="flex justify-between items-center mb-6">
+                                <div
+                                    class="w-14 h-14 bg-slate-100 dark:bg-slate-900 rounded-2xl flex items-center justify-center">
+                                    <i data-lucide="smartphone"
+                                        class="w-7 h-7 text-slate-400 group-hover:text-indigo-600 transition-colors"></i>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 text-xs font-bold rounded-full">Warranty
+                                    Active</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">iPhone 14 Pro</h3>
+                            <p class="text-sm text-slate-700 dark:text-slate-400 mb-6">Serial: H892-KLD0-221</p>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs font-bold text-slate-500">
+                                    <span>Warranty Coverage</span>
+                                    <span>240 Days Left</span>
+                                </div>
                                 <div class="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden">
-                                    <div class="bg-indigo-600 h-full w-2/3 animate-pulse"></div>
-                                </div>
-                                <div
-                                    class="flex justify-between text-xs font-bold mt-2 text-indigo-600 dark:text-indigo-400">
-                                    <span>Processing</span>
-                                    <span>Out for Delivery</span>
-                                    <span class="text-slate-400">Delivered</span>
+                                    <div class="bg-emerald-500 h-full w-2/3"></div>
                                 </div>
                             </div>
-                            <div class="flex flex-col gap-2 w-full md:w-auto">
+                            <div class="mt-6 flex gap-4">
                                 <button
-                                    class="px-6 py-2 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors">Track</button>
+                                    class="flex-1 py-2 bg-slate-50 dark:bg-slate-900 rounded-lg text-sm font-bold hover:bg-indigo-50 dark:hover:bg-slate-700 transition-colors dark:text-white">Get
+                                    Support</button>
                                 <button
-                                    class="px-6 py-2 border border-slate-200 dark:border-slate-700 font-bold rounded-lg hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors dark:text-white">Invoice</button>
+                                    class="flex-1 py-2 bg-slate-50 dark:bg-slate-900 rounded-lg text-sm font-bold hover:bg-rose-50 dark:hover:bg-slate-700 transition-colors dark:text-white">Report
+                                    Issue</button>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Past Order -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 opacity-80 hover:opacity-100 transition-opacity">
-                        <div class="flex flex-col md:flex-row gap-6 items-center">
-                            <div
-                                class="w-24 h-24 bg-slate-100 dark:bg-slate-900 rounded-xl flex items-center justify-center shrink-0">
-                                <i data-lucide="laptop" class="w-10 h-10 text-slate-400"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">MacBook Pro 14"</h3>
-                                <p class="text-sm text-slate-700 dark:text-slate-400">Order #PV-1029 • Delivered Dec 10,
-                                    2025</p>
-                                <span
-                                    class="inline-block mt-2 px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 text-xs font-bold rounded-full">Delivered</span>
-                            </div>
-                            <button
-                                class="px-6 py-2 border border-indigo-100 dark:border-slate-700 text-indigo-600 dark:text-indigo-400 font-bold rounded-lg hover:bg-indigo-50 transition-colors">Buy
-                                Again</button>
-                        </div>
-                    </div>
-
-                    <!-- NEW ROW: Returned Order -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 opacity-70 hover:opacity-100 transition-opacity">
-                        <div class="flex flex-col md:flex-row gap-6 items-center">
-                            <div
-                                class="w-24 h-24 bg-slate-100 dark:bg-slate-900 rounded-xl flex items-center justify-center shrink-0">
-                                <i data-lucide="smartphone" class="w-10 h-10 text-slate-400"></i>
-                            </div>
-                            <div class="flex-1">
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Google Pixel 8</h3>
-                                <p class="text-sm text-slate-700 dark:text-slate-400">Order #PV-1001 • Returned Nov 15,
-                                    2025</p>
-                                <span
-                                    class="inline-block mt-2 px-3 py-1 bg-rose-100 dark:bg-rose-900/30 text-rose-600 text-xs font-bold rounded-full">Refunded</span>
-                            </div>
-                            <button
-                                class="px-6 py-2 border border-indigo-100 dark:border-slate-700 text-indigo-600 dark:text-indigo-400 font-bold rounded-lg hover:bg-indigo-50 transition-colors">View
-                                Details</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3️⃣ MY DEVICES -->
-            <section id="devices" class="scroll-mt-24">
-                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-                    <i data-lucide="smartphone" class="text-indigo-600"></i> My Devices
-                </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Device Card 1 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 transition-transform shadow-lg group flex flex-col h-full">
-                        <div class="flex justify-between items-center mb-6">
-                            <div
-                                class="w-14 h-14 bg-slate-100 dark:bg-slate-900 rounded-2xl flex items-center justify-center">
-                                <i data-lucide="smartphone"
-                                    class="w-7 h-7 text-slate-400 group-hover:text-indigo-600 transition-colors"></i>
-                            </div>
-                            <span
-                                class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 text-xs font-bold rounded-full">Warranty
-                                Active</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">iPhone 14 Pro</h3>
-                        <p class="text-sm text-slate-700 dark:text-slate-400 mb-6">Serial: H892-KLD0-221</p>
-
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs font-bold text-slate-500">
-                                <span>Warranty Coverage</span>
-                                <span>240 Days Left</span>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden">
-                                <div class="bg-emerald-500 h-full w-2/3"></div>
-                            </div>
-                        </div>
-                        <div class="mt-6 flex gap-4">
-                            <button
-                                class="flex-1 py-2 bg-slate-50 dark:bg-slate-900 rounded-lg text-sm font-bold hover:bg-indigo-50 dark:hover:bg-slate-700 transition-colors dark:text-white">Get
-                                Support</button>
-                            <button
-                                class="flex-1 py-2 bg-slate-50 dark:bg-slate-900 rounded-lg text-sm font-bold hover:bg-rose-50 dark:hover:bg-slate-700 transition-colors dark:text-white">Report
-                                Issue</button>
-                        </div>
-                    </div>
-
-                    <!-- Device Card 2 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 transition-transform shadow-lg group flex flex-col h-full">
-                        <div class="flex justify-between items-center mb-6">
-                            <div
-                                class="w-14 h-14 bg-slate-100 dark:bg-slate-900 rounded-2xl flex items-center justify-center">
-                                <i data-lucide="watch"
-                                    class="w-7 h-7 text-slate-400 group-hover:text-amber-500 transition-colors"></i>
-                            </div>
-                            <span
-                                class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 text-xs font-bold rounded-full">Expiring
-                                Soon</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Apple Watch Ultra</h3>
-                        <p class="text-sm text-slate-700 dark:text-slate-400 mb-6">Serial: W992-MMX0-112</p>
-
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs font-bold text-slate-500">
-                                <span>Warranty Coverage</span>
-                                <span>12 Days Left</span>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden">
-                                <div class="bg-yellow-500 h-full w-[90%]"></div>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <button
-                                class="w-full py-2 bg-indigo-600 text-white rounded-lg text-sm font-bold hover:bg-indigo-700 transition-colors">Extend
-                                Warranty</button>
-                        </div>
-                    </div>
-
-                    <!-- NEW ROW: Device Card 3 -->
-                    <div
-                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 transition-transform shadow-lg group flex flex-col h-full">
-                        <div class="flex justify-between items-center mb-6">
-                            <div
-                                class="w-14 h-14 bg-slate-100 dark:bg-slate-900 rounded-2xl flex items-center justify-center">
-                                <i data-lucide="tablet"
-                                    class="w-7 h-7 text-slate-400 group-hover:text-rose-500 transition-colors"></i>
-                            </div>
-                            <span
-                                class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-full">Expired</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">iPad Air (5th Gen)</h3>
-                        <p class="text-sm text-slate-700 dark:text-slate-400 mb-6">Serial: A123-B456-789</p>
-
-                        <div class="space-y-2">
-                            <div class="flex justify-between text-xs font-bold text-slate-500">
-                                <span>Warranty Coverage</span>
-                                <span>0 Days Left</span>
-                            </div>
-                            <div class="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden">
-                                <div class="bg-slate-300 dark:bg-slate-600 h-full w-full"></div>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <button
-                                class="w-full py-2 border border-slate-200 dark:border-slate-600 rounded-lg text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors dark:text-slate-300">Renew
-                                Warranty</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 4️⃣ PAYMENTS & BILLING -->
-            <section id="payments" class="scroll-mt-24">
-                <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8 flex items-center gap-3">
-                    <i data-lucide="credit-card" class="text-indigo-600"></i> Payments & Billing
-                </h2>
-                <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- Cards -->
-                    <div class="space-y-6">
-                        <h3 class="text-xl font-bold text-slate-900 dark:text-white">Saved Cards</h3>
+                        <!-- Device Card 2 -->
                         <div
-                            class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden group">
-                            <div
-                                class="absolute top-0 right-0 p-32 bg-white/10 rounded-full blur-3xl -translate-y-16 translate-x-16">
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 transition-transform shadow-lg group flex flex-col h-full">
+                            <div class="flex justify-between items-center mb-6">
+                                <div
+                                    class="w-14 h-14 bg-slate-100 dark:bg-slate-900 rounded-2xl flex items-center justify-center">
+                                    <i data-lucide="watch"
+                                        class="w-7 h-7 text-slate-400 group-hover:text-amber-500 transition-colors"></i>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 text-xs font-bold rounded-full">Expiring
+                                    Soon</span>
                             </div>
-                            <i data-lucide="wifi" class="w-8 h-8 mb-8 opacity-50"></i>
-                            <div class="text-2xl font-mono tracking-widest mb-8">•••• •••• •••• 4242</div>
-                            <div class="flex justify-between items-end">
-                                <div>
-                                    <div class="text-xs text-indigo-200 uppercase mb-1">Card Holder</div>
-                                    <div class="font-bold">ALEX MORGAN</div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Apple Watch Ultra</h3>
+                            <p class="text-sm text-slate-700 dark:text-slate-400 mb-6">Serial: W992-MMX0-112</p>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs font-bold text-slate-500">
+                                    <span>Warranty Coverage</span>
+                                    <span>12 Days Left</span>
                                 </div>
-                                <div class="text-right">
-                                    <div class="text-xs text-indigo-200 uppercase mb-1">Expires</div>
-                                    <div class="font-bold">12/28</div>
+                                <div class="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-yellow-500 h-full w-[90%]"></div>
                                 </div>
+                            </div>
+                            <div class="mt-6">
+                                <button
+                                    class="w-full py-2 bg-indigo-600 text-white rounded-lg text-sm font-bold hover:bg-indigo-700 transition-colors">Extend
+                                    Warranty</button>
+                            </div>
+                        </div>
+
+                        <!-- NEW ROW: Device Card 3 -->
+                        <div
+                            class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 transition-transform shadow-lg group flex flex-col h-full">
+                            <div class="flex justify-between items-center mb-6">
+                                <div
+                                    class="w-14 h-14 bg-slate-100 dark:bg-slate-900 rounded-2xl flex items-center justify-center">
+                                    <i data-lucide="tablet"
+                                        class="w-7 h-7 text-slate-400 group-hover:text-rose-500 transition-colors"></i>
+                                </div>
+                                <span
+                                    class="px-3 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-full">Expired</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">iPad Air (5th Gen)</h3>
+                            <p class="text-sm text-slate-700 dark:text-slate-400 mb-6">Serial: A123-B456-789</p>
+
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs font-bold text-slate-500">
+                                    <span>Warranty Coverage</span>
+                                    <span>0 Days Left</span>
+                                </div>
+                                <div class="w-full bg-slate-100 dark:bg-slate-900 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-slate-300 dark:bg-slate-600 h-full w-full"></div>
+                                </div>
+                            </div>
+                            <div class="mt-6">
+                                <button
+                                    class="w-full py-2 border border-slate-200 dark:border-slate-600 rounded-lg text-sm font-bold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors dark:text-slate-300">Renew
+                                    Warranty</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4️⃣ PAYMENTS & BILLING -->
+                <section id="payments" class="scroll-mt-24">
+                    <h2 class="text-3xl font-black text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                        <i data-lucide="credit-card" class="text-indigo-600"></i> Payments & Billing
+                    </h2>
+                    <div class="grid lg:grid-cols-2 gap-8">
+                        <!-- Cards -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Saved Cards</h3>
+                            <div
+                                class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white p-8 rounded-2xl shadow-xl relative overflow-hidden group">
+                                <div
+                                    class="absolute top-0 right-0 p-32 bg-white/10 rounded-full blur-3xl -translate-y-16 translate-x-16">
+                                </div>
+                                <i data-lucide="wifi" class="w-8 h-8 mb-8 opacity-50"></i>
+                                <div class="text-2xl font-mono tracking-widest mb-8">•••• •••• •••• 4242</div>
+                                <div class="flex justify-between items-end">
+                                    <div>
+                                        <div class="text-xs text-indigo-200 uppercase mb-1">Card Holder</div>
+                                        <div class="font-bold">ALEX MORGAN</div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-xs text-indigo-200 uppercase mb-1">Expires</div>
+                                        <div class="font-bold">12/28</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- NEW Saved Card -->
+                            <div
+                                class="p-4 border border-indigo-50 dark:border-slate-700 rounded-2xl flex items-center justify-between">
+                                <div class="flex items-center gap-4">
+                                    <div
+                                        class="w-12 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs italic">
+                                        VISA</div>
+                                    <div>
+                                        <div class="font-bold text-slate-900 dark:text-white">Visa **** 8899</div>
+                                        <div class="text-xs text-slate-500">Expires 09/27</div>
+                                    </div>
+                                </div>
+                                <button class="text-rose-500 hover:bg-rose-50 p-2 rounded-lg"><i data-lucide="trash-2"
+                                        class="w-4 h-4"></i></button>
                             </div>
                         </div>
                         <!-- NEW Saved Card -->
@@ -724,128 +750,124 @@
                             <button class="text-rose-500 hover:bg-rose-50 p-2 rounded-lg"><i data-lucide="trash-2"
                                     class="w-4 h-4"></i></button>
                         </div>
+                        <button
+                            class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold hover:underline"><i
+                                data-lucide="plus" class="w-4 h-4"></i> Add new card</button>
                     </div>
-                    <!-- NEW Saved Card -->
+
+                    <!-- Billing History -->
                     <div
-                        class="p-4 border border-indigo-50 dark:border-slate-700 rounded-2xl flex items-center justify-between">
-                        <div class="flex items-center gap-4">
+                        class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Billing History</h3>
+                        <div class="space-y-4">
                             <div
-                                class="w-12 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold text-xs italic">
-                                VISA</div>
-                            <div>
-                                <div class="font-bold text-slate-900 dark:text-white">Visa **** 8899</div>
-                                <div class="text-xs text-slate-500">Expires 09/27</div>
+                                class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-700">
+                                <div>
+                                    <div class="font-bold text-slate-900 dark:text-white">Jan 24, 2026</div>
+                                    <div class="text-xs text-slate-700 dark:text-slate-400">Invoice #INV-2029</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-slate-900 dark:text-white">$349.00</div>
+                                    <button
+                                        class="text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Download</button>
+                                </div>
                             </div>
-                        </div>
-                        <button class="text-rose-500 hover:bg-rose-50 p-2 rounded-lg"><i data-lucide="trash-2"
-                                class="w-4 h-4"></i></button>
-                    </div>
-                    <button
-                        class="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold hover:underline"><i
-                            data-lucide="plus" class="w-4 h-4"></i> Add new card</button>
-                </div>
-
-                <!-- Billing History -->
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700">
-                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-6">Billing History</h3>
-                    <div class="space-y-4">
-                        <div
-                            class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-700">
-                            <div>
-                                <div class="font-bold text-slate-900 dark:text-white">Jan 24, 2026</div>
-                                <div class="text-xs text-slate-700 dark:text-slate-400">Invoice #INV-2029</div>
+                            <div
+                                class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-700">
+                                <div>
+                                    <div class="font-bold text-slate-900 dark:text-white">Dec 10, 2025</div>
+                                    <div class="text-xs text-slate-700 dark:text-slate-400">Invoice #INV-1992</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-slate-900 dark:text-white">$1,299.00</div>
+                                    <button
+                                        class="text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Download</button>
+                                </div>
                             </div>
-                            <div class="text-right">
-                                <div class="font-bold text-slate-900 dark:text-white">$349.00</div>
-                                <button
-                                    class="text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Download</button>
-                            </div>
-                        </div>
-                        <div
-                            class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-700">
-                            <div>
-                                <div class="font-bold text-slate-900 dark:text-white">Dec 10, 2025</div>
-                                <div class="text-xs text-slate-700 dark:text-slate-400">Invoice #INV-1992</div>
-                            </div>
-                            <div class="text-right">
-                                <div class="font-bold text-slate-900 dark:text-white">$1,299.00</div>
-                                <button
-                                    class="text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Download</button>
-                            </div>
-                        </div>
-                        <!-- NEW Billing History Item -->
-                        <div
-                            class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-700">
-                            <div>
-                                <div class="font-bold text-slate-900 dark:text-white">Nov 28, 2025</div>
-                                <div class="text-xs text-slate-700 dark:text-slate-400">Invoice #INV-1880</div>
-                            </div>
-                            <div class="text-right">
-                                <div class="font-bold text-slate-900 dark:text-white">$299.00</div>
-                                <button
-                                    class="text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Download</button>
+                            <!-- NEW Billing History Item -->
+                            <div
+                                class="flex justify-between items-center pb-4 border-b border-slate-100 dark:border-slate-700">
+                                <div>
+                                    <div class="font-bold text-slate-900 dark:text-white">Nov 28, 2025</div>
+                                    <div class="text-xs text-slate-700 dark:text-slate-400">Invoice #INV-1880</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="font-bold text-slate-900 dark:text-white">$299.00</div>
+                                    <button
+                                        class="text-xs text-indigo-600 dark:text-indigo-400 font-bold hover:underline">Download</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-    </div>
-    </section>
+                </section>
+            </main>
+
+            <!-- Footer -->
+            <footer class="bg-slate-900 text-white pt-20 pb-10 border-t border-slate-800">
+                <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                    <!-- Col 1: Branding -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div
+                                class="w-10 h-10 bg-emerland-400 rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-2xl font-bold text-white">ElectraHub</span>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed">Next-generation electrical & tech components
+                            provider.
+                        </p>
+                    </div> <!-- Col 1: Branding -->
 
 
 
-
-    <!-- Footer -->
-    <footer class="bg-white text-slate-900 pt-20 pb-10 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            <div class="space-y-6">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-black rounded-xl flex items-center justify-center text-white">
-                        <i data-lucide="zap" class="w-6 h-6"></i>
+                    <!-- Col 2: Explore -->
+                    <div>
+                        <h3 class="font-bold text-lg mb-6 text-white">Explore</h3>
+                        <ul class="space-y-4 text-slate-400">
+                            <li><a href="index.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Home</a>
+                            </li>
+                            <li><a href="about.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">About</a>
+                            </li>
+                            <li><a href="services.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Services</a>
+                            </li>
+                        </ul>
                     </div>
-                    <span class="text-2xl font-bold text-black">ElectraHub</span>
+
+                    <!-- Col 3: Account -->
+                    <div>
+                        <h3 class="font-bold text-lg mb-6 text-white">Account</h3>
+                        <ul class="space-y-4 text-slate-400">
+                            <li><a href="login.html" class="hover:text-emerald-400 transition-colors text-slate-400">Log
+                                    In</a>
+                            </li>
+                            <li><a href="contact.html"
+                                    class="hover:text-emerald-400 transition-colors text-slate-400">Support</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 4: Newsletter -->
+                    <div>
+                        <h3 class="font-bold text-lg mb-6 text-white">Newsletter</h3>
+                        <div class="flex gap-2">
+                            <input type="email" placeholder="Email"
+                                class="bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 w-full outline-none text-white focus:border-black-400 transition-colors placeholder:text-slate-500">
+                            <button
+                                class="bg-black-400 text-emerald-500 font-bold px-6 rounded-lg hover:bg-black-300 transition-colors">
+                                Go
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <p class="text-slate-500">Next-generation electrical & tech components provider.</p>
-            </div>
-            <div>
-                <h4 class="font-bold text-lg mb-6 text-slate-900">Explore</h4>
-                <ul class="space-y-4 text-slate-500">
-                    <li><a href="index.html" class="hover:text-black transition-colors text-slate-500">Home</a>
-                    </li>
-                    <li><a href="about.html" class="hover:text-black transition-colors text-slate-500">About</a>
-                    </li>
-                    <li><a href="services.html" class="hover:text-black transition-colors text-slate-500">Services</a>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-lg mb-6 text-slate-900">Account</h4>
-                <ul class="space-y-4 text-slate-500">
-                    <li><a href="login.html" class="hover:text-black transition-colors text-slate-500">Log In</a>
-                    </li>
-                    <li><a href="#" class="hover:text-black transition-colors text-slate-500">Support</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="font-bold text-lg mb-6 text-slate-900">Newsletter</h4>
-                <div class="flex gap-2">
-                    <input type="email" placeholder="Email"
-                        class="bg-slate-50 border border-slate-200 rounded-lg px-4 py-3 w-full outline-none text-slate-900 placeholder:text-slate-400">
-                    <button
-                        class="bg-black text-white dark:bg-white dark:text-black font-bold px-6 rounded-lg hover:bg-neutral-800">Go</button>
+                <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800 text-slate-500 text-sm">
+                    &copy; 2026 ElectraHub Inc. All rights reserved.
                 </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-200 text-slate-500 text-sm">
-            &copy; 2026 ElectraHub Inc. All rights reserved.
-        </div>
-    </footer>
-    <div class="hidden md:block"></div>
-    <div class="md:col-span-3">
-        &copy; 2026 ElectraHub Inc. All rights reserved.
-    </div>
-    </div>
-    </footer>
-    </main>
+            </footer>
+        </div> <!-- Close Wrapper -->
     </div>
 
     </div>
@@ -893,59 +915,132 @@
         });
 
         // --- APEX CHARTS CONFIGURATION ---
+        const chartInstances = [];
+
+        const getChartThemeOptions = () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            const labelCol = isDark ? '#FFFFFF' : '#475569';
+            const gridCol = isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.05)';
+            const axisCol = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.1)';
+
+            return {
+                theme: { mode: isDark ? 'dark' : 'light' },
+                chart: {
+                    foreColor: labelCol
+                },
+                grid: { borderColor: gridCol },
+                xaxis: {
+                    labels: { style: { colors: labelCol } },
+                    axisBorder: { color: axisCol },
+                    axisTicks: { color: axisCol }
+                },
+                yaxis: {
+                    labels: { style: { colors: labelCol } }
+                }
+            };
+        };
+
+        const updateChartsTheme = () => {
+            const newOptions = getChartThemeOptions();
+            chartInstances.forEach(chart => {
+                chart.updateOptions(newOptions);
+            });
+        };
+
+        // Theme Toggle Listener
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+                updateChartsTheme();
+
+                // Update Lucide icons if any inside the button changed visibility
+                if (typeof lucide !== 'undefined') lucide.createIcons();
+            });
+        }
+
+        const initialThemeOptions = getChartThemeOptions();
+
         const commonOptions = {
-            chart: { background: 'transparent', toolbar: { show: false } },
-            theme: { mode: document.documentElement.classList.contains('dark') ? 'dark' : 'light' },
+            chart: {
+                background: 'transparent',
+                toolbar: { show: false },
+                foreColor: initialThemeOptions.chart.foreColor
+            },
+            theme: { mode: initialThemeOptions.theme.mode },
             stroke: { curve: 'smooth' },
+            grid: {
+                borderColor: initialThemeOptions.grid.borderColor,
+                strokeDashArray: 4
+            },
             dataLabels: { enabled: false },
-            tooltip: { theme: document.documentElement.classList.contains('dark') ? 'dark' : 'light' }
+            tooltip: { theme: initialThemeOptions.theme.mode }
+        };
+
+        const renderChart = (selector, options) => {
+            const chart = new ApexCharts(document.querySelector(selector), {
+                ...commonOptions,
+                ...options,
+                xaxis: {
+                    ...options.xaxis,
+                    ...initialThemeOptions.xaxis
+                },
+                yaxis: {
+                    ...options.yaxis,
+                    ...initialThemeOptions.yaxis
+                }
+            });
+            chart.render();
+            chartInstances.push(chart);
+            return chart;
         };
 
         // 1. Spend Chart
-        new ApexCharts(document.querySelector("#u-chart-spend"), {
-            ...commonOptions,
+        renderChart("#u-chart-spend", {
             series: [{ name: 'Spend', data: [120, 250, 90, 420, 150, 349] }],
-            chart: { type: 'area', height: 250, background: 'transparent', toolbar: { show: false } },
+            chart: { type: 'area', height: 250 },
             colors: ['#4f46e5'],
-            xaxis: { categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'] }
-        }).render();
+            xaxis: {
+                categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
+            }
+        });
 
         // 2. Categories Chart
-        new ApexCharts(document.querySelector("#u-chart-categories"), {
-            ...commonOptions,
+        renderChart("#u-chart-categories", {
             series: [44, 55, 13],
-            chart: { type: 'donut', height: 250, background: 'transparent' },
+            chart: { type: 'donut', height: 250 },
             labels: ['Electronics', 'Accessories', 'Services'],
-            colors: ['#4f46e5', '#818cf8', '#c7d2fe']
-        }).render();
+            colors: ['#4f46e5', '#818cf8', '#c7d2fe'],
+            legend: { labels: { useSeriesColors: false } }
+        });
 
-        // 3. Activity Chart
-        new ApexCharts(document.querySelector("#u-chart-activity"), {
-            ...commonOptions,
-            series: [{ name: 'Logins', data: [5, 2, 8, 1, 3, 2, 6] }],
-            chart: { type: 'bar', height: 250, background: 'transparent', toolbar: { show: false } },
-            colors: ['#10b981'],
-            xaxis: { categories: ['M', 'T', 'W', 'T', 'F', 'S', 'S'] }
-        }).render();
+        // 3. Device Distribution Chart (Pie)
+        renderChart("#u-chart-device-dist", {
+            series: [45, 30, 25],
+            chart: { type: 'pie', height: 250 },
+            labels: ['Mobile', 'Desktop', 'Tablet'],
+            colors: ['#3b82f6', '#10b981', '#f59e0b'],
+            legend: { position: 'bottom' }
+        });
 
-        // 4. Orders Overview Chart (Column)
-        new ApexCharts(document.querySelector("#u-chart-orders"), {
-            ...commonOptions,
-            series: [{ name: 'Orders', data: [2, 4, 1, 5, 2, 3] }],
-            chart: { type: 'bar', height: 250, background: 'transparent', toolbar: { show: false } },
-            colors: ['#f59e0b'],
-            plotOptions: { bar: { borderRadius: 4 } },
-            xaxis: { categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'] }
-        }).render();
+        // New Radar Chart
+        renderChart("#u-chart-radar", {
+            series: [{ name: 'Efficiency', data: [80, 50, 30, 40, 100, 20] }],
+            chart: { type: 'radar', height: 250 },
+            labels: ['Speed', 'Reliability', 'Cost', 'Flexibility', 'Quality', 'Support'],
+            colors: ['#8b5cf6'],
+            yaxis: { show: false },
+            plotOptions: { radar: { polygons: { strokeColors: initialThemeOptions.xaxis.axisBorder.color, connectorColors: initialThemeOptions.xaxis.axisBorder.color } } }
+        });
 
         // 5. Warranty Status (RadialBar)
-        new ApexCharts(document.querySelector("#u-chart-warranty"), {
-            ...commonOptions,
+        renderChart("#u-chart-warranty", {
             series: [76],
-            chart: { type: 'radialBar', height: 250, background: 'transparent' },
+            chart: { type: 'radialBar', height: 250 },
             plotOptions: {
                 radialBar: {
-                    hollow: { size: '70%' },
+                    hollow: { size: '70%', background: 'transparent' },
                     dataLabels: {
                         show: true,
                         name: { show: true },
@@ -955,16 +1050,17 @@
             },
             labels: ['Coverage'],
             colors: ['#10b981']
-        }).render();
+        });
 
         // 6. Support Metrics (Area)
-        new ApexCharts(document.querySelector("#u-chart-support"), {
-            ...commonOptions,
+        renderChart("#u-chart-support", {
             series: [{ name: 'Tickets', data: [0, 1, 0, 2, 0, 1] }],
-            chart: { type: 'area', height: 250, background: 'transparent', toolbar: { show: false } },
+            chart: { type: 'area', height: 250 },
             colors: ['#f43f5e'],
-            xaxis: { categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'] }
-        }).render();
+            xaxis: {
+                categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
+            }
+        });
 
     </script>
 
