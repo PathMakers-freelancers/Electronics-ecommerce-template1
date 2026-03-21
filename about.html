@@ -13,40 +13,27 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        heading: ['Syne', 'sans-serif'],
-                        mono: ['"Space Mono"', 'monospace'],
                         outfit: ['Outfit', 'sans-serif'],
                     },
                     colors: {
-                        // LIGHT MODE: Ivory & Deep Navy (NO GRAY)
-                        ivory: {
-                            DEFAULT: '#E6DCCF', // Brown light shade
-                            50: '#FFFFFF',
-                            100: '#FDFBF7',
-                            900: '#E6E2D8'
+                        // Standard ElectraHub Brand Colors
+                        light: {
+                            bg: '#F8FAFC',
+                            section: '#FFFFFF',
+                            text: {
+                                primary: '#0F172A',
+                                secondary: '#1E3A8A',
+                                muted: '#334155'
+                            },
                         },
-                        navy: {
-                            DEFAULT: '#4A332A', // Mocha / Dark Brown (Replaces Blue/Black)
-                            light: '#5D4037',
-                            accent: '#3E2723'
-                        },
-                        cyan: {
-                            electric: '#D4AF37', // Golden Metallic (was Cyan)
-                            glow: '#FFD700'      // Pure Gold (was Cyan Glow)
-                        },
-                        // DARK MODE: Midnight & Neon (NO GRAY)
-                        midnight: {
-                            DEFAULT: '#020617', // True black/deep blue
-                            lighter: '#0B1121'
-                        },
-                        neon: {
-                            DEFAULT: '#FFD700', // Gold
-                            glow: '#F4C430',    // Saffron Gold
-                            purple: '#A855F7'
-                        },
-                        french: {
-                            beige: '#C2B280', // Ecru / French Beige shade
-                            dark: '#A4907C'   // Darker Beige
+                        dark: {
+                            bg: '#020617',
+                            section: '#0F172A',
+                            text: {
+                                primary: '#FFFFFF',
+                                secondary: '#E2E8F0',
+                                muted: '#CBD5E1'
+                            }
                         }
                     },
                     animation: {
@@ -55,7 +42,6 @@
                         'float-fast': 'float 4s ease-in-out infinite',
                         'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
                         'spin-slow': 'spin 12s linear infinite',
-                        'magnetic': 'magnetic 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both',
                         'text-reveal': 'textReveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards',
                         'slide-bg': 'slideBg 20s linear infinite',
                     },
@@ -76,16 +62,14 @@
                             '0%': { backgroundPosition: '0% 0%' },
                             '100%': { backgroundPosition: '100% 100%' }
                         }
-                    },
-                    backgroundImage: {
-                        'grid-pattern': "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm1 1h38v38H1V1z' fill='%2306B6D4' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E\")",
                     }
                 }
             }
         }
     </script>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/3d-marquee.css">
@@ -218,7 +202,7 @@
 </head>
 
 <body
-    class="bg-ivory dark:bg-midnight transition-colors duration-700 text-navy dark:text-white antialiased selection:bg-cyan-electric selection:text-white">
+    class="bg-light-bg dark:bg-dark-bg text-light-text-primary dark:text-dark-text-primary transition-colors duration-700 antialiased overflow-x-hidden">
 
     <!-- Flash Preloader REMOVED -->
 
@@ -329,15 +313,15 @@
                     </button>
                 </div>
 
-                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden lg:block"></div>
 
                 <!-- Auth Buttons -->
                 <a href="login.html"
-                    class="hidden sm:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
+                    class="hidden lg:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
                     Log In
                 </a>
                 <a href="signup.html"
-                    class="hidden sm:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
+                    class="hidden lg:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
                     Get Started
                 </a>
 
@@ -381,12 +365,14 @@
             </div>
 
             <a href="about.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">About</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="info" class="w-5 h-5 text-indigo-500"></i> About</a>
             <a href="services.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Our
-                Services</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="layers" class="w-5 h-5 text-indigo-500"></i> Our Services</a>
             <a href="contact.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Contact</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="phone" class="w-5 h-5 text-indigo-500"></i> Contact</a>
 
             <!-- Dashboards Dropdown -->
             <div class="relative group">
@@ -396,11 +382,11 @@
                 </button>
                 <div id="mobile-dash-menu" class="hidden pl-2 mt-2 space-y-1">
                     <a href="user_dashboard.html"
-                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">User
-                        Panel</a>
+                        class="flex items-center gap-3 p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">
+                        <i data-lucide="user" class="w-4 h-4 text-indigo-500"></i> User Panel</a>
                     <a href="admin_dashboard.html"
-                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Admin
-                        Panel</a>
+                        class="flex items-center gap-3 p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-purple-500"></i> Admin Panel</a>
                 </div>
             </div>
 
@@ -1750,9 +1736,8 @@
                     <!-- Col 1: Branding -->
                     <div class="space-y-6">
                         <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 bg-emerland-400 rounded-xl flex items-center justify-center text-white">
-                                <i data-lucide="zap" class="w-6 h-6"></i>
+                            <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white">
+                                <i data-lucide="plug" class="w-6 h-6"></i>
                             </div>
                             <span class="text-2xl font-bold text-white">ElectraHub</span>
                         </div>

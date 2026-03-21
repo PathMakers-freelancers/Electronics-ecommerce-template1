@@ -13,12 +13,7 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        heading: ['Syne', 'sans-serif'],
-                        mono: ['"Space Mono"', 'monospace'],
                         outfit: ['Outfit', 'sans-serif'],
-                        anime: ['Orbitron', 'sans-serif'],
-                        comic: ['Bangers', 'cursive'],
-                        sub: ['Rajdhani', 'sans-serif'],
                     },
                     colors: {
                         light: {
@@ -53,8 +48,9 @@
             }
         }
     </script>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/background-lines.css">
@@ -216,15 +212,15 @@
                     </button>
                 </div>
 
-                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden lg:block"></div>
 
                 <!-- Auth Buttons -->
                 <a href="login.html"
-                    class="hidden sm:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
+                    class="hidden lg:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
                     Log In
                 </a>
                 <a href="signup.html"
-                    class="hidden sm:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
+                    class="hidden lg:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
                     Get Started
                 </a>
 
@@ -268,12 +264,14 @@
             </div>
 
             <a href="about.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">About</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="info" class="w-5 h-5 text-indigo-500"></i> About</a>
             <a href="services.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Our
-                Services</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="layers" class="w-5 h-5 text-indigo-500"></i> Our Services</a>
             <a href="contact.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Contact</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="phone" class="w-5 h-5 text-indigo-500"></i> Contact</a>
 
             <!-- Dashboards Dropdown -->
             <div class="relative group">
@@ -283,11 +281,11 @@
                 </button>
                 <div id="mobile-dash-menu" class="hidden pl-2 mt-2 space-y-1">
                     <a href="user_dashboard.html"
-                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">User
-                        Panel</a>
+                        class="flex items-center gap-3 p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">
+                        <i data-lucide="user" class="w-4 h-4 text-indigo-500"></i> User Panel</a>
                     <a href="admin_dashboard.html"
-                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Admin
-                        Panel</a>
+                        class="flex items-center gap-3 p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-purple-500"></i> Admin Panel</a>
                 </div>
             </div>
 
@@ -335,12 +333,12 @@
             <div class="bg-lines-svg"></div>
 
             <div class="bg-lines-content">
-                <h2 class="bg-lines-title flex flex-col gap-4 font-comic-title">
+                <h2 class="bg-lines-title flex flex-col gap-4">
                     <div class="hero-text-reveal"><span
-                            class="hero-gradient-text drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-3xl md:text-8xl">Expert</span><span
-                            class="hero-gradient-text ml-2 drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-3xl md:text-8xl">Solutions</span>
-                    </div><span class="font-anime-sub text-lg md:text-3xl tracking-widest uppercase">Services
-                        That Power Your Tech Experience</span>
+                            class="hero-gradient-text drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-3xl md:text-8xl font-outfit">Our</span><span
+                            class="hero-gradient-text ml-2 drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] text-3xl md:text-8xl font-outfit">Services</span>
+                    </div><span class="font-sans text-lg md:text-3xl tracking-wide">Everything you need, from purchase
+                        to long-term support</span>
                 </h2>
                 <p class="bg-lines-desc font-anime-sub tracking-wider text-sm mt-4">From purchase to
                     performance,
@@ -356,6 +354,120 @@
     </section>
     <script src="js/background-lines.js"></script>
     <script src="js/global-reveal.js"></script>
+
+    <!-- WHAT WE OFFER: Clear Services Grid -->
+    <section class="py-16 md:py-20 bg-slate-50 dark:bg-slate-900" id="our-services">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <span
+                    class="inline-block px-4 py-1.5 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 text-xs font-bold rounded-full uppercase tracking-wider mb-4">What
+                    We Offer</span>
+                <h2 class="text-3xl md:text-4xl font-black font-outfit text-slate-900 dark:text-white mb-3">6 Ways
+                    ElectraHub Serves You</h2>
+                <p class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto text-base md:text-lg">
+                    From doorstep delivery to expert setup — we're with you at every step of your electronics journey.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 1: Fast Delivery -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/40 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+                        <i data-lucide="truck"
+                            class="w-7 h-7 text-indigo-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Fast Delivery</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">Same-day and next-day
+                        delivery available across major cities. Free shipping on orders above ₹999. Real-time tracking
+                        on every package.</p>
+                    <a href="#" class="text-indigo-600 font-bold text-sm hover:underline flex items-center gap-1">Learn
+                        more <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <!-- 2: Warranty & Returns -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/40 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+                        <i data-lucide="shield-check"
+                            class="w-7 h-7 text-emerald-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Warranty &amp; Returns</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">All products come with
+                        manufacturer warranty. Easy 7-day hassle-free returns and replacements — no questions asked.</p>
+                    <a href="#" class="text-indigo-600 font-bold text-sm hover:underline flex items-center gap-1">Learn
+                        more <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <!-- 3: Technical Support -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-rose-100 dark:bg-rose-900/40 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+                        <i data-lucide="headset"
+                            class="w-7 h-7 text-rose-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Technical Support</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">24/7 expert support via
+                        chat, phone, and video call. Our certified tech team resolves hardware and software issues
+                        remotely or on-site.</p>
+                    <a href="#"
+                        class="text-indigo-600 font-bold text-sm hover:underline flex items-center gap-1">Contact
+                        support <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <!-- 4: B2B & Bulk Orders -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-purple-100 dark:bg-purple-900/40 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+                        <i data-lucide="briefcase"
+                            class="w-7 h-7 text-purple-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">B2B &amp; Bulk Orders</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">Special pricing for
+                        businesses, schools, and enterprises. Dedicated account manager, custom invoicing, and priority
+                        dispatch for bulk purchases.</p>
+                    <a href="#" class="text-indigo-600 font-bold text-sm hover:underline flex items-center gap-1">Get a
+                        quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <!-- 5: Setup & Installation -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-amber-100 dark:bg-amber-900/40 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+                        <i data-lucide="wrench"
+                            class="w-7 h-7 text-amber-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Setup &amp; Installation</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">Professional home and
+                        office device setup. Smart home configuration, TV mounting, laptop setup, router installation —
+                        done right the first time.</p>
+                    <a href="#" class="text-indigo-600 font-bold text-sm hover:underline flex items-center gap-1">Book a
+                        visit <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <!-- 6: Data Recovery -->
+                <div
+                    class="bg-white dark:bg-slate-800 p-8 rounded-2xl border border-indigo-50 dark:border-slate-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-sky-100 dark:bg-sky-900/40 rounded-2xl flex items-center justify-center mb-5 group-hover:bg-indigo-600 transition-colors">
+                        <i data-lucide="database"
+                            class="w-7 h-7 text-sky-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Data Recovery</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed mb-5">Lost files? Our certified
+                        engineers recover data from damaged drives, phones, and SSDs. Secure, confidential, and with a
+                        high success rate.</p>
+                    <a href="#" class="text-indigo-600 font-bold text-sm hover:underline flex items-center gap-1">Start
+                        recovery <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="py-10 md:py-20 bg-white dark:bg-dark-surface border-b border-indigo-50 dark:border-indigo-900/50">
         <div class="max-w-7xl mx-auto px-6">
@@ -510,7 +622,7 @@
             <h3 class="text-2xl font-bold text-center mb-12 text-light-text-primary dark:text-dark-text-primary">
                 Global Infrastructure</h3>
             <!-- Desktop Folded Card View -->
-            <div class="folded-card-section hidden md:block">
+            <div class="folded-card-section hidden md:block mx-auto">
                 <div class="folded-card">
                     <div class="fold"
                         style="background-image: url('Assets/6.jpeg'); background-position: center !important;">
@@ -571,9 +683,11 @@
                     Collaborating with industry leaders to deliver world-class performance
                     and reliability. </p>
             </div>
-            <div class="block-wrap">
+            <div class="flex justify-center items-center">
+                <div class="block-wrap max-w-5xl">
                 <div class="block-col">
                     <div class="block eb-purple"><i data-lucide="cpu" class="block-icon"></i>
+                        <span class="block-label">Silicon Tech</span>
                         <div class="block-content">
                             <div class="block-content__header">
                                 <h2 class="block-content__header__text">Silicon Tech</h2>
@@ -587,6 +701,7 @@
                 </div>
                 <div class="block-col">
                     <div class="block eb-cyan"><i data-lucide="cloud" class="block-icon"></i>
+                        <span class="block-label">CloudScale</span>
                         <div class="block-content">
                             <div class="block-content__header">
                                 <h2 class="block-content__header__text">CloudScale</h2>
@@ -600,6 +715,7 @@
                 </div>
                 <div class="block-col">
                     <div class="block eb-gold"><i data-lucide="shield-check" class="block-icon"></i>
+                        <span class="block-label">SecureNet</span>
                         <div class="block-content">
                             <div class="block-content__header">
                                 <h2 class="block-content__header__text">SecureNet</h2>
@@ -611,19 +727,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="block-col">
-                    <div class="block eb-emerald"><i data-lucide="zap" class="block-icon"></i>
-                        <div class="block-content">
-                            <div class="block-content__header">
-                                <h2 class="block-content__header__text">VoltMatrix</h2>
-                            </div>
-                            <p class="block-content__body font-outfit">Smart Power
-                                Management systems that optimize energy consumption across
-                                all connected ElectraHub devices.</p>
-                            <div class="block-content__button">Return to Grid</div>
-                        </div>
-                    </div>
-                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -644,18 +748,18 @@
                         data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star"
                         class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
                 </div>
-                <p class="text-slate-700 dark:text-slate-300 italic mb-6">
+                <p class="text-slate-700 dark:text-slate-300 italic mb-6 text-center">
                     "ElectraHub's deployment speed is
                     unmatched. They transformed our entire IT infrastructure
                     in under 48 hours."</p>
-                <div class="flex flex-col items-center gap-2">
+                <div class="flex flex-col items-center gap-2 text-center">
                     <div
                         class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/50 rounded-full flex items-center justify-center font-bold text-indigo-700 dark:text-indigo-300">
                         JD</div>
-                    <div>
-                        <h4 class="font-bold text-slate-900 dark:text-white text-sm">
+                    <div class="text-center">
+                        <h4 class="font-bold text-slate-900 dark:text-white text-sm text-center">
                             John Doe</h4>
-                        <p class="text-xs text-slate-500">CTO,
+                        <p class="text-xs text-slate-500 text-center">CTO,
                             TechFlow</p>
                     </div>
                 </div>
@@ -819,13 +923,12 @@
                     </div>
                 </div>
                 <div
-                    class="bg-indigo-600 rounded-3xl p-8 transform scale-105 shadow-2xl relative overflow-hidden group">
+                    class="bg-indigo-600 rounded-3xl p-8 md:transform md:scale-105 shadow-2xl relative overflow-hidden group">
                     <img src="Assets/tv2.jpeg" loading="lazy"
                         class="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none mix-blend-overlay">
-                    <div class="relative z-10">
-                        <div
-                            class="absolute top-0 right-0 bg-white text-indigo-600 text-xs font-bold px-3 py-1 rounded-bl-xl">
-                            POPULAR</div>
+                    <div class="absolute top-0 right-0 bg-white text-indigo-600 text-xs font-bold px-3 py-1 rounded-bl-xl z-20">
+                        POPULAR</div>
+                    <div class="relative z-10 mt-2">
                         <h3 class="text-xl font-bold mb-2">Premium</h3>
                         <p class="text-4xl font-black mb-6">$<span class="count-up" data-target="199">0</span><span
                                 class="text-lg text-indigo-200">/mo</span>
@@ -851,11 +954,11 @@
     </section>
 
     <section class="py-16 bg-light-surface dark:bg-dark-bg">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div class="relative order-2 md:order-1 animate-slide-right delay-100">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+            <div class="relative order-2 md:order-1">
 
                 <div
-                    class="aspect-square md:h-[600px] rounded-[2.5rem] bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 border-2 border-indigo-50 dark:border-indigo-900 overflow-hidden flex items-center justify-center relative p-8 shadow-2xl shadow-indigo-500/10 group">
+                    class="aspect-square md:h-[500px] rounded-[2.5rem] bg-gradient-to-br from-indigo-100 to-white dark:from-slate-800 dark:to-slate-900 border-2 border-indigo-50 dark:border-indigo-900 overflow-hidden flex items-center justify-center relative p-4 md:p-8 shadow-2xl shadow-indigo-500/10 group">
                     <div class="absolute inset-0 bg-indigo-500/5 mix-blend-overlay z-0">
                     </div><img src="Assets/per1.jpeg"
                         class="absolute inset-0 w-full h-full object-cover opacity-100 group-hover:scale-105 transition-transform duration-700 z-0">
@@ -2191,8 +2294,8 @@
             <!-- Col 1: Branding -->
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-emerland-400 rounded-xl flex items-center justify-center text-white"><i
-                            data-lucide="zap" class="w-6 h-6"></i></div>
+                    <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white"><i
+                            data-lucide="plug" class="w-6 h-6"></i></div>
                     <span class="text-2xl font-bold text-white">ElectraHub</span>
                 </div>
                 <p class="text-slate-400 text-sm leading-relaxed">Next-generation electrical & tech components provider.

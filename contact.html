@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | ElectraHub</title>
+    <title>Contact Us - ElectraHub</title>
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -282,15 +283,15 @@
                     </button>
                 </div>
 
-                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden lg:block"></div>
 
                 <!-- Auth Buttons -->
                 <a href="login.html"
-                    class="hidden sm:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
+                    class="hidden lg:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
                     Log In
                 </a>
                 <a href="signup.html"
-                    class="hidden sm:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
+                    class="hidden lg:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
                     Get Started
                 </a>
 
@@ -334,12 +335,14 @@
             </div>
 
             <a href="about.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">About</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="info" class="w-5 h-5 text-indigo-500"></i> About</a>
             <a href="services.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Our
-                Services</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="layers" class="w-5 h-5 text-indigo-500"></i> Our Services</a>
             <a href="contact.html"
-                class="block p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">Contact</a>
+                class="flex items-center gap-3 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-800 font-medium dark:text-slate-200 transition-colors">
+                <i data-lucide="phone" class="w-5 h-5 text-indigo-500"></i> Contact</a>
 
             <!-- Dashboards Dropdown -->
             <div class="relative group">
@@ -349,11 +352,11 @@
                 </button>
                 <div id="mobile-dash-menu" class="hidden pl-2 mt-2 space-y-1">
                     <a href="user_dashboard.html"
-                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">User
-                        Panel</a>
+                        class="flex items-center gap-3 p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">
+                        <i data-lucide="user" class="w-4 h-4 text-indigo-500"></i> User Panel</a>
                     <a href="admin_dashboard.html"
-                        class="block p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Admin
-                        Panel</a>
+                        class="flex items-center gap-3 p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-purple-500"></i> Admin Panel</a>
                 </div>
             </div>
 
@@ -1357,11 +1360,11 @@
             <!-- Col 1: Branding -->
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-emerland-400 rounded-xl flex items-center justify-center text-white"><i
-                            data-lucide="zap" class="w-6 h-6"></i></div>
+                    <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white"><i
+                            data-lucide="plug" class="w-6 h-6"></i></div>
                     <span class="text-2xl font-bold text-white">ElectraHub</span>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed">Next-generation electrical & tech components provider.
+                <p class="text-slate-300 text-sm leading-relaxed">Next-generation electrical & tech components provider.
                 </p>
             </div> <!-- Col 1: Branding -->
 
@@ -1370,13 +1373,13 @@
             <!-- Col 2: Explore -->
             <div>
                 <h3 class="font-bold text-lg mb-6 text-white">Explore</h3>
-                <ul class="space-y-4 text-slate-400">
-                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors text-slate-400">Home</a>
+                <ul class="space-y-4 text-slate-300">
+                    <li><a href="index.html" class="hover:text-indigo-400 transition-colors text-slate-300">Home</a>
                     </li>
-                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors text-slate-400">About</a>
+                    <li><a href="about.html" class="hover:text-indigo-400 transition-colors text-slate-300">About</a>
                     </li>
                     <li><a href="services.html"
-                            class="hover:text-emerald-400 transition-colors text-slate-400">Services</a>
+                            class="hover:text-indigo-400 transition-colors text-slate-300">Services</a>
                     </li>
                 </ul>
             </div>
@@ -1384,11 +1387,11 @@
             <!-- Col 3: Account -->
             <div>
                 <h3 class="font-bold text-lg mb-6 text-white">Account</h3>
-                <ul class="space-y-4 text-slate-400">
-                    <li><a href="login.html" class="hover:text-emerald-400 transition-colors text-slate-400">Log In</a>
+                <ul class="space-y-4 text-slate-300">
+                    <li><a href="login.html" class="hover:text-indigo-400 transition-colors text-slate-300">Log In</a>
                     </li>
                     <li><a href="contact.html"
-                            class="hover:text-emerald-400 transition-colors text-slate-400">Support</a>
+                            class="hover:text-indigo-400 transition-colors text-slate-300">Support</a>
                     </li>
                 </ul>
             </div>
@@ -1398,15 +1401,15 @@
                 <h3 class="font-bold text-lg mb-6 text-white">Newsletter</h3>
                 <div class="flex gap-2">
                     <input type="email" placeholder="Email"
-                        class="bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 w-full outline-none text-white focus:border-black-400 transition-colors placeholder:text-slate-500">
+                        class="bg-slate-800 border border-slate-600 rounded-lg px-4 py-3 w-full outline-none text-white focus:border-indigo-400 transition-colors placeholder:text-slate-400">
                     <button
-                        class="bg-black-400 text-emerald-500 font-bold px-6 rounded-lg hover:bg-black-300 transition-colors">
+                        class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold px-6 rounded-lg transition-colors whitespace-nowrap">
                         Go
                     </button>
                 </div>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-800 text-slate-500 text-sm">
+        <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-700 text-slate-300 text-sm">
             &copy; 2026 ElectraHub Inc. All rights reserved.
         </div>
     </footer>

@@ -13,8 +13,6 @@
                 extend: {
                     fontFamily: {
                         sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        heading: ['Syne', 'sans-serif'],
-                        mono: ['"Space Mono"', 'monospace'],
                         outfit: ['Outfit', 'sans-serif'],
                     },
                     colors: {
@@ -69,9 +67,9 @@
             }
         }
     </script>
-    <link href="https://fonts.cdnfonts.com/css/sreda" rel="stylesheet">
+    <link rel="icon" href="logo.svg" type="image/svg+xml">
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@400;500;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
@@ -200,15 +198,15 @@
                     </button>
                 </div>
 
-                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:block"></div>
+                <div class="h-6 w-px bg-slate-200 dark:bg-slate-700 mx-1 hidden lg:block"></div>
 
                 <!-- Auth Buttons -->
                 <a href="login.html"
-                    class="hidden sm:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
+                    class="hidden lg:flex px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-bold text-slate-700 dark:text-white hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all hover:shadow-md active:scale-95">
                     Log In
                 </a>
                 <a href="signup.html"
-                    class="hidden sm:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
+                    class="hidden lg:flex px-7 py-2.5 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-bold shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:-translate-y-0.5 active:translate-y-0 active:scale-95">
                     Get Started
                 </a>
 
@@ -267,13 +265,13 @@
                     class="w-full flex justify-between items-center p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/50 font-bold text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
                     Dashboards <i data-lucide="plus" class="w-4 h-4"></i>
                 </button>
-                <div id="mobile-dash-menu" class="hidden pl-2 mt-1 space-y-0.5">
+                <div id="mobile-dash-menu" class="hidden pl-2 mt-2 space-y-1">
                     <a href="user_dashboard.html"
-                        class="block py-1.5 px-3 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">User
-                        Panel</a>
+                        class="flex items-center gap-3 p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">
+                        <i data-lucide="user" class="w-4 h-4 text-indigo-500"></i> User Panel</a>
                     <a href="admin_dashboard.html"
-                        class="block py-1.5 px-3 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">Admin
-                        Panel</a>
+                        class="flex items-center gap-3 p-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-slate-800/50">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-purple-500"></i> Admin Panel</a>
                 </div>
             </div>
 
@@ -305,6 +303,7 @@
         }
     </style>
 
+    <!-- SECTION 1: Hero -->
     <section class="w-full bg-white dark:bg-black" id="hero">
         <div class="images-slider-container">
             <!-- Images are injected here by JS -->
@@ -312,21 +311,23 @@
             <!-- Overlay -->
             <div class="images-slider-overlay"></div>
 
-            <div class="images-slider-content">
+            <!-- Hero Content: No box, plain text over image -->
+            <div class="images-slider-content"
+                style="background:none;backdrop-filter:none;border:none;box-shadow:none;padding:0;">
                 <!-- Layout Text Flip Component -->
                 <div class="text-flip-container">
                     <span
-                        class="text-flip-static font-sreda text-4xl md:text-[8rem] lg:text-[10rem] xl:text-[12rem] leading-none text-white drop-shadow-[4px_4px_0_#000] tracking-wider text-center md:text-left">Upgrade
+                        class="text-flip-static font-outfit text-4xl md:text-[8rem] lg:text-[10rem] xl:text-[12rem] leading-none text-white drop-shadow-[4px_4px_0_#000] tracking-wider text-center md:text-left">Upgrade
                         Your Life With</span>
                     <div id="text-flip-wrapper"
-                        class="text-flip-box font-sreda text-3xl md:text-[5rem] lg:text-[7rem] tracking-wider mt-4 md:mt-0">
+                        class="text-flip-box font-outfit text-3xl md:text-[5rem] lg:text-[7rem] tracking-wider mt-4 md:mt-0">
                         <!-- JS injects words -->
                     </div>
                 </div>
 
                 <p
-                    class="mt-4 text-center text-sm md:text-xl lg:text-2xl text-neutral-200 shadow-md drop-shadow-md max-w-lg font-sreda tracking-widest uppercase px-4">
-                    Experience the power of modern UI components that bring your ideas to life.
+                    class="mt-4 text-center text-sm md:text-xl lg:text-2xl text-neutral-200 drop-shadow-md max-w-lg font-sans tracking-wide px-4">
+                    Experience the future of electronics. Unbeatable prices. Unmatched quality.
                 </p>
 
                 <!-- Two Buttons -->
@@ -454,45 +455,97 @@
     </section>
 
 
-    <!-- SECTION 2: Shop by Categories (Floating Dock) -->
-    <section class="py-10 md:py-20 bg-white dark:bg-slate-950 flex flex-col items-center">
-        <div class="max-w-7xl mx-auto px-6 text-center w-full">
-            <h2
-                class="text-2xl md:text-3xl lg:text-4xl font-black font-outfit text-slate-900 dark:text-white mb-8 md:mb-12">
-                Shop by
-                Category</h2>
+    <!-- SECTION 2: Shop by Categories - Card Grid -->
+    <section class="py-16 md:py-24 bg-white dark:bg-slate-950" id="categories">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-black font-outfit text-slate-900 dark:text-white mb-3">
+                Shop by Category
+            </h2>
+            <p class="text-slate-500 dark:text-slate-400 text-base md:text-lg mb-12 max-w-xl mx-auto">
+                Browse our curated selection across 6 categories — from cutting-edge smartphones to smart home
+                essentials.
+            </p>
 
-            <div class="floating-dock-wrapper">
-                <div class="floating-dock-container">
-                    <!-- Dock Items -->
-                    <a href="#" class="dock-item">
-                        <div class="dock-tooltip">Smartphones</div>
-                        <i data-lucide="smartphone"></i>
-                    </a>
-                    <a href="#" class="dock-item">
-                        <div class="dock-tooltip">Laptops</div>
-                        <i data-lucide="laptop"></i>
-                    </a>
-                    <a href="#" class="dock-item">
-                        <div class="dock-tooltip">Audio</div>
-                        <i data-lucide="headphones"></i>
-                    </a>
-                    <a href="#" class="dock-item">
-                        <div class="dock-tooltip">Smart Home</div>
-                        <i data-lucide="home"></i>
-                    </a>
-                    <a href="#" class="dock-item">
-                        <div class="dock-tooltip">Accessories</div>
-                        <i data-lucide="watch"></i>
-                    </a>
-                    <a href="#" class="dock-item">
-                        <div class="dock-tooltip">Gaming</div>
-                        <i data-lucide="gamepad-2"></i>
-                    </a>
-                </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+                <!-- Smartphones -->
+                <a href="#"
+                    class="group flex flex-col items-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20">
+                    <div
+                        class="w-14 h-14 bg-indigo-100 dark:bg-indigo-900/40 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i data-lucide="smartphone"
+                            class="w-7 h-7 text-indigo-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white text-sm mb-1">Smartphones</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-tight">Latest flagships
+                        &amp; budget picks</span>
+                </a>
+
+                <!-- Laptops -->
+                <a href="#"
+                    class="group flex flex-col items-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20">
+                    <div
+                        class="w-14 h-14 bg-purple-100 dark:bg-purple-900/40 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i data-lucide="laptop"
+                            class="w-7 h-7 text-purple-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white text-sm mb-1">Laptops</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-tight">Work, gaming
+                        &amp; ultrabooks</span>
+                </a>
+
+                <!-- Audio -->
+                <a href="#"
+                    class="group flex flex-col items-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20">
+                    <div
+                        class="w-14 h-14 bg-rose-100 dark:bg-rose-900/40 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i data-lucide="headphones"
+                            class="w-7 h-7 text-rose-500 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white text-sm mb-1">Audio</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-tight">Headphones,
+                        speakers &amp; earbuds</span>
+                </a>
+
+                <!-- Smart Home -->
+                <a href="#"
+                    class="group flex flex-col items-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20">
+                    <div
+                        class="w-14 h-14 bg-emerald-100 dark:bg-emerald-900/40 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i data-lucide="home"
+                            class="w-7 h-7 text-emerald-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white text-sm mb-1">Smart Home</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-tight">Automation &amp;
+                        connected devices</span>
+                </a>
+
+                <!-- Accessories -->
+                <a href="#"
+                    class="group flex flex-col items-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20">
+                    <div
+                        class="w-14 h-14 bg-amber-100 dark:bg-amber-900/40 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i data-lucide="watch"
+                            class="w-7 h-7 text-amber-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white text-sm mb-1">Accessories</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-tight">Cables, cases
+                        &amp; wearables</span>
+                </a>
+
+                <!-- Gaming -->
+                <a href="#"
+                    class="group flex flex-col items-center p-6 bg-slate-50 dark:bg-slate-900 rounded-2xl border border-slate-100 dark:border-slate-800 hover:border-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-indigo-100 dark:hover:shadow-indigo-900/20">
+                    <div
+                        class="w-14 h-14 bg-sky-100 dark:bg-sky-900/40 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i data-lucide="gamepad-2"
+                            class="w-7 h-7 text-sky-600 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="font-bold text-slate-900 dark:text-white text-sm mb-1">Gaming</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-tight">Consoles, PCs
+                        &amp; peripherals</span>
+                </a>
             </div>
         </div>
-        <script src="floating-dock.js"></script>
     </section>
 
     <!-- SECTION 3: New Arrivals -->
@@ -786,48 +839,53 @@
                 <h2 class="text-4xl font-black text-slate-900 dark:text-white mt-2">Our Network</h2>
             </div>
 
-            <div class="block-wrap">
-                <div class="block-col">
-                    <div class="block eb-purple">
-                        <i data-lucide="globe" class="block-icon"></i>
-                        <div class="block-content">
-                            <div class="block-content__header">
-                                <h2 class="block-content__header__text">Global Reach</h2>
+            <div class="flex justify-center items-center">
+                <div class="block-wrap max-w-4xl">
+                    <div class="block-col">
+                        <div class="block eb-purple">
+                            <i data-lucide="globe" class="block-icon"></i>
+                            <span class="block-label">Global Reach</span>
+                            <div class="block-content">
+                                <div class="block-content__header">
+                                    <h2 class="block-content__header__text">Global Reach</h2>
+                                </div>
+                                <p class="block-content__body font-outfit">Operating in over 50 countries with a robust
+                                    logistics network that ensures your electronics reach you faster than ever.</p>
+                                <div class="block-content__button">Return to Grid</div>
                             </div>
-                            <p class="block-content__body font-outfit">Operating in over 50 countries with a robust
-                                logistics network that ensures your electronics reach you faster than ever.</p>
-                            <div class="block-content__button">Return to Grid</div>
+                        </div>
+                    </div>
+                    <div class="block-col">
+                        <div class="block eb-gold">
+                            <i data-lucide="users" class="block-icon"></i>
+                            <span class="block-label">Local Partners</span>
+                            <div class="block-content">
+                                <div class="block-content__header">
+                                    <h2 class="block-content__header__text">Local Partners</h2>
+                                </div>
+                                <p class="block-content__body font-outfit">Collaborating with 500+ certified local
+                                    distributors to provide on-ground support and authentic product availability.</p>
+                                <div class="block-content__button">Return to Grid</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-col">
+                        <div class="block eb-cyan">
+                            <i data-lucide="zap" class="block-icon"></i>
+                            <span class="block-label">Fast Nodes</span>
+                            <div class="block-content">
+                                <div class="block-content__header">
+                                    <h2 class="block-content__header__text">Fast Nodes</h2>
+                                </div>
+                                <p class="block-content__body font-outfit">Strategic fulfillment centers placed globally to
+                                    minimize latency and maximize delivery efficiency for every order.</p>
+                                <div class="block-content__button">Return to Grid</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="block-col">
-                    <div class="block eb-gold">
-                        <i data-lucide="users" class="block-icon"></i>
-                        <div class="block-content">
-                            <div class="block-content__header">
-                                <h2 class="block-content__header__text">Local Partners</h2>
-                            </div>
-                            <p class="block-content__body font-outfit">Collaborating with 500+ certified local
-                                distributors to provide on-ground support and authentic product availability.</p>
-                            <div class="block-content__button">Return to Grid</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="block-col">
-                    <div class="block eb-cyan">
-                        <i data-lucide="zap" class="block-icon"></i>
-                        <div class="block-content">
-                            <div class="block-content__header">
-                                <h2 class="block-content__header__text">Fast Nodes</h2>
-                            </div>
-                            <p class="block-content__body font-outfit">Strategic fulfillment centers placed globally to
-                                minimize latency and maximize delivery efficiency for every order.</p>
-                            <div class="block-content__button">Return to Grid</div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+
         </div>
     </section>
 
@@ -1271,8 +1329,8 @@
                             <!-- Logo Origin Point -->
                             <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                                 <div
-                                    class="w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center">
-                                    <i data-lucide="globe" class="text-white w-8 h-8"></i>
+                                    class="w-16 h-16 bg-white shadow-lg border-2 border-indigo-200 rounded-full flex items-center justify-center">
+                                    <i data-lucide="globe" class="text-indigo-600 w-8 h-8"></i>
                                 </div>
                             </div>
                             <img src="Assets/1.jpeg"
@@ -1303,8 +1361,8 @@
                             <!-- Logo Origin Point -->
                             <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                                 <div
-                                    class="w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center">
-                                    <i data-lucide="cpu" class="text-white w-8 h-8"></i>
+                                    class="w-16 h-16 bg-white shadow-lg border-2 border-purple-200 rounded-full flex items-center justify-center">
+                                    <i data-lucide="cpu" class="text-purple-600 w-8 h-8"></i>
                                 </div>
                             </div>
                             <img src="Assets/2.jpeg"
@@ -1334,8 +1392,8 @@
                             <!-- Logo Origin Point -->
                             <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                                 <div
-                                    class="w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center">
-                                    <i data-lucide="leaf" class="text-white w-8 h-8"></i>
+                                    class="w-16 h-16 bg-white shadow-lg border-2 border-emerald-200 rounded-full flex items-center justify-center">
+                                    <i data-lucide="leaf" class="text-emerald-600 w-8 h-8"></i>
                                 </div>
                             </div>
                             <img src="Assets/3.jpeg"
@@ -1365,8 +1423,8 @@
                             <!-- Logo Origin Point -->
                             <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                                 <div
-                                    class="w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center">
-                                    <i data-lucide="zap" class="text-white w-8 h-8"></i>
+                                    class="w-16 h-16 bg-white shadow-lg border-2 border-amber-200 rounded-full flex items-center justify-center">
+                                    <i data-lucide="zap" class="text-amber-500 w-8 h-8"></i>
                                 </div>
                             </div>
                             <img src="Assets/4.jpeg"
@@ -1396,8 +1454,8 @@
                             <!-- Logo Origin Point -->
                             <div class="absolute inset-0 flex items-center justify-center z-20 pointer-events-none">
                                 <div
-                                    class="w-16 h-16 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center">
-                                    <i data-lucide="heart" class="text-white w-8 h-8"></i>
+                                    class="w-16 h-16 bg-white shadow-lg border-2 border-pink-200 rounded-full flex items-center justify-center">
+                                    <i data-lucide="heart" class="text-pink-600 w-8 h-8"></i>
                                 </div>
                             </div>
                             <img src="Assets/5.jpeg"
@@ -1581,8 +1639,8 @@
             <!-- Col 1: Branding -->
             <div class="space-y-6">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-emerland-400 rounded-xl flex items-center justify-center text-white"><i
-                            data-lucide="zap" class="w-6 h-6"></i></div>
+                    <div class="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white"><i
+                            data-lucide="plug" class="w-6 h-6"></i></div>
                     <span class="text-2xl font-bold text-white">ElectraHub</span>
                 </div>
                 <p class="text-slate-400 text-sm leading-relaxed">Next-generation electrical & tech components provider.
@@ -1595,12 +1653,12 @@
             <div>
                 <h3 class="font-bold text-lg mb-6 text-white">Explore</h3>
                 <ul class="space-y-4 text-slate-400">
-                    <li><a href="index.html" class="hover:text-emerald-400 transition-colors text-slate-400">Home</a>
+                    <li><a href="index.html" class="hover:text-indigo-400 transition-colors text-slate-400">Home</a>
                     </li>
-                    <li><a href="about.html" class="hover:text-emerald-400 transition-colors text-slate-400">About</a>
+                    <li><a href="about.html" class="hover:text-indigo-400 transition-colors text-slate-400">About</a>
                     </li>
                     <li><a href="services.html"
-                            class="hover:text-emerald-400 transition-colors text-slate-400">Services</a>
+                            class="hover:text-indigo-400 transition-colors text-slate-400">Services</a>
                     </li>
                 </ul>
             </div>
@@ -1609,10 +1667,10 @@
             <div>
                 <h3 class="font-bold text-lg mb-6 text-white">Account</h3>
                 <ul class="space-y-4 text-slate-400">
-                    <li><a href="login.html" class="hover:text-emerald-400 transition-colors text-slate-400">Log In</a>
+                    <li><a href="login.html" class="hover:text-indigo-400 transition-colors text-slate-400">Log In</a>
                     </li>
                     <li><a href="contact.html"
-                            class="hover:text-emerald-400 transition-colors text-slate-400">Support</a>
+                            class="hover:text-indigo-400 transition-colors text-slate-400">Support</a>
                     </li>
                 </ul>
             </div>
