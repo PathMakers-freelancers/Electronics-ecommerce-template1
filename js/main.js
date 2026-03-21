@@ -27,44 +27,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 2. Theme Logic (Dark Mode)
-    const themeBtn = document.getElementById('theme-toggle');
+    const themeBtns = document.querySelectorAll('#theme-toggle, #mobile-theme-toggle'); // Support multiple buttons including mobile
     const html = document.documentElement;
     const savedTheme = localStorage.getItem('theme');
     const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
+    const setTheme = (isDark) => {
+        if (isDark) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    };
+
     // Apply saved or system theme on load
     if (savedTheme === 'dark' || (!savedTheme && systemTheme === 'dark')) {
-        html.classList.add('dark');
+        setTheme(true);
     } else {
-        html.classList.remove('dark');
+        setTheme(false);
     }
 
-    if (themeBtn) {
-        // Remove old listeners to prevent duplicates if any
-        const newThemeBtn = themeBtn.cloneNode(true);
-        themeBtn.parentNode.replaceChild(newThemeBtn, themeBtn);
+    themeBtns.forEach(btn => {
+        // Remove old listeners to prevent duplicates
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
 
-        newThemeBtn.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const isDark = html.classList.contains('dark');
-            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        newBtn.addEventListener('click', () => {
+            const isDark = !html.classList.contains('dark');
+            setTheme(isDark);
         });
-    }
+    });
 
     // 3. RTL Logic (Consolidated)
-    const rtlBtn = document.getElementById('rtl-toggle');
+    const rtlBtns = document.querySelectorAll('#rtl-toggle, #mobile-rtl-toggle'); // Support both
     const savedDir = localStorage.getItem('dir') || 'ltr';
 
+    const setDirection = (dir) => {
+        html.setAttribute('dir', dir);
+        localStorage.setItem('dir', dir);
+        if (dir === 'rtl') {
+            html.classList.add('rtl');
+        } else {
+            html.classList.remove('rtl');
+        }
+        // Update sidebar position if function exists
+        if (typeof updateSidebarPosition === 'function') {
+            setTimeout(updateSidebarPosition, 50);
+        }
+    };
+
     // Apply saved direction
-    html.setAttribute('dir', savedDir);
-    if (savedDir === 'rtl') html.classList.add('rtl');
-    else html.classList.remove('rtl');
+    setDirection(savedDir);
 
-    if (rtlBtn) {
-        const newRtlBtn = rtlBtn.cloneNode(true);
-        rtlBtn.parentNode.replaceChild(newRtlBtn, rtlBtn);
+    rtlBtns.forEach(btn => {
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
 
-        newRtlBtn.addEventListener('click', () => {
+        newBtn.addEventListener('click', () => {
             // Disable transitions
             document.body.classList.add('no-transition');
 
@@ -81,24 +101,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const currentDir = html.getAttribute('dir');
             const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-
-            html.setAttribute('dir', newDir);
-            localStorage.setItem('dir', newDir);
-
-            if (newDir === 'rtl') html.classList.add('rtl');
-            else html.classList.remove('rtl');
-
-            // Update sidebar position
-            if (typeof updateSidebarPosition === 'function') {
-                setTimeout(updateSidebarPosition, 50);
-            }
+            setDirection(newDir);
 
             // Re-enable transitions
             setTimeout(() => {
                 document.body.classList.remove('no-transition');
             }, 50);
         });
-    }
+    });
 
     // --- Navigation functionality now handled by navbar.js ---
 
