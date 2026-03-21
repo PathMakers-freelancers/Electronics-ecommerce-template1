@@ -329,8 +329,12 @@
                     <button id="theme-toggle"
                         class="flex items-center justify-center p-3 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 text-xl hover:scale-110 transition-all"
                         title="Toggle Theme">
-                        <span class="dark:hidden">☀️</span>
-                        <span class="hidden dark:block">🌙</span>
+                        <span class="moon-wrapper">
+                            <i data-lucide="moon" class="w-4 h-4"></i>
+                        </span>
+                        <span class="sun-wrapper">
+                            <i data-lucide="sun" class="w-4 h-4"></i>
+                        </span>
                     </button>
                 </div>
                 <a href="login.html"
@@ -941,6 +945,8 @@
             return chart;
         };
 
+        window.addEventListener('load', () => {
+            setTimeout(() => {
         // 1. Spend Chart
         renderChart("#u-chart-spend", {
             series: [{ name: 'Spend', data: [120, 250, 90, 420, 150, 349] }],
@@ -1005,6 +1011,8 @@
             xaxis: {
                 categories: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan'],
             }
+        });
+            }, 600); // Ensure Tailwind CDN compiles CSS Grid before chart width calculations
         });
 
     </script>
