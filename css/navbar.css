@@ -4,13 +4,13 @@
 .text-gray-500,
 .text-gray-600,
 .text-slate-700 {
-    color: #0369A1 !important;
+    color: #0369A1;
 }
 
 .text-slate-900,
 .text-gray-900,
 .text-black {
-    color: #000000 !important;
+    color: #000000;
 }
 
 /* ===== NAVBAR TOGGLE BUTTONS - always clearly visible ===== */
